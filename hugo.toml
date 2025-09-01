@@ -1,0 +1,15 @@
+baseurl = "/"
+title = "Sridhar's Blog!"
+languageCode = "en-us"
+theme = "newsroom"
+locale = "en_US"
+
+[pagination]
+disableAliases = false
+pagerSize = 10
+path = 'page'
+
+author = "Sridhar"
+canonifyurls = true
+twitter = "@ssathya"
+
