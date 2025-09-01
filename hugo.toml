@@ -3,6 +3,7 @@ title = "Sridhar's Blog!"
 languageCode = "en-us"
 theme = "newsroom"
 locale = "en_US"
+publishDir = "public"
 
 [pagination]
 disableAliases = false
