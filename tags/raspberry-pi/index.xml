@@ -1,6 +1,367 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raspberry Pi on Sridhar's Blog!</title><link>https://ssathya.github.io/SridharBlog/tags/raspberry-pi/</link><description>Recent content in Raspberry Pi on Sridhar's Blog!</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 30 Mar 2025 11:56:15 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing (Upgrading) Ollama</title><link>https://ssathya.github.io/SridharBlog/posts/install-ollama/</link><pubDate>Sun, 30 Mar 2025 11:56:15 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/install-ollama/</guid><description>&lt;p&gt;This is an urgent note about how I resolved a pressing issue installing Ollama on my Raspberry Pi.&lt;/p&gt;
-&lt;p&gt;A few months ago, I successfully installed Ollama on my Raspberry Pi, and it performed flawlessly. I made some configuration tweaks to ensure everything worked smoothly at the time, but I couldn’t recall the changes I had implemented. Recently, after upgrading the Ollama server, disaster struck—all the applications reliant on this Raspberry Pi began to fail. I wrote this blog to prevent a repeat of this frustrating experience during future upgrades, documenting how I resolved the issue and restored functionality.&lt;/p&gt;</description></item><item><title>Blazor on RP</title><link>https://ssathya.github.io/SridharBlog/posts/blazor-on-rp/</link><pubDate>Sat, 15 Mar 2025 11:28:39 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/blazor-on-rp/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;I have always been interested in creating a blog using Blazor, a web framework that allows me to write C# code for both the client and the server side. I also wanted to host it on a Raspberry Pi, a low-cost and portable device that can run Linux and .NET applications. In this post, I will share how I configured my Blazing Blog, the name I gave to my project, on my Raspberry Pi.&lt;/p&gt;</description></item><item><title>Connecting to Ollama running on Raspberry Pi</title><link>https://ssathya.github.io/SridharBlog/posts/ollamatocs/</link><pubDate>Sat, 15 Mar 2025 11:26:12 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/ollamatocs/</guid><description>&lt;h2 id="prerequests"&gt;Prerequests&lt;/h2&gt;
-&lt;p&gt;Here are the instructions for connecting to Ollama running on my Raspberry Pi from my C# application. I will provide step-by-step instructions for installing Ollama and connecting it to a C# application. Please ensure that your Raspberry Pi is already running some version of Linux and that you have Visual Studio installed on your computer.&lt;/p&gt;
-&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Let us start by installing Ollama on your Raspberry Pi (RbP). I&amp;rsquo;ve named my RbP rbpi-5-1, and if you see &amp;ldquo;rbpi-5-1&amp;rdquo; in the rest of the document, I&amp;rsquo;m indicating my RbP.&lt;/p&gt;</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Raspberry Pi</title><link>https://ssathya.github.io/SridharBlog/tags/raspberry-pi/</link><description>Recent content in Raspberry Pi on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 30 Mar 2025 11:56:15 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing (Upgrading) Ollama</title><link>https://ssathya.github.io/SridharBlog/posts/install-ollama/</link><pubDate>Sun, 30 Mar 2025 11:56:15 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/install-ollama/</guid><description>
+&lt;p&gt;This is an urgent note about how I resolved a pressing issue installing Ollama on my Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;A few months ago, I successfully installed Ollama on my Raspberry Pi, and it performed flawlessly. I made some configuration tweaks to ensure everything worked smoothly at the time, but I couldn’t recall the changes I had implemented. Recently, after upgrading the Ollama server, disaster struck—all the applications reliant on this Raspberry Pi began to fail. I wrote this blog to prevent a repeat of this frustrating experience during future upgrades, documenting how I resolved the issue and restored functionality.&lt;/p&gt;
+&lt;h2&gt;What happened?&lt;span class="hx:absolute hx:-mt-20" id="what-happened"&gt;&lt;/span&gt;
+&lt;a href="#what-happened" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I’ve worked with models like Pi3 and Gemma3 on my Raspberry Pi, and while they performed adequately, I discovered a newer version of Gemma3 was available—an upgrade I couldn’t resist. At the time, I was running Ollama version 0.3.x, but the latest Gemma3 model required Ollama version 0.6.0 or higher. As someone prioritizing staying up-to-date with the newest software, I promptly upgraded my installation. This upgrade occurred on a Friday, and as fate would have it, I overlooked the change and didn’t use the applications reliant on my local Ollama installation for weeks. When I finally reconnected, every application hit me with exceptions, indicating that the upgrade needed further attention.&lt;/p&gt;
+&lt;p&gt;The challenge I faced was rooted in confusion—I couldn’t pinpoint the exact cause of the problem. Was the issue introduced by the Ollama server upgrade itself, or was it connected to the change in my network setup? Around the same time, I had replaced my router, switching from one that primarily used IPV4 to a newer model that emphasized IPV6. This shift introduced the possibility of a firewall misconfiguration or connectivity hiccups that I hadn’t anticipated. Alternatively, could the problem have stemmed from the Windows update that occurred in parallel with these changes? The timing of these events made troubleshooting even more complex, as I had to consider multiple variables and their potential interactions.&lt;/p&gt;
+&lt;p&gt;On the surface, each factor seemed plausible, but I lacked the clarity to determine which one—or combination of them—was to blame. The Ollama upgrade introduced compatibility concerns with my applications, while the router change could have affected network communication protocols. Simultaneously, the Windows update may have brought unexpected changes to system settings, firewall rules, or application permissions. The overlapping nature of these modifications created a perfect storm of uncertainty, leaving me scrambling to identify the root cause of the failure.&lt;/p&gt;
+&lt;p&gt;This experience served as a stark reminder of the importance of thorough testing and documentation when implementing multiple changes to a system. It underscored how seemingly unrelated upgrades and modifications could combine to create unforeseen issues, leaving critical applications in limbo. As I delved deeper into the problem, I realized that unraveling this tangled web of possibilities would require methodical investigation and careful analysis of each component involved. My goal became not just resolving the immediate issue but ensuring that I could learn from this situation and mitigate similar risks in the future.&lt;/p&gt;
+&lt;h2&gt;Fix&lt;span class="hx:absolute hx:-mt-20" id="fix"&gt;&lt;/span&gt;
+&lt;a href="#fix" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To expose Ollama on your network, you must change the default bind address from 127.0.0.1 to 0.0.0.0. This allows Ollama to accept connections from any IP address and makes it accessible from other devices on the same network. The bind address can be modified using the OLLAMA_HOST environment variable.&lt;/p&gt;
+&lt;p&gt;I run Raspberry Pi OS, which is Debian-based, on my Raspberry Pi. The required change needs to be done in &lt;code&gt;ollama.service&lt;/code&gt; file, and the way one updates this file is as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl edit ollama.service&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In the editor, add the following line under the &lt;code&gt;[Service]&lt;/code&gt; section:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;Service&lt;span style="color:#f92672"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Environment&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;OLLAMA_HOST=0.0.0.0:11434&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Save and exit the editor, and reload systemd configuration and restart Ollama as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl restart ollama&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ollama should be accessible from a remote machine. &lt;strong&gt;If not, update this document after you resolve the issue 😔.&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Blazor on RP</title><link>https://ssathya.github.io/SridharBlog/posts/blazor-on-rp/</link><pubDate>Sat, 15 Mar 2025 11:28:39 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/blazor-on-rp/</guid><description>
+&lt;h2&gt;Introduction&lt;span class="hx:absolute hx:-mt-20" id="introduction"&gt;&lt;/span&gt;
+&lt;a href="#introduction" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I have always been interested in creating a blog using Blazor, a web framework that allows me to write C# code for both the client and the server side. I also wanted to host it on a Raspberry Pi, a low-cost and portable device that can run Linux and .NET applications. In this post, I will share how I configured my Blazing Blog, the name I gave to my project, on my Raspberry Pi.&lt;/p&gt;
+&lt;h2&gt;How are the executable(s) built?&lt;span class="hx:absolute hx:-mt-20" id="how-are-the-executables-built"&gt;&lt;/span&gt;
+&lt;a href="#how-are-the-executables-built" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I attempted to use DuckDNS as a dynamic DNS service, but it required me to configure my router settings, which I was not comfortable with. Therefore, I decided to look for another solution for hosting my Blazing Blog website. I wanted to deploy my blog as a docker container, but I faced a challenge in creating a Dockerfile that would work on both Intel and Raspberry Pi architectures. As a result, I opted to install .Net SDK on Raspberry Pi and compile my application using the following commands:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;dotnet build release&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Enviromnet variables&lt;span class="hx:absolute hx:-mt-20" id="enviromnet-variables"&gt;&lt;/span&gt;
+&lt;a href="#enviromnet-variables" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;One of the common problems that developers face when deploying their applications on Raspberry Pi devices is the configuration of environment variables. Environment variables are key-value pairs that store information such as paths, credentials, settings, etc. that are specific to the operating system or the application. When we develop our applications in Visual Studio, we often rely on its built-in features to manage the environment variables for us, without paying much attention to how they are set or where they are stored. However, when we try to run our applications on a new Raspberry Pi device, we may encounter errors or unexpected behaviors because the device does not have the same environment variables that we used in Visual Studio. Therefore, it is important to understand how to properly configure the environment variables for our applications on Raspberry Pi devices, and how to troubleshoot any issues that may arise from them.
+Here are a few challenges and how I resolved it:&lt;/p&gt;
+&lt;h3&gt;Kestrel&lt;span class="hx:absolute hx:-mt-20" id="kestrel"&gt;&lt;/span&gt;
+&lt;a href="#kestrel" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Kestrel is a lightweight web server that can run on its own without a reverse proxy like Nginx. I chose to use Kestrel for my Blazing Blog project, which is hosted on a Raspberry Pi and has a very low traffic volume (no more than a handful concurrent users). To make Kestrel accessible from other machines, I had set enviroment
+variable ASPNETCORE_URLS as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;export ASPNETCORE_URLS=&amp;#34;http://0.0.0.0:5001;https://0.0.0.0:5002&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;One way to configure the ASP.NET Core application to listen on all network interfaces is to set the ASPNETCORE_URLS environment variable to the value of 0.0.0.0. This means that the application will accept requests from any IP address.&lt;/p&gt;
+&lt;h3&gt;AWS credentials&lt;span class="hx:absolute hx:-mt-20" id="aws-credentials"&gt;&lt;/span&gt;
+&lt;a href="#aws-credentials" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Blazing Blog is a web application that uses AWS S3 and System Manager&amp;rsquo;s parameter store to manage its data. It stores the database connection string in the parameter store and uses it to connect to the database. It also uploads and downloads images from S3 buckets. To ensure security and limit the scope of access, a new IAM user BlazingBlogUser was created with permissions to only access S3 and System Manager. The access keys of this user were saved in a secure location and used by the application to authenticate with AWS.&lt;/p&gt;
+&lt;h3&gt;Self signed SSL&lt;span class="hx:absolute hx:-mt-20" id="self-signed-ssl"&gt;&lt;/span&gt;
+&lt;a href="#self-signed-ssl" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As Blazing Blog is a intranet application we are going to use a Self signed SSL certificate to make browsers happy! Self signed SSL certificates are a type of digital certificates that are created and signed by the owner of the website or server, rather than by a trusted third-party authority. They are often used for testing or development purposes, or for internal networks where trust is not an issue. However, self signed SSL certificates are not recommended for public-facing websites or services, as they can trigger security warnings in browsers and clients, and expose users to potential man-in-the-middle attacks.&lt;/p&gt;
+&lt;p&gt;The SSL was created using the following commands:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\aspnetapp.pfx -p crypticpassword
+dotnet dev-certs https --trust&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This creates a file $HOME/.aspnet/https/aspnetapp.pfx and we set the following two envirornment variables to use this certificate.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;export ASPNETCORE_Kestrel__Certificates__Default__Password=MySecretPassword
+export ASPNETCORE_Kestrel__Certificates__Default__Path=/home/sridh/.aspnet/https/aspnetapp.pfx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Putting all together&lt;span class="hx:absolute hx:-mt-20" id="putting-all-together"&gt;&lt;/span&gt;
+&lt;a href="#putting-all-together" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;export ASPNETCORE_URLS=&amp;#34;http://0.0.0.0:5001;https://0.0.0.0:5002&amp;#34;
+export ASPNETCORE_Kestrel__Certificates__Default__Password=MySecretPassword
+export ASPNETCORE_Kestrel__Certificates__Default__Path=/home/sridh/.aspnet/https/aspnetapp.pfx
+cd ~/dotnetApp/bin/Release/net8.0/publish
+./BlazingBlog &amp;amp;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Connecting to Ollama running on Raspberry Pi</title><link>https://ssathya.github.io/SridharBlog/posts/ollamatocs/</link><pubDate>Sat, 15 Mar 2025 11:26:12 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/ollamatocs/</guid><description>
+&lt;h2&gt;Prerequests&lt;span class="hx:absolute hx:-mt-20" id="prerequests"&gt;&lt;/span&gt;
+&lt;a href="#prerequests" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Here are the instructions for connecting to Ollama running on my Raspberry Pi from my C# application. I will provide step-by-step instructions for installing Ollama and connecting it to a C# application. Please ensure that your Raspberry Pi is already running some version of Linux and that you have Visual Studio installed on your computer.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;span class="hx:absolute hx:-mt-20" id="installation"&gt;&lt;/span&gt;
+&lt;a href="#installation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let us start by installing Ollama on your Raspberry Pi (RbP). I&amp;rsquo;ve named my RbP rbpi-5-1, and if you see &amp;ldquo;rbpi-5-1&amp;rdquo; in the rest of the document, I&amp;rsquo;m indicating my RbP.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll start by visiting &lt;a href="https://ollama.com/"target="_blank" rel="noopener"&gt;Ollama&amp;rsquo;s website&lt;/a&gt; and copy the curl script provided for Linux installation.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -fsSL https://ollama.com/install.sh | sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Run the above curl command on your RbP, and it takes care of installing Ollama on your RbP. The first step is completed! It is time to check out the installation. We invoke Ollama with the command:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ollama run &lt;span style="color:#f92672"&gt;{&lt;/span&gt;model_name&lt;span style="color:#f92672"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Several models that are available, each specializing in a different subject. For example, &lt;em&gt;codellama&lt;/em&gt; focuses more on coding, while &lt;em&gt;wizard-math&lt;/em&gt; focuses on math and logic problems.&lt;/p&gt;
+&lt;p&gt;With my vast experience using Ollama, which is 3 hours at the time of this writing, gemma2 is the best for me. It has a wide range of applications across various industries and domains. It is good in&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text Generation&lt;/li&gt;
+&lt;li&gt;Chatbots and conversational AI&lt;/li&gt;
+&lt;li&gt;Text summarization
+These are my needs as of now, and hence &lt;em&gt;&lt;strong&gt;Heil gemma2!&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Testing&lt;span class="hx:absolute hx:-mt-20" id="testing"&gt;&lt;/span&gt;
+&lt;a href="#testing" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Having installed Ollama, let us do some basic testing. Invoke Ollama&amp;rsquo;s CLI frontend with the command:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Let&amp;#39;s use the 2b model - the smallest available!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ollama run gemma2:2b&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If this is your first time running this command, it is time to make a cup of coffee. It has to download the model, parse it, and eventully you will get the prompt.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; Send a message (/? for help)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ask your first question: if you go blank like me, here are some examples.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Who was the first person to land on the moon?
+Why is the blood red?
+Why is the sky blue?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;If your new chatty friend answers correctly, you are good for the next step. &lt;em&gt;If not abort!&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Service fix&lt;span class="hx:absolute hx:-mt-20" id="service-fix"&gt;&lt;/span&gt;
+&lt;a href="#service-fix" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Ollama is now running as a systemd service. Hence, the environment variables should be using systemctl: we need to allow access to other machines to use your ollama instance, and hence, we need to open the port for external requests. I tried to follow Ollama&amp;rsquo;s FAQ verbatim, and I failed. So I suggest you follow my suggestion.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl stop ollama.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl disable ollama.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd /etc/systemd/system&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Now, in this folder, we are going to edit the file &lt;u&gt;&lt;strong&gt;ollama.service&lt;/strong&gt;&lt;/u&gt;. In this file, under section Service, add the following line:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Environment=&amp;#34;OLLAMA_HOST=0.0.0.0&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;After editing, my file looked as follows: yours will be different, especially in the path, but it gives you an idea of how it should look.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;[Unit]
+Description=Ollama Service
+After=network-online.target
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+Environment=&amp;#34;OLLAMA_HOST=0.0.0.0&amp;#34;
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment=&amp;#34;PATH=/home/sridh/bin:./:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/home/sridh/bin:/home/sridh/.dotnet/tools&amp;#34;
+[Install]
+WantedBy=default.target&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Restart ollama as follows:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl enable ollama.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo systemctl restart ollama.service&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;I prefer using the restart command over the start command. Feel free to choose whichever option you prefer. I won&amp;rsquo;t judge you!
+The last thing we&amp;rsquo;ll be doing when we are still logged in your RbP will be checking if you can access your RbP from your computer. In my case, in my browser, I navigated to my &lt;a href="http://rbpi-5-1:11434/"target="_blank" rel="noopener"&gt;rbpi-5&lt;/a&gt; using the following link:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;http://rbpi-5-1:11434/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;I got a beautiful welcome message:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Ollama is running&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;We can now ignore the terminal window for now and work with Visual Studio.&lt;/p&gt;
+&lt;h2&gt;Cleint Application&lt;span class="hx:absolute hx:-mt-20" id="cleint-application"&gt;&lt;/span&gt;
+&lt;a href="#cleint-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We are going to use a Nuget package, OllamaSharp, to talk to our local LLM server. I wanted to use Microsoft&amp;rsquo;s Semantic Kernel to connect to Ollama, but I need to do more work to make it happen. For now, let us be happy with this package, and when we hit a wall with it, we&amp;rsquo;ll try Semantic Kernel once again.
+In Visual Studio, create a console application and add the following packages:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Install-Package Lyndychivs.Fibonacci
+Install-Package OllamaSharp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Fibonacci is more of a gimmick, but why not? It makes the terminal behave a little differently from regular chat applications.
+The following code does not require much explanation; once you read it, you&amp;rsquo;ll know exactly what it is doing.&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cs" data-lang="cs"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Fibonacci;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; OllamaSharp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.Numerics;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.Text;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; endpoint = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Uri(&lt;span style="color:#e6db74"&gt;&amp;#34;http://rbpi-5-1:11434&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; modelId = &lt;span style="color:#e6db74"&gt;&amp;#34;gemma2:2b&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; Fibonacci = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; FibonacciRecursive();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;List&amp;lt;BigInteger&amp;gt; sequence = Fibonacci.GetFibonacciSequence(&lt;span style="color:#ae81ff"&gt;15&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; sequenceCount = sequence.Count();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Random rand = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Random(DateTime.Now.Second);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; ollama = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; OllamaApiClient(endpoint, modelId);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; chat = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Chat(ollama);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Console.ForegroundColor = ConsoleColor.Green;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Console.WriteLine(&lt;span style="color:#e6db74"&gt;&amp;#34;AI: Now How can I help?&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Console.ForegroundColor = ConsoleColor.Yellow;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Console.Write(&lt;span style="color:#e6db74"&gt;&amp;#34;User: &amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; helpTopic = Console.ReadLine();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; outMsg = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; StringBuilder();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (!&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(helpTopic))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; outMsg.Clear();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.ForegroundColor = ConsoleColor.Green;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.Write(&lt;span style="color:#e6db74"&gt;&amp;#34;AI: &amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;foreach&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; answerToken &lt;span style="color:#66d9ef"&gt;in&lt;/span&gt; chat.Send(helpTopic))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; Task.Delay(&lt;span style="color:#ae81ff"&gt;50&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; outMsg.Append(answerToken);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (outMsg.Length &amp;gt;= sequence[rand.Next(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, sequenceCount)])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.Write(outMsg.ToString());
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; outMsg.Clear();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.WriteLine(outMsg.ToString());
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.ForegroundColor = ConsoleColor.Yellow;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Console.Write(&lt;span style="color:#e6db74"&gt;&amp;#34;\nUser: (bye or nothing to exit chat)&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; helpTopic = Console.ReadLine() ?? &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (helpTopic.Equals(&lt;span style="color:#e6db74"&gt;&amp;#34;bye&amp;#34;&lt;/span&gt;, StringComparison.OrdinalIgnoreCase))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Console.ForegroundColor = ConsoleColor.White;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

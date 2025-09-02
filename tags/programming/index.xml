@@ -1,8 +1,418 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Sridhar's Blog!</title><link>https://ssathya.github.io/SridharBlog/tags/programming/</link><description>Recent content in Programming on Sridhar's Blog!</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 30 Aug 2025 17:31:31 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Aspire Getting Started</title><link>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</link><pubDate>Sat, 30 Aug 2025 17:31:31 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</guid><description>&lt;p&gt;In this comprehensive guide, we will explore the foundational steps involved in writing your very first Aspire project. Additionally, the post will provide insightful instructions on how to smoothly transition and migrate your existing projects to the Aspire platform. This tutorial aims to equip beginners with the necessary knowledge and confidence to start developing with Aspire effectively.&lt;/p&gt;
-&lt;p&gt;Microsoft has &lt;a href="https://learn.microsoft.com/en-us/dotnet/aspire/get-started/build-your-first-aspire-app?tabs=windows&amp;amp;pivots=visual-studio"&gt;excellent documentation&lt;/a&gt; for getting started with Aspire, but I am preparing this document for my personal reference and easy access.&lt;/p&gt;</description></item><item><title>Simplified Stock Portfolio Tracker and Analyzer</title><link>https://ssathya.github.io/SridharBlog/posts/portfolio-analyzer/</link><pubDate>Thu, 01 May 2025 12:40:09 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/portfolio-analyzer/</guid><description>&lt;h2 id="preamble"&gt;Preamble&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;This high-level requirement was generated using my prompts, with the AI providing its interpretations of my bullet points. My implementation of the Portfolio Tracker may diverge from the original specifications. However, I must establish a target, and I hope that the final product will incorporate most of the defined objectives. Once I execute my project, I will enumerate the changes and articulate how they differ from the initial goals.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Using AWS Systems Manager in a docker image</title><link>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</link><pubDate>Sat, 15 Mar 2025 11:30:50 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</guid><description>&lt;p&gt;I had issues using AWS Systems Manager in a docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, etc. and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a docker image.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Programming</title><link>https://ssathya.github.io/SridharBlog/tags/programming/</link><description>Recent content in Programming on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 30 Aug 2025 17:31:31 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Aspire Getting Started</title><link>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</link><pubDate>Sat, 30 Aug 2025 17:31:31 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</guid><description>
+&lt;p&gt;In this comprehensive guide, we will explore the foundational steps involved in writing your very first Aspire project. Additionally, the post will provide insightful instructions on how to smoothly transition and migrate your existing projects to the Aspire platform. This tutorial aims to equip beginners with the necessary knowledge and confidence to start developing with Aspire effectively.&lt;/p&gt;
+&lt;p&gt;Microsoft has &lt;a href="https://learn.microsoft.com/en-us/dotnet/aspire/get-started/build-your-first-aspire-app?tabs=windows&amp;amp;pivots=visual-studio"target="_blank" rel="noopener"&gt;excellent documentation&lt;/a&gt; for getting started with Aspire, but I am preparing this document for my personal reference and easy access.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;.NET 9
+&lt;ul&gt;
+&lt;li&gt;Though .NET 8 will be suitable for Aspire, we&amp;rsquo;ll go with version 9 for Aspire 9.x support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An OCI-compliant container runtime, such as Podman.&lt;/li&gt;
+&lt;li&gt;Visual Studio 2022&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Create your first Aspire Project.&lt;span class="hx:absolute hx:-mt-20" id="create-your-first-aspire-project"&gt;&lt;/span&gt;
+&lt;a href="#create-your-first-aspire-project" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Start Visual Studio and create a new project. In the Create New Project template, select to create a new &amp;ldquo;Aspire Starter App&amp;rdquo;. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/media/aspire-templates.png" alt="New project template" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;In the following window, select &amp;lsquo;AspireSample&amp;rsquo; as the project name and click Next.&lt;/p&gt;
+&lt;p&gt;In the next dialog box, ensure .NET 9.0 is selected, ensure Redis for caching is checked, and select &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Visual Studio creates a new solution that is structured to use .NET Aspire.&lt;/p&gt;
+&lt;h2&gt;Testing the application&lt;span class="hx:absolute hx:-mt-20" id="testing-the-application"&gt;&lt;/span&gt;
+&lt;a href="#testing-the-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The sample application includes a frontend Blazor app that communicates with a Minimal API project. The API project is used to provide weather data to the frontend. The frontend app is configured to use service discovery to connect to the API project. The API project is configured to use output caching with Redis. The sample app is now ready for testing. When we deploy the application, we can verify the following conditions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Weather data is retrieved from the API project using service discovery and displayed on the weather page.&lt;/li&gt;
+&lt;li&gt;Subsequent requests are handled via the output caching configured by the .NET Aspire Redis integration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Visual Studio, set the &lt;em&gt;AspireSample.AppHost&lt;/em&gt; project as the startup project if it isn&amp;rsquo;t set as startup project. When you start debugging/running the application:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The application displays the .NET Aspire dashboard in the browser.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/aspire-dashboard-webfrontend.png" alt="" loading="lazy" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Launch the Blazor frontend by clicking on the &lt;em&gt;launch&lt;/em&gt; button in Aspire dashboard.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate from the home page to the weather page. Make a mental note of some of the values represented in the forecast table.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continue occasionally refreshing the page. If it is refreshed within 10 seconds, the cached data is returned. Eventually, the cache data will expire, and a new set of values will be displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Congratulations! You have created and run your first .NET Aspire solution! Below, we will outline the steps to migrate your existing solution to Aspire.&lt;/p&gt;
+&lt;h1&gt;Moving an existing .NET application to Aspire&lt;/h1&gt;&lt;p&gt;If you have an existing microservice and .NET web app, you can add .NET Aspire to it and get all the included features and benefits.&lt;/p&gt;
+&lt;h2&gt;Get started&lt;span class="hx:absolute hx:-mt-20" id="get-started"&gt;&lt;/span&gt;
+&lt;a href="#get-started" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We will work on an existing application created by Microsoft for this tutorial. We&amp;rsquo;ll use the following command to clone an existing repository:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/MicrosoftDocs/mslearn-dotnet-cloudnative-devops.git eShopLite&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Explore the sample application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-sample-application"&gt;&lt;/span&gt;
+&lt;a href="#explore-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Entities:&lt;/strong&gt; This project serves as an example class library. It defines the &lt;em&gt;Product&lt;/em&gt; class used in the Web App and Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Products:&lt;/strong&gt; This example Web API returns a list of products in the catalog, along with their properties.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Store:&lt;/strong&gt; This example Blazor Web App shows the product catalog to visitors on the website.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Run the sample application&lt;span class="hx:absolute hx:-mt-20" id="run-the-sample-application"&gt;&lt;/span&gt;
+&lt;a href="#run-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Load the solution in &lt;strong&gt;&lt;mark&gt;Visual Studio&lt;/mark&gt;&lt;/strong&gt; and in the &lt;em&gt;Solution Explorer&lt;/em&gt; right-click the &lt;em&gt;eShopLite&lt;/em&gt; solution, and then select &lt;em&gt;Configure Startup Projects.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select &lt;em&gt;Multiple startup projects&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the Action column, Select Start for both the Products and Store projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select &lt;em&gt;Ok&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Start debugging the solution by pressing the &lt;code&gt;F5&lt;/code&gt;key.&lt;/p&gt;
+&lt;p&gt;Two pages open in the browser:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A page displays products in JSON format from a call to the Products Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A page displays the website&amp;rsquo;s homepage. In the menu on the left, select &lt;strong&gt;&amp;ldquo;Products&amp;rdquo;&lt;/strong&gt; to view the catalog retrieved from the Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regardless of the tool employed, initiating multiple projects manually or establishing the necessary connections between them can be a laborious and time-consuming task. Furthermore, the Store project mandates explicit configuration of endpoints for the Products API, which can be both cumbersome and susceptible to errors. In such scenarios, .NET Aspire offers an effective solution by simplifying and streamlining these processes.&lt;/p&gt;
+&lt;h2&gt;Ensure .NET Aspire templates are installed&lt;span class="hx:absolute hx:-mt-20" id="ensure-net-aspire-templates-are-installed"&gt;&lt;/span&gt;
+&lt;a href="#ensure-net-aspire-templates-are-installed" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To develop .NET Aspire projects, we need to ensure that Aspire templates are installed on our computer. We can install and list the Aspire templates using the following commands:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new install Aspire.ProjectTemplates&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This will install Aspire, and we can check the installed packages and version using the following command:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new list aspire&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Add .NET Aspire to the Store web app&lt;span class="hx:absolute hx:-mt-20" id="add-net-aspire-to-the-store-web-app"&gt;&lt;/span&gt;
+&lt;a href="#add-net-aspire-to-the-store-web-app" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now, let&amp;rsquo;s enroll the Store project, which implements the web user interface, in .NET Aspire orchestration:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Store project, select Add, and then select &lt;mark&gt;.NET Aspire Orchestrator Support&lt;/mark&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the Add .NET Aspire Orchestrator Support dialog, select Ok. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/add-aspire-orchestrator-support.png" alt="" loading="lazy" /&gt; You should now have two new projects, both of which have been added to the solution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; is an orchestrator project designed to connect and configure the different projects and services of your application. The orchestrator is set as the &lt;em&gt;Startup project&lt;/em&gt;, and it depends on the &lt;em&gt;eShopLite&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across an orchestrator project designed to connect and configure the various projects and services within &lt;em&gt;eShopLite.Store&lt;/em&gt; project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;eshopLite.ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across the projects in your solution related to resilience, service discovery, and telemetry.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you would examine the &lt;em&gt;AppHost.cs&lt;/em&gt; file, you&amp;rsquo;ll find the following line of code, which registers the Store project in the .NET Aspire orchestration:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To add the &lt;em&gt;Products&lt;/em&gt; project to the .NET Aspire:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Products project, select Add, and then select .NET Aspire Orchestrator Support.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A dialog indicating that the .NET Aspire Orchestrator project already exists, select OK. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/orchestrator-already-added.png" alt="" loading="lazy" /&gt; In the eShopLite.AppHost project, open &lt;em&gt;AppHost.cs&lt;/em&gt; file. Notice this line of code, which registers the Products project in the .NET Aspire orchestration:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Also notice that the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project, now depends on both the Store and Products projects.&lt;/p&gt;
+&lt;h3&gt;Service Discovery&lt;span class="hx:absolute hx:-mt-20" id="service-discovery"&gt;&lt;/span&gt;
+&lt;a href="#service-discovery" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;At this point, both projects are part of .NET Aspire orchestration, but the Store project needs to rely on the Products backend address through .NET Aspire&amp;rsquo;s service discovery. To enable service discovery, open the &lt;em&gt;AppHost.cs&lt;/em&gt; file in the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project and update the code so that the &lt;code&gt;builder &lt;/code&gt;adds a reference to the &lt;em&gt;Products&lt;/em&gt; project:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = DistributedApplication.CreateBuilder(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; products = builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithExternalHttpEndpoints()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithReference(products)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WaitFor(products);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Build().Run();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The preceding code expresses that the &lt;em&gt;Store&lt;/em&gt; project depends on the &lt;em&gt;Products&lt;/em&gt; project. This reference is used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project at run time. Additionally, the &lt;em&gt;Store&lt;/em&gt; project is configured to use external HTTP endpoints. If you later choose to deploy this application, you&amp;rsquo;d need the call to &lt;code&gt;WithExternalHttpEndpoints &lt;/code&gt;to ensure that it&amp;rsquo;s public to the outside world. Finally, the &lt;code&gt;WaitFor&lt;/code&gt; API ensures that the &lt;em&gt;Store&lt;/em&gt; app waits for the &lt;em&gt;Products&lt;/em&gt; app to be ready to serve requests.&lt;/p&gt;
+&lt;p&gt;Next, update the &lt;em&gt;appsettings.json&lt;/em&gt; in the &lt;em&gt;Store&lt;/em&gt; project with the following JSON:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;DetailedErrors&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Logging&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;LogLevel&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Default&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Information&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Microsoft.AspNetCore&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Warning&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;AllowedHosts&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpoint&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;http://products&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpointHttps&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://products&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Change to note is &lt;code&gt;ProductEndpoint &lt;/code&gt;and &lt;code&gt;ProductEndpointHttps&lt;/code&gt;. The destination addresses were hardcoded, but now use the &amp;ldquo;products&amp;rdquo; name that was added to the orchestrator in the &lt;em&gt;AppHost&lt;/em&gt;. These names are used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
+&lt;div class="alert is-info"&gt;
+&lt;p class="alert-title"&gt;&lt;span class="docon docon-status-error-outline" aria-hidden="true"&gt;&lt;/span&gt; Note&lt;/p&gt;
+&lt;p&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new startup project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2&gt;Explore the enrolled application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-enrolled-application"&gt;&lt;/span&gt;
+&lt;a href="#explore-the-enrolled-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s start by examining the new behavior that .NET Aspire provides.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new statup project.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, to start debugging, press &lt;code&gt;F5&lt;/code&gt; to build and launch the project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the Start Docker Desktop dialog appears, select Yes. Visual Studio starts the Docker engine and creates the necessary containers. When the deployment is complete, the .NET Aspire dashboard is displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the dashboard, select the endpoint for the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the dashboard, select the endpoint for the products project. A new browser tab appears and displays the product catalog in JSON format.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the menu on the left, select Products. The product catalog is displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To stop debugging, close the browser.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Congratulations, you added .NET Aspire orchestration to your preexisting web app. You can now add .NET Aspire integrations and use the .NET Aspire tooling to streamline your cloud native web app development.&lt;/p&gt;</description></item><item><title>Simplified Stock Portfolio Tracker and Analyzer</title><link>https://ssathya.github.io/SridharBlog/posts/portfolio-analyzer/</link><pubDate>Thu, 01 May 2025 12:40:09 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/portfolio-analyzer/</guid><description>
+&lt;h2&gt;Preamble&lt;span class="hx:absolute hx:-mt-20" id="preamble"&gt;&lt;/span&gt;
+&lt;a href="#preamble" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;This high-level requirement was generated using my prompts, with the AI providing its interpretations of my bullet points. My implementation of the Portfolio Tracker may diverge from the original specifications. However, I must establish a target, and I hope that the final product will incorporate most of the defined objectives. Once I execute my project, I will enumerate the changes and articulate how they differ from the initial goals.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Detailed Specification&lt;span class="hx:absolute hx:-mt-20" id="detailed-specification"&gt;&lt;/span&gt;
+&lt;a href="#detailed-specification" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Project Overview&lt;span class="hx:absolute hx:-mt-20" id="1-project-overview"&gt;&lt;/span&gt;
+&lt;a href="#1-project-overview" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The goal of this project is to build a web application using C# and Blazor that allows users to easily track the performance of their stock portfolio. Users will be able to input their stock holdings and purchase history, and the application will then fetch real-time (or near real-time) stock data to calculate portfolio value, returns, and present insightful visualizations. The application aims to provide a clear and straightforward view of investment performance without overwhelming the user with excessive complexity.&lt;/p&gt;
+&lt;h3&gt;2. Technical Details (C# with Blazor)&lt;span class="hx:absolute hx:-mt-20" id="2-technical-details-c-with-blazor"&gt;&lt;/span&gt;
+&lt;a href="#2-technical-details-c-with-blazor" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You&amp;rsquo;ve chosen a fantastic tech stack! Here&amp;rsquo;s how the application could be structured:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Blazor Frontend (Client-Side or Server-Side):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Components:&lt;/strong&gt; You&amp;rsquo;ll likely create several Blazor components for different parts of the application:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PortfolioInput.razor&lt;/code&gt;: For users to add or edit their stock holdings and purchase details.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PortfolioDisplay.razor&lt;/code&gt;: To show the current portfolio holdings with real-time data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PerformanceCharts.razor&lt;/code&gt;: To render visualizations of portfolio performance over time.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TransactionHistory.razor&lt;/code&gt;: To display a log of the user&amp;rsquo;s buy and sell transactions.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StockDetails.razor&lt;/code&gt;: Potentially to show more detailed information about individual stocks.&lt;/li&gt;
+&lt;li&gt;Layout components for the overall structure of the application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;State Management:&lt;/strong&gt; Consider how you&amp;rsquo;ll manage the application&amp;rsquo;s state, especially the user&amp;rsquo;s portfolio data and fetched stock quotes. Options include:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Simple State Management:&lt;/strong&gt; For a medium-complexity project, you might start with passing state down through component parameters and using &lt;code&gt;EventCallback&lt;/code&gt; for child-to-parent communication.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flux/Redux-like patterns:&lt;/strong&gt; Libraries like Fluxor or Blazor State offer more structured approaches for larger applications but might be overkill initially.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scoped Services:&lt;/strong&gt; Using scoped services to hold and manage user-specific data can be a good middle ground.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI Framework:&lt;/strong&gt; Blazor leverages standard HTML and CSS. You can enhance the styling and responsiveness with CSS frameworks like Bootstrap or Tailwind CSS, or Blazor UI component libraries like MudBlazor or Radzen Blazor Components.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backend (ASP.NET Core Web API):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Controllers:&lt;/strong&gt; You&amp;rsquo;ll need API controllers to handle requests from the Blazor frontend:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PortfolioController&lt;/code&gt;: Endpoints for adding, retrieving, updating, and deleting portfolio holdings.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StockDataController&lt;/code&gt;: Endpoint(s) to fetch real-time stock quotes and potentially historical data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Services:&lt;/strong&gt; Create services to encapsulate business logic:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PortfolioService&lt;/code&gt;: To manage portfolio data (calculations, persistence).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StockDataService&lt;/code&gt;: To interact with the chosen stock data API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Access:&lt;/strong&gt; Use Entity Framework Core (EF Core) to interact with your database. Define your data models (e.g., &lt;code&gt;PortfolioItem&lt;/code&gt;, &lt;code&gt;Transaction&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication and Authorization:&lt;/strong&gt; Implement user authentication to secure user data. ASP.NET Core Identity is a robust choice.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose a relational database like PostgreSQL, MySQL, or SQL Server to store user data, portfolio holdings, and transaction history.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Data Source&lt;span class="hx:absolute hx:-mt-20" id="3-data-source"&gt;&lt;/span&gt;
+&lt;a href="#3-data-source" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For fetching real-time or near real-time stock data, you&amp;rsquo;ll need to integrate with a financial data API. Here are some popular options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free/Limited Free Options:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yahoo Finance API (Unofficial Libraries):&lt;/strong&gt; While Yahoo Finance doesn&amp;rsquo;t have an official public API, there are several community-maintained libraries in C# that can scrape or access its data (be mindful of terms of service and potential instability).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alpha Vantage:&lt;/strong&gt; Offers a free tier with limitations on API calls and data frequency. Provides real-time and historical stock data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Financial Modeling Prep:&lt;/strong&gt; Offers a free tier with limited API calls and data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paid Options (More Reliable and Feature-Rich):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IEX Cloud:&lt;/strong&gt; A popular option with various data plans and a well-documented API.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Polygon.io:&lt;/strong&gt; Offers real-time and historical market data with different pricing tiers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Refinitiv Eikon API:&lt;/strong&gt; A professional-grade API with comprehensive financial data (typically higher cost).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bloomberg API:&lt;/strong&gt; Another professional-grade option (also typically higher cost).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Considerations for Data Source:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Real-time vs. Delayed Data:&lt;/strong&gt; Decide if you need truly real-time data or if a slight delay (e.g., 15-minute delayed data offered by some free APIs) is acceptable for your &amp;ldquo;simplified&amp;rdquo; tracker.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Limits:&lt;/strong&gt; Be aware of rate limits on free APIs and design your application to handle them gracefully (e.g., implement caching, backoff strategies).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Coverage:&lt;/strong&gt; Ensure the API covers the stock exchanges and instruments your target users are likely to trade.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Historical Data:&lt;/strong&gt; If you plan to implement charting of past performance, you&amp;rsquo;ll need an API that provides historical data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Portfolio Details&lt;span class="hx:absolute hx:-mt-20" id="4-portfolio-details"&gt;&lt;/span&gt;
+&lt;a href="#4-portfolio-details" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;a. User-Provided Details (Input)&lt;span class="hx:absolute hx:-mt-20" id="a-user-provided-details-input"&gt;&lt;/span&gt;
+&lt;a href="#a-user-provided-details-input" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;When a user adds a stock to their portfolio, they will likely need to provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Instrument Details:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ticker Symbol (Required):&lt;/strong&gt; The unique identifier of the stock (e.g., AAPL, MSFT, GOOGL).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Company Name (Optional, but helpful for display):&lt;/strong&gt; The full name of the company. You might consider fetching this automatically based on the ticker symbol using the data API.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exchange (Optional, but can be important for disambiguation):&lt;/strong&gt; The stock exchange where the stock is traded (e.g., NASDAQ, NYSE). Some APIs might require this for accurate data retrieval.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Procurement Details (Transaction History):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transaction Type (Buy/Sell):&lt;/strong&gt; To track purchases and sales.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Purchase Date (for Buy transactions):&lt;/strong&gt; The date the stock was acquired.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Purchase Price (per share, for Buy transactions):&lt;/strong&gt; The price at which the stock was bought.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quantity (Number of shares):&lt;/strong&gt; The number of shares bought or sold.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transaction Costs/Fees (Optional):&lt;/strong&gt; Any brokerage fees associated with the transaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You&amp;rsquo;ll need a user interface that allows users to input this information easily, potentially with validation to ensure data integrity. You might also consider allowing users to edit or delete their transactions.&lt;/p&gt;
+&lt;h4&gt;b. Details to be Presented to the User (Output)&lt;span class="hx:absolute hx:-mt-20" id="b-details-to-be-presented-to-the-user-output"&gt;&lt;/span&gt;
+&lt;a href="#b-details-to-be-presented-to-the-user-output" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Based on the input data and fetched stock information, here are some details you can present to the user:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Current Holdings:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ticker Symbol:&lt;/strong&gt; The stock ticker.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Company Name:&lt;/strong&gt; The name of the company.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Current Price:&lt;/strong&gt; The latest stock price fetched from the data API.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quantity Held:&lt;/strong&gt; The total number of shares currently owned.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Current Value:&lt;/strong&gt; The current price multiplied by the quantity held.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Average Cost Basis (per share):&lt;/strong&gt; The average price paid for all shares of that stock (total cost of purchases divided by total shares bought).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Total Cost Basis:&lt;/strong&gt; The total amount invested in that stock.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unrealized Gain/Loss (Dollar Amount):&lt;/strong&gt; Current Value minus Total Cost Basis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unrealized Gain/Loss (Percentage):&lt;/strong&gt; ((Current Value - Total Cost Basis) / Total Cost Basis) * 100.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Portfolio Summary:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Total Portfolio Value:&lt;/strong&gt; The sum of the current value of all holdings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Total Investment:&lt;/strong&gt; The sum of the cost basis of all holdings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overall Gain/Loss (Dollar Amount):&lt;/strong&gt; Total Portfolio Value minus Total Investment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overall Gain/Loss (Percentage):&lt;/strong&gt; ((Total Portfolio Value - Total Investment) / Total Investment) * 100.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Charts:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Portfolio Value Over Time:&lt;/strong&gt; A line chart showing how the total portfolio value has changed over a selected period (e.g., 1 month, 6 months, 1 year, YTD, All Time). This will require fetching historical stock data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset Allocation (Optional):&lt;/strong&gt; A pie chart showing the percentage of the portfolio allocated to different stocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Investment Returns:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Daily/Weekly/Monthly Returns (Percentage or Dollar Amount):&lt;/strong&gt; Showing the change in portfolio value over specific periods.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Time-Weighted Return (Optional, more complex):&lt;/strong&gt; A more accurate measure of investment performance that removes the impact of cash flows (deposits and withdrawals). This is generally more advanced.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Analyst Estimates (Optional, adds complexity):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Target Price:&lt;/strong&gt; Analyst consensus on the expected future price of the stock.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Buy/Hold/Sell Ratings:&lt;/strong&gt; Summary of analyst recommendations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Note:&lt;/strong&gt; This data is often available through paid APIs and can be less reliable or consistent across different sources. Consider if this is crucial for your &amp;ldquo;simplified&amp;rdquo; version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transaction History:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A table displaying all buy and sell transactions with details like date, ticker, quantity, price, and total cost/proceeds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Further Considerations:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User Interface (UI) and User Experience (UX):&lt;/strong&gt; Focus on creating a clean, intuitive, and responsive interface using Blazor components and styling.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Error Handling:&lt;/strong&gt; Implement proper error handling for API calls, data parsing, and user input.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Persistence:&lt;/strong&gt; Use EF Core to save and retrieve user portfolio data from your chosen database.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asynchronous Operations:&lt;/strong&gt; Use &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt; effectively in Blazor to handle API calls and prevent blocking the UI thread.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code Organization:&lt;/strong&gt; Structure your C# code logically with services, controllers, and data models to maintain readability and scalability.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Using AWS Systems Manager in a docker image</title><link>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</link><pubDate>Sat, 15 Mar 2025 11:30:50 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</guid><description>
+&lt;p&gt;I had issues using AWS Systems Manager in a docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, etc. and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a docker image.&lt;/p&gt;
 &lt;p&gt;This is the way I solved it and yes it works!&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cs" data-lang="cs"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Amazon.Extensions.NETCore.Setup;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cs" data-lang="cs"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Amazon.Extensions.NETCore.Setup;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Amazon.Runtime;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.Configuration;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.DependencyInjection;
@@ -45,12 +455,510 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Configuration = builder.Build();
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; Configuration;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create an AWSOptions instance and use this instance when you call AddSystemsManager.&lt;/p&gt;</description></item><item><title>SemanticKernelRag</title><link>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</link><pubDate>Sat, 15 Mar 2025 11:22:29 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</guid><description>&lt;p&gt;Okay, let&amp;rsquo;s break down how to use Semantic Kernel with Retrieval Augmented Generation (RAG) in a Blazor application. It can be a bit tricky to get all the pieces working together, so we&amp;rsquo;ll go step by step.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Create an AWSOptions instance and use this instance when you call AddSystemsManager.&lt;/p&gt;
+&lt;p&gt;And when I run my image I issue the following command:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run --name test_container1 -e AWS_ACCESS_KEY_ID&lt;span style="color:#f92672"&gt;=&lt;/span&gt;AccessKey -e AWS_SECRET_ACCESS_KEY&lt;span style="color:#f92672"&gt;=&lt;/span&gt;SecretKey test_image3&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>SemanticKernelRag</title><link>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</link><pubDate>Sat, 15 Mar 2025 11:22:29 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</guid><description>
+&lt;p&gt;Okay, let&amp;rsquo;s break down how to use Semantic Kernel with Retrieval Augmented Generation (RAG) in a Blazor application. It can be a bit tricky to get all the pieces working together, so we&amp;rsquo;ll go step by step.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Understanding the Core Concepts&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Semantic Kernel:&lt;/strong&gt; This is a framework that helps you build intelligent applications by integrating Large Language Models (LLMs) like OpenAI, Azure OpenAI, etc. It provides abstractions for things like plugins, memory, and planners.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;RAG (Retrieval Augmented Generation):&lt;/strong&gt; This approach improves LLM responses by first retrieving relevant information from a data source (like a vector database) and then using that information as context when generating the final output. This helps the LLM ground its responses in factual data and reduce hallucinations.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Blazor:&lt;/strong&gt; This is a framework for building interactive web UIs with C# instead of JavaScript. We&amp;rsquo;ll use it to create the front-end for your RAG-powered application.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;High-Level Steps&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;High-Level Steps&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a general outline of what we&amp;rsquo;ll need to do:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Set up your environment:&lt;/strong&gt; Install the necessary NuGet packages and configure your API keys.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prepare your data source:&lt;/strong&gt; Choose a vector database (or similar) and index your data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Semantic Kernel components:&lt;/strong&gt; Build your skills (plugins), memory, and kernel.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Develop your Blazor UI:&lt;/strong&gt; Create a simple interface for users to ask questions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Connect Semantic Kernel with Blazor:&lt;/strong&gt; Send user input to the kernel, get the RAG-enhanced response, and display it in the UI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Let&amp;rsquo;s Get Started with the Code&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll provide code snippets with explanations and comments. This will be for a simple Blazor Server app for demonstration purposes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Setting up your Environment&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create a New Blazor Server Project:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;In Visual Studio or using the .NET CLI:
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new blazorserver -o MyRAGApp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd MyRAGApp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Install NuGet Packages:&lt;/strong&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet add package Microsoft.SemanticKernel
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Qdrant
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet add package Microsoft.SemanticKernel.Connectors.OpenAI&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+(Choose &lt;code&gt;Qdrant&lt;/code&gt; or a memory connector of your preference)
+&lt;ul&gt;
+&lt;li&gt;Make sure you have &lt;code&gt;System.Text.Json&lt;/code&gt; package included as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Configure App Settings (appsettings.json)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Logging&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;LogLevel&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Default&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Information&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Microsoft.AspNetCore&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Warning&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;AllowedHosts&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;SemanticKernel&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;OpenAI&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ApiKey&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;YOUR_OPENAI_API_KEY&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;OrgId&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;YOUR_OPTIONAL_OPENAI_ORG_ID&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ModelId&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;gpt-3.5-turbo&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;EmbeddingModelId&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;text-embedding-ada-002&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Qdrant&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Endpoint&amp;#34;&lt;/span&gt;:&lt;span style="color:#e6db74"&gt;&amp;#34;http://localhost:6333&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;VectorSize&amp;#34;&lt;/span&gt;:&lt;span style="color:#ae81ff"&gt;1536&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;CollectionName&amp;#34;&lt;/span&gt;:&lt;span style="color:#e6db74"&gt;&amp;#34;ragcollection&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Replace the placeholder with the api key of your preferred LLM API, e.g., OpenAI. Make sure you also replace the placeholder with the correct values of your memory vector database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Create Data Loader (optional)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For simplicity, let&amp;rsquo;s assume you have a simple text file of data to be indexed, say &lt;code&gt;knowledge_base.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create a DataLoader service (&lt;code&gt;Services/DataLoader.cs&lt;/code&gt;):&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.Text;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Memory;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.Options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Embeddings;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; MyRAGApp.Services
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;DataLoader&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; IOptions&amp;lt;SemanticKernelOptions&amp;gt; _options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; ILogger&amp;lt;DataLoader&amp;gt; _logger;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; ITextEmbeddingGeneration _textEmbeddingGeneration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; DataLoader(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; IOptions&amp;lt;SemanticKernelOptions&amp;gt; options,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ILogger&amp;lt;DataLoader&amp;gt; logger,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ITextEmbeddingGeneration textEmbeddingGeneration
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options = options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger = logger;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _textEmbeddingGeneration = textEmbeddingGeneration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; Task LoadKnowledge(&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; filePath, IKernel kernel)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Read content from text file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; content = &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; File.ReadAllTextAsync(filePath, Encoding.UTF8);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; lines = content.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; memoryStore = GetMemoryStore();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt;(memoryStore != &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;foreach&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; line &lt;span style="color:#66d9ef"&gt;in&lt;/span&gt; lines)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; id = Guid.NewGuid().ToString();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; kernel.Memory.SaveInformationAsync(_options.Value.Qdrant.CollectionName, line, id, line, &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;, _textEmbeddingGeneration);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogInformation(&lt;span style="color:#e6db74"&gt;&amp;#34;Knowledge base loaded successfully&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;&amp;#34;Memory store is null. Cannot load the knowledge base&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (Exception ex)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;$&amp;#34;Error reading or loading data: {ex.Message}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; ISemanticTextMemory? GetMemoryStore()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (_options.Value.Qdrant &lt;span style="color:#66d9ef"&gt;is&lt;/span&gt; not &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; QdrantMemoryStore(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.Endpoint,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.VectorSize
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Add the corresponding SemanticKernelOptions class:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.ComponentModel.DataAnnotations;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; MyRAGApp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SemanticKernelOptions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; OpenAIConfig? OpenAI { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; QdrantConfig? Qdrant { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;OpenAIConfig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; ApiKey { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; OrgId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; ModelId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; EmbeddingModelId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;QdrantConfig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; Endpoint { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;int?&lt;/span&gt; VectorSize { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; CollectionName { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure to add your knowledge base content in the &lt;code&gt;knowledge_base.txt&lt;/code&gt; in the &lt;code&gt;wwwroot/&lt;/code&gt; directory or other preferred location.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4. Kernel Setup&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create a Kernel service (&lt;code&gt;Services/KernelService.cs&lt;/code&gt;):&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Connectors.OpenAI;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.Options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Memory;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Embeddings;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; MyRAGApp.Services
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;KernelService&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; IOptions&amp;lt;SemanticKernelOptions&amp;gt; _options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; ILogger&amp;lt;KernelService&amp;gt; _logger;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; KernelService(IOptions&amp;lt;SemanticKernelOptions&amp;gt; options, ILogger&amp;lt;KernelService&amp;gt; logger)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options = options;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger = logger;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; IKernel GetKernel()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = Kernel.Builder;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; apiKey = _options.Value.OpenAI?.ApiKey;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; orgId = _options.Value.OpenAI?.OrgId;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; modelId = _options.Value.OpenAI?.ModelId;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; embeddingModelId = _options.Value.OpenAI?.EmbeddingModelId;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(apiKey) || &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(modelId) || &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(embeddingModelId))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;&amp;#34;OpenAI API settings are not correctly configured.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.AddAzureOpenAIChatCompletion(modelId, apiKey,orgId);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.AddAzureOpenAITextEmbeddingGeneration(embeddingModelId, apiKey, orgId);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.Services.AddTransient((sp) =&amp;gt; GetMemoryStore());
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (Exception ex)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;$&amp;#34;Error creating Kernel: {ex.Message}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; ISemanticTextMemory? GetMemoryStore()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (_options.Value.Qdrant &lt;span style="color:#66d9ef"&gt;is&lt;/span&gt; not &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; QdrantMemoryStore(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.Endpoint,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.VectorSize
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;5. Register Services in &lt;code&gt;Program.cs&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; MyRAGApp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; MyRAGApp.Services;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = WebApplication.CreateBuilder(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Services.Configure&amp;lt;SemanticKernelOptions&amp;gt;(builder.Configuration.GetSection(&lt;span style="color:#e6db74"&gt;&amp;#34;SemanticKernel&amp;#34;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Add services to the container.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Services.AddRazorPages();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Services.AddServerSideBlazor();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Services.AddSingleton&amp;lt;KernelService&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Services.AddSingleton&amp;lt;DataLoader&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; app = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Configure the HTTP request pipeline.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (!app.Environment.IsDevelopment())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app.UseExceptionHandler(&lt;span style="color:#e6db74"&gt;&amp;#34;/Error&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; app.UseHsts();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.UseHttpsRedirection();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.UseStaticFiles();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.UseRouting();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.MapBlazorHub();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.MapFallbackToPage(&lt;span style="color:#e6db74"&gt;&amp;#34;/_Host&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; scope = app.Services.CreateScope())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; dataLoader = scope.ServiceProvider.GetRequiredService&amp;lt;DataLoader&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; kernelService = scope.ServiceProvider.GetRequiredService&amp;lt;KernelService&amp;gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; kernel = kernelService.GetKernel();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; filePath = Path.Combine(app.Environment.WebRootPath, &lt;span style="color:#e6db74"&gt;&amp;#34;knowledge_base.txt&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (kernel &lt;span style="color:#66d9ef"&gt;is&lt;/span&gt; not &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; dataLoader.LoadKnowledge(filePath, kernel);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;app.Run();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;6. Blazor UI&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Modify &lt;code&gt;Pages/Index.razor&lt;/code&gt;:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@page &lt;span style="color:#e6db74"&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@using MyRAGApp.Services
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@inject KernelService KernelService
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@inject ILogger&amp;lt;Index&amp;gt; Logger
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@inject DataLoader DataLoader
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;h1&amp;gt;RAG with Semantic Kernel&amp;lt;/h1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;div class=&lt;span style="color:#e6db74"&gt;&amp;#34;input-group mb-3&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;input type=&lt;span style="color:#e6db74"&gt;&amp;#34;text&amp;#34;&lt;/span&gt; class=&lt;span style="color:#e6db74"&gt;&amp;#34;form-control&amp;#34;&lt;/span&gt; placeholder=&lt;span style="color:#e6db74"&gt;&amp;#34;Ask a question&amp;#34;&lt;/span&gt; @bind=&lt;span style="color:#e6db74"&gt;&amp;#34;UserQuestion&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;button class=&lt;span style="color:#e6db74"&gt;&amp;#34;btn btn-primary&amp;#34;&lt;/span&gt; @onclick=&lt;span style="color:#e6db74"&gt;&amp;#34;AskQuestion&amp;#34;&lt;/span&gt;&amp;gt;Ask&amp;lt;/button&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@if (!&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(Response))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;div class=&lt;span style="color:#e6db74"&gt;&amp;#34;alert alert-secondary&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; @Response
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@code {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; UserQuestion { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; } = &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; Response { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; } = &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; Task AskQuestion()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(UserQuestion)) &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; kernel = KernelService.GetKernel();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (kernel &lt;span style="color:#66d9ef"&gt;is&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Logger.LogError(&lt;span style="color:#e6db74"&gt;&amp;#34;Kernel was not properly initialized&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Response = &lt;span style="color:#e6db74"&gt;&amp;#34;Error initializing the kernel.&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; result = &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; kernel.Memory.SearchAsync(&lt;span style="color:#e6db74"&gt;&amp;#34;ragcollection&amp;#34;&lt;/span&gt;, UserQuestion, limit:&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, minRelevanceScore:&lt;span style="color:#ae81ff"&gt;0.7&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; context = result.FirstOrDefault()?.Text;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt;(context != &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; prompt = &lt;span style="color:#960050;background-color:#1e0010"&gt;@&lt;/span&gt;&lt;span style="color:#e6db74"&gt;$&amp;#34;You are an AI assistant. Use the provided context to answer the question. If the context is not relevant for the answer, say you don&amp;#39;t know.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; Context:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; {context}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; Question: {UserQuestion}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; &amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; promptTemplateFactory = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; Microsoft.SemanticKernel.PromptTemplate.PromptTemplateFactory();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; promptTemplate = promptTemplateFactory.Create(prompt);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; chatFunction = kernel.CreateSemanticFunction(promptTemplate);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; answer = &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; kernel.RunAsync(&lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; KernelArguments(), chatFunction);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Response = answer.ToString();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Response = &lt;span style="color:#e6db74"&gt;&amp;#34;No relevant knowledge found. Please ask a question related to the content of knowledge base file&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (Exception ex)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Logger.LogError(&lt;span style="color:#e6db74"&gt;$&amp;#34;Error processing question: {ex.Message}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Response = &lt;span style="color:#e6db74"&gt;$&amp;#34;An error occurred: {ex.Message}&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Dependency Injection:&lt;/strong&gt; We inject &lt;code&gt;KernelService&lt;/code&gt; and &lt;code&gt;DataLoader&lt;/code&gt; to use them in the page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI Elements:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;A text input (&lt;code&gt;UserQuestion&lt;/code&gt;) for the user to type their question.&lt;/li&gt;
+&lt;li&gt;A button to trigger the question processing.&lt;/li&gt;
+&lt;li&gt;A div (&lt;code&gt;Response&lt;/code&gt;) to display the result.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;AskQuestion&lt;/code&gt; Method:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Gets the kernel from the &lt;code&gt;KernelService&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Uses Semantic Kernel&amp;rsquo;s memory to search for relevant data.&lt;/li&gt;
+&lt;li&gt;Constructs an advanced prompt with retrieved context.&lt;/li&gt;
+&lt;li&gt;Uses Semantic Kernel to run an LLM completion and get the response.&lt;/li&gt;
+&lt;li&gt;Updates the &lt;code&gt;Response&lt;/code&gt; variable, which triggers a UI update.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;How to Run&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure that your Qdrant instance is running.&lt;/li&gt;
+&lt;li&gt;Set your API keys in &lt;code&gt;appsettings.json&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Add your knowledge base content in the &lt;code&gt;knowledge_base.txt&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;Build and run your project (&lt;code&gt;dotnet run&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Navigate to the application in your browser (&lt;code&gt;https://localhost:7085&lt;/code&gt; by default).&lt;/li&gt;
+&lt;li&gt;Type your question in the input and hit &amp;ldquo;Ask.&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Important Considerations&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Error Handling:&lt;/strong&gt; Implement better error handling and logging throughout your application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Memory Store Selection:&lt;/strong&gt; Explore other vector databases or memory stores (like Azure Cognitive Search). &lt;code&gt;Qdrant&lt;/code&gt; is a good starting point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prompt Engineering:&lt;/strong&gt; Fine-tune your prompts to get the best results.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance:&lt;/strong&gt; Vector search and LLM completions can be slow. Optimize based on your application&amp;rsquo;s needs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security:&lt;/strong&gt; Be mindful of storing your API keys securely. Use environment variables or secrets management.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let me know if you would like to dive deeper into specific parts of this process, like more advanced prompt engineering or using a different memory store. I&amp;rsquo;m here to help you get your RAG application working!&lt;/p&gt;</description></item></channel></rss>
