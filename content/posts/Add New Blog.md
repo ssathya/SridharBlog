@@ -4,8 +4,6 @@ draft = false
 title = 'Add New Blog'
 +++
 
-
-
 # Blog Post Creation Workflow
 
 This document outlines the process for creating new blog posts. It will be updated regularly as new techniques and workflow improvements are implemented.

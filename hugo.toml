@@ -14,3 +14,7 @@ author = "Sridhar"
 canonifyurls = true
 twitter = "@ssathya"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
