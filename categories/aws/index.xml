@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws on Sridhar's Blog!</title><link>https://ssathya.github.io/SridharBlog/categories/aws/</link><description>Recent content in Aws on Sridhar's Blog!</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 15 Mar 2025 11:30:50 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/categories/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Using AWS Systems Manager in a docker image</title><link>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</link><pubDate>Sat, 15 Mar 2025 11:30:50 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aws-systems-manager/</guid><description>&lt;p&gt;I had issues using AWS Systems Manager in a docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, etc. and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a docker image.&lt;/p&gt;
+&lt;p&gt;This is the way I solved it and yes it works!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cs" data-lang="cs"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Amazon.Extensions.NETCore.Setup;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Amazon.Runtime;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.DependencyInjection;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; CloudConsole.Services;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ServiceBuilder&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; IConfiguration? Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;internal&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; IServiceCollection ConfigureServices(&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; applicationName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; IServiceCollection services = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; ServiceCollection();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Configuration = BuildConfiguration(applicationName);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; services.AddSingleton(Configuration);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; services;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; IConfiguration BuildConfiguration(&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt; applicationName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; allEnvVariables = Environment.GetEnvironmentVariables();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//var region = allEnvVariables[&amp;#34;AWS_DEFAULT_REGION&amp;#34;]?.ToString() ?? string.Empty;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; accessKey = allEnvVariables[&lt;span style="color:#e6db74"&gt;&amp;#34;AWS_ACCESS_KEY_ID&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; secretKey = allEnvVariables[&lt;span style="color:#e6db74"&gt;&amp;#34;AWS_SECRET_ACCESS_KEY&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; awsCredentials = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; BasicAWSCredentials(accessKey, secretKey);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AWSOptions aWSOptions = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Region = Amazon.RegionEndpoint.USEast1,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Credentials = awsCredentials
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; IConfigurationBuilder builder = &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; ConfigurationBuilder();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.SetBasePath(Directory.GetCurrentDirectory())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .AddJsonFile(&lt;span style="color:#e6db74"&gt;&amp;#34;appsettings.json&amp;#34;&lt;/span&gt;, optional: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .AddJsonFile(&lt;span style="color:#e6db74"&gt;$&amp;#34;appsettings.{Environment.GetEnvironmentVariable(&amp;#34;&lt;/span&gt;ASPNETCORE_ENVIRONMENT&lt;span style="color:#e6db74"&gt;&amp;#34;) ?? &amp;#34;&lt;/span&gt;Production&lt;span style="color:#e6db74"&gt;&amp;#34;}.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; , optional: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .AddEnvironmentVariables()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .AddSystemsManager(&lt;span style="color:#e6db74"&gt;@&amp;#34;/&amp;#34;&lt;/span&gt; + applicationName + &lt;span style="color:#e6db74"&gt;@&amp;#34;/&amp;#34;&lt;/span&gt;, aWSOptions, TimeSpan.FromMinutes(&lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .AddSystemsManager(&lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&amp;#34;/PortfolioManager/&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;, aWSOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; Configuration = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create an AWSOptions instance and use this instance when you call AddSystemsManager.&lt;/p&gt;</description></item><item><title>AWS SAA C02 Study Guide</title><link>https://ssathya.github.io/SridharBlog/posts/aws-saa-c02-study-guide/</link><pubDate>Sat, 15 Mar 2025 11:17:35 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aws-saa-c02-study-guide/</guid><description>&lt;h1 id="this-is-not-my-effort-original-content-is-from-keenan-romain-repository"&gt;This is not my effort. Original content is from &lt;a href="https://github.com/keenanromain/AWS-SAA-C02-Study-Guide"&gt;Keenan Romain&amp;rsquo;s&lt;/a&gt; repository.&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;I&amp;rsquo;d strongly recommend to use Keenan&amp;rsquo;s repository; I made a copy so that I can make notes and update as needed.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id="aws-saa-c02-study-guide"&gt;AWS SAA-C02 Study Guide&lt;/h1&gt;
+&lt;p&gt;This study guide will help you pass the newer AWS Certified Solutions Architect - Associate exam. Ideally, you should reference this guide while working through the following material:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stephane Maarek&amp;rsquo;s &lt;a href="https://links.datacumulus.com/aws-certified-sa-associate-coupon"&gt;Ultimate AWS Certified Solutions Architect Associate 2021 course&lt;/a&gt; (permanent discount available through this link) or A Cloud Guru&amp;rsquo;s &lt;a href="https://acloud.guru/learn/aws-certified-solutions-architect-associate"&gt;AWS Certified Solutions Architect Associate SAA-C02 course&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The FAQs for the most critical services, included in the recommended reading list below&lt;/li&gt;
+&lt;li&gt;Tutorials Dojo&amp;rsquo;s &lt;a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams-saa-c02/"&gt;AWS Certified Solutions Architect Associate Practice Exams &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Andrew Brown&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=Ia-UEYYR44s"&gt;AWS Certified Solutions Architect - Associate 2020 (PASS THE EXAM!) | Ad-Free Course
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt;:
+If at any point you find yourself feeling uncertain of your progress and in need of more time, you can postpone your AWS exam date. Be sure to also keep up with the ongoing discussions in &lt;a href="https://reddit.com/r/AWSCertifications/"&gt;r/AWSCertifications&lt;/a&gt; as you will find relevant exam tips, studying material, and advice from other exam takers. Before experimenting with AWS, it&amp;rsquo;s very important to be sure that you know what is &lt;a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc"&gt;free&lt;/a&gt; and what isn&amp;rsquo;t. Relevant Free Tier FAQs can be found &lt;a href="https://aws.amazon.com/free/free-tier-faqs/"&gt;here&lt;/a&gt;. Finally, Udemy often has their courses go on sale from time to time. It might be worth waiting to purchase either the Tutorial Dojo practice exam or Stephane Maarek&amp;rsquo;s course depending on how urgently you need the content.&lt;/p&gt;</description></item></channel></rss>

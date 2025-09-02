@@ -1,0 +1,85 @@
+<!doctype html><html lang=en><head><title>Connecting to ollama running on raspberry pi | Sridhar's Blog!</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=keywords content="Sridhar's Blog!"><meta property="og:locale" content='en_US'><meta property="og:type" content="article"><meta property="og:title" content="Connecting to Ollama running on Raspberry Pi"><meta property="og:description" content="Prerequests
+Here are the instructions for connecting to Ollama running on my Raspberry Pi from my C# application. I will provide step-by-step instructions for"><meta property="og:url" content="https://ssathya.github.io/SridharBlog/posts/ollamatocs/"><meta property="og:image" content="images/%!s(<nil>)"><link rel=canonical href=https://ssathya.github.io/SridharBlog/posts/ollamatocs/><link rel=apple-touch-icon sizes=180x180 href=https://ssathya.github.io/SridharBlog/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://ssathya.github.io/SridharBlog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://ssathya.github.io/SridharBlog/favicon-16x16.png><link rel=manifest href=https://ssathya.github.io/SridharBlog/site.webmanifest><link rel=stylesheet href=https://ssathya.github.io/SridharBlog/css/styles.648e60c6d86809f863ae1346848574b9c685732794e7851c7d3e557de9ddd293bc1c209f963d5041785c2fd4268470bdfde453a99f550b655d1b4f825eed4682.css integrity="sha512-ZI5gxthoCfhjrhNGhIV0ucaFcyeU54UcfT5Vfend0pO8HCCflj1QQXhcL9QmhHC9/eRTqZ9VC2VdG0+CXu1Ggg=="></head><body><div class=nav-drop><div class=nav-body><div class=nav-close></div><div class=color_mode><label for=mode>Toggle Dark Mode</label>
+<input type=checkbox class=color_choice id=mode></div></div></div><header class=nav><nav class=nav-menu><a href=https://ssathya.github.io/SridharBlog/ class="nav-brand nav_item">Sridhar's Blog!</a><div class=nav_bar-wrap><div class=nav_bar></div></div></nav></header><main><div class="wrap mt post"><div><p class=post_date>15. March 2025</p><h1 class=post_title>Connecting to Ollama running on Raspberry Pi</h1><div class=post_body><div class=post_inner><h2 id=prerequests>Prerequests</h2><p>Here are the instructions for connecting to Ollama running on my Raspberry Pi from my C# application. I will provide step-by-step instructions for installing Ollama and connecting it to a C# application. Please ensure that your Raspberry Pi is already running some version of Linux and that you have Visual Studio installed on your computer.</p><h2 id=installation>Installation</h2><p>Let us start by installing Ollama on your Raspberry Pi (RbP). I&rsquo;ve named my RbP rbpi-5-1, and if you see &ldquo;rbpi-5-1&rdquo; in the rest of the document, I&rsquo;m indicating my RbP.</p><p>We&rsquo;ll start by visiting <a href=https://ollama.com/>Ollama&rsquo;s website</a> and copy the curl script provided for Linux installation.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>curl -fsSL https://ollama.com/install.sh | sh
+</span></span></code></pre></div><p>Run the above curl command on your RbP, and it takes care of installing Ollama on your RbP. The first step is completed! It is time to check out the installation. We invoke Ollama with the command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ollama run <span style=color:#f92672>{</span>model_name<span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Several models that are available, each specializing in a different subject. For example, <em>codellama</em> focuses more on coding, while <em>wizard-math</em> focuses on math and logic problems.</p><p>With my vast experience using Ollama, which is 3 hours at the time of this writing, gemma2 is the best for me. It has a wide range of applications across various industries and domains. It is good in</p><ul><li>Text Generation</li><li>Chatbots and conversational AI</li><li>Text summarization
+These are my needs as of now, and hence <em><strong>Heil gemma2!</strong></em></li></ul><h3 id=testing>Testing</h3><p>Having installed Ollama, let us do some basic testing. Invoke Ollama&rsquo;s CLI frontend with the command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#75715e># Let&#39;s use the 2b model - the smallest available!</span>
+</span></span><span style=display:flex><span>ollama run gemma2:2b
+</span></span></code></pre></div><p>If this is your first time running this command, it is time to make a cup of coffee. It has to download the model, parse it, and eventully you will get the prompt.</p><pre tabindex=0><code>&gt;&gt;&gt; Send a message (/? for help)
+</code></pre><p>Ask your first question: if you go blank like me, here are some examples.</p><pre tabindex=0><code>Who was the first person to land on the moon?
+Why is the blood red?
+Why is the sky blue?
+</code></pre><p>If your new chatty friend answers correctly, you are good for the next step. <em>If not abort!</em></p><h3 id=service-fix>Service fix</h3><p>Ollama is now running as a systemd service. Hence, the environment variables should be using systemctl: we need to allow access to other machines to use your ollama instance, and hence, we need to open the port for external requests. I tried to follow Ollama&rsquo;s FAQ verbatim, and I failed. So I suggest you follow my suggestion.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>sudo systemctl stop ollama.service
+</span></span><span style=display:flex><span>sudo systemctl disable ollama.service
+</span></span><span style=display:flex><span>cd /etc/systemd/system
+</span></span></code></pre></div><p>Now, in this folder, we are going to edit the file <u><strong>ollama.service</strong></u>. In this file, under section Service, add the following line:</p><pre tabindex=0><code>Environment=&#34;OLLAMA_HOST=0.0.0.0&#34;
+</code></pre><p>After editing, my file looked as follows: yours will be different, especially in the path, but it gives you an idea of how it should look.</p><pre tabindex=0><code>[Unit]
+Description=Ollama Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+Environment=&#34;OLLAMA_HOST=0.0.0.0&#34;
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment=&#34;PATH=/home/sridh/bin:./:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/home/sridh/bin:/home/sridh/.dotnet/tools&#34;
+[Install]
+WantedBy=default.target
+</code></pre><p>Restart ollama as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>sudo systemctl enable ollama.service
+</span></span><span style=display:flex><span>sudo systemctl restart ollama.service
+</span></span></code></pre></div><p>I prefer using the restart command over the start command. Feel free to choose whichever option you prefer. I won&rsquo;t judge you!
+The last thing we&rsquo;ll be doing when we are still logged in your RbP will be checking if you can access your RbP from your computer. In my case, in my browser, I navigated to my <a href=http://rbpi-5-1:11434/>rbpi-5</a> using the following link:</p><pre tabindex=0><code>http://rbpi-5-1:11434/
+</code></pre><p>I got a beautiful welcome message:</p><pre tabindex=0><code>Ollama is running
+</code></pre><p>We can now ignore the terminal window for now and work with Visual Studio.</p><h2 id=cleint-application>Cleint Application</h2><p>We are going to use a Nuget package, OllamaSharp, to talk to our local LLM server. I wanted to use Microsoft&rsquo;s Semantic Kernel to connect to Ollama, but I need to do more work to make it happen. For now, let us be happy with this package, and when we hit a wall with it, we&rsquo;ll try Semantic Kernel once again.
+In Visual Studio, create a console application and add the following packages:</p><pre tabindex=0><code>Install-Package Lyndychivs.Fibonacci
+Install-Package OllamaSharp
+</code></pre><p>Fibonacci is more of a gimmick, but why not? It makes the terminal behave a little differently from regular chat applications.
+The following code does not require much explanation; once you read it, you&rsquo;ll know exactly what it is doing.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#66d9ef>using</span> Fibonacci;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> OllamaSharp;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> System.Numerics;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> System.Text;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> endpoint = <span style=color:#66d9ef>new</span> Uri(<span style=color:#e6db74>&#34;http://rbpi-5-1:11434&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> modelId = <span style=color:#e6db74>&#34;gemma2:2b&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> Fibonacci = <span style=color:#66d9ef>new</span> FibonacciRecursive();
+</span></span><span style=display:flex><span>List&lt;BigInteger&gt; sequence = Fibonacci.GetFibonacciSequence(<span style=color:#ae81ff>15</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> sequenceCount = sequence.Count();
+</span></span><span style=display:flex><span>Random rand = <span style=color:#66d9ef>new</span> Random(DateTime.Now.Second);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> ollama = <span style=color:#66d9ef>new</span> OllamaApiClient(endpoint, modelId);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> chat = <span style=color:#66d9ef>new</span> Chat(ollama);
+</span></span><span style=display:flex><span>Console.ForegroundColor = ConsoleColor.Green;
+</span></span><span style=display:flex><span>Console.WriteLine(<span style=color:#e6db74>&#34;AI: Now How can I help?&#34;</span>);
+</span></span><span style=display:flex><span>Console.ForegroundColor = ConsoleColor.Yellow;
+</span></span><span style=display:flex><span>Console.Write(<span style=color:#e6db74>&#34;User: &#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> helpTopic = Console.ReadLine();
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> outMsg = <span style=color:#66d9ef>new</span> StringBuilder();
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> (!<span style=color:#66d9ef>string</span>.IsNullOrEmpty(helpTopic))
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    outMsg.Clear();
+</span></span><span style=display:flex><span>    Console.ForegroundColor = ConsoleColor.Green;
+</span></span><span style=display:flex><span>    Console.Write(<span style=color:#e6db74>&#34;AI: &#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>foreach</span> (<span style=color:#66d9ef>var</span> answerToken <span style=color:#66d9ef>in</span> chat.Send(helpTopic))
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>await</span> Task.Delay(<span style=color:#ae81ff>50</span>);
+</span></span><span style=display:flex><span>        outMsg.Append(answerToken);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (outMsg.Length &gt;= sequence[rand.Next(<span style=color:#ae81ff>0</span>, sequenceCount)])
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            Console.Write(outMsg.ToString());
+</span></span><span style=display:flex><span>            outMsg.Clear();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    Console.WriteLine(outMsg.ToString());
+</span></span><span style=display:flex><span>    Console.ForegroundColor = ConsoleColor.Yellow;
+</span></span><span style=display:flex><span>    Console.Write(<span style=color:#e6db74>&#34;\nUser: (bye or nothing to exit chat)&#34;</span>);
+</span></span><span style=display:flex><span>    helpTopic = Console.ReadLine() ?? <span style=color:#66d9ef>string</span>.Empty;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (helpTopic.Equals(<span style=color:#e6db74>&#34;bye&#34;</span>, StringComparison.OrdinalIgnoreCase))
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>Console.ForegroundColor = ConsoleColor.White;
+</span></span></code></pre></div></div><div class="post_extra mb-2"><div class=copy data-before="Share Story" data-after="Link Copied"><svg class="icon"><use xlink:href="#copy"/></svg></div></div><div></div></div></div><a href=https://ssathya.github.io/SridharBlog/ class=post_nav><span class=post_next>Latest Posts
+<svg class="icon icon_scale"><use xlink:href="#double-arrow"/></svg></span></a></div></main><footer class="footer wrap pale"><p>&copy;&nbsp;<span class=year></span>&nbsp;Sridhar's Blog!</p><p class="attribution upcase">Designed by <a href='<no value>' target=_blank title='Linkedin Profile' rel=nonopener><no value></a></p></footer><script src=https://ssathya.github.io/SridharBlog/js/index.min.37437af50776941f9afce75ecfefd228d0ee6ceb0ad33ff35a9fea22b0a7236be8e38a9ff1666ad540d25dd37bc569705c5cceb13f7cd57ccbf3678201c43771.js></script><svg width="0" height="0" class="hidden"><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 699.428 699.428" id="copy"><path d="M502.714.0H240.428C194.178.0 153 42.425 153 87.429l-25.267.59c-46.228.0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249.0 87.428-42.424 87.428-87.428h21.857c46.25.0 87.429-42.424 87.429-87.428v-349.19L502.714.0zM459 655.715H131.143c-22.95.0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95.0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337.0 87.975.0 87.975.0 45.419 40.872 86.882 87.428 86.882H612v306zm-65.572-349.715c-23.277.0-43.714-42.293-43.714-64.981V44.348L612 174.857h-65.572zm-43.714 131.537H306c-12.065.0-21.857 9.77-21.857 21.835s9.792 21.835 21.857 21.835h196.714c12.065.0 21.857-9.771 21.857-21.835.0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065.0-21.857 9.77-21.857 21.834.0 12.066 9.792 21.836 21.857 21.836h196.714c12.065.0 21.857-9.77 21.857-21.836.0-12.064-9.792-21.834-21.857-21.834z"/></symbol><symbol viewBox="0 0 53 42" xmlns="http://www.w3.org/2000/svg" id="double-arrow"><path d="M.595 39.653a1.318 1.318.0 010-1.864L16.55 21.833a1.318 1.318.0 000-1.863L.595 4.014a1.318 1.318.0 010-1.863L2.125.62a1.318 1.318.0 011.864.0l19.35 19.349a1.318 1.318.0 010 1.863l-19.35 19.35a1.318 1.318.0 01-1.863.0zm29 0a1.318 1.318.0 010-1.864L45.55 21.833a1.318 1.318.0 000-1.863L29.595 4.014a1.318 1.318.0 010-1.863l1.53-1.53a1.318 1.318.0 011.864.0l19.35 19.349a1.318 1.318.0 010 1.863l-19.35 19.35a1.318 1.318.0 01-1.863.0z"/></symbol></svg></body></html>
