@@ -6,23 +6,31 @@ tags = ['programming', 'ai']
 categories = ['programming', 'artificial-intelligence']
 +++
 
+
+
+## Sematic Kernel with RAG
+
+
+
 Okay, let's break down how to use Semantic Kernel with Retrieval Augmented Generation (RAG) in a Blazor application. It can be a bit tricky to get all the pieces working together, so we'll go step by step.
 
-**Understanding the Core Concepts**
 
-1.  **Semantic Kernel:** This is a framework that helps you build intelligent applications by integrating Large Language Models (LLMs) like OpenAI, Azure OpenAI, etc. It provides abstractions for things like plugins, memory, and planners.
-2.  **RAG (Retrieval Augmented Generation):** This approach improves LLM responses by first retrieving relevant information from a data source (like a vector database) and then using that information as context when generating the final output. This helps the LLM ground its responses in factual data and reduce hallucinations.
-3.  **Blazor:** This is a framework for building interactive web UIs with C# instead of JavaScript. We'll use it to create the front-end for your RAG-powered application.
+
+## Understanding the Core Concepts
+
+1. **Semantic Kernel:** This is a framework that helps you build intelligent applications by integrating Large Language Models (LLMs) like OpenAI, Azure OpenAI, etc. It provides abstractions for things like plugins, memory, and planners.
+2. **RAG (Retrieval Augmented Generation):** This approach improves LLM responses by first retrieving relevant information from a data source (like a vector database) and then using that information as context when generating the final output. This helps the LLM ground its responses in factual data and reduce hallucinations.
+3. **Blazor:** This is a framework for building interactive web UIs with C# instead of JavaScript. We'll use it to create the front-end for your RAG-powered application.
 
 **High-Level Steps**
 
 Here's a general outline of what we'll need to do:
 
-1.  **Set up your environment:** Install the necessary NuGet packages and configure your API keys.
-2.  **Prepare your data source:** Choose a vector database (or similar) and index your data.
-3.  **Create Semantic Kernel components:** Build your skills (plugins), memory, and kernel.
-4.  **Develop your Blazor UI:** Create a simple interface for users to ask questions.
-5.  **Connect Semantic Kernel with Blazor:** Send user input to the kernel, get the RAG-enhanced response, and display it in the UI.
+1. **Set up your environment:** Install the necessary NuGet packages and configure your API keys.
+2. **Prepare your data source:** Choose a vector database (or similar) and index your data.
+3. **Create Semantic Kernel components:** Build your skills (plugins), memory, and kernel.
+4. **Develop your Blazor UI:** Create a simple interface for users to ask questions.
+5. **Connect Semantic Kernel with Blazor:** Send user input to the kernel, get the RAG-enhanced response, and display it in the UI.
 
 **Let's Get Started with the Code**
 
@@ -30,20 +38,23 @@ I'll provide code snippets with explanations and comments. This will be for a si
 
 **1. Setting up your Environment**
 
-*   **Create a New Blazor Server Project:**
-    *   In Visual Studio or using the .NET CLI:
-        ```bash
-        dotnet new blazorserver -o MyRAGApp
-        cd MyRAGApp
-        ```
-*   **Install NuGet Packages:**
+* **Create a New Blazor Server Project:**
+  * In Visual Studio or using the .NET CLI:
+    
     ```bash
-    dotnet add package Microsoft.SemanticKernel
-    dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Qdrant
-    dotnet add package Microsoft.SemanticKernel.Connectors.OpenAI
+    dotnet new blazorserver -o MyRAGApp
+    cd MyRAGApp
     ```
-    (Choose `Qdrant` or a memory connector of your preference)
-    *   Make sure you have `System.Text.Json` package included as well.
+* **Install NuGet Packages:**
+  
+  ```bash
+  dotnet add package Microsoft.SemanticKernel
+  dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Qdrant
+  dotnet add package Microsoft.SemanticKernel.Connectors.OpenAI
+  ```
+  
+  (Choose `Qdrant` or a memory connector of your preference)
+  * Make sure you have `System.Text.Json` package included as well.
 
 **2. Configure App Settings (appsettings.json)**
 
@@ -71,12 +82,13 @@ I'll provide code snippets with explanations and comments. This will be for a si
     }
 }
 ```
+
 * Replace the placeholder with the api key of your preferred LLM API, e.g., OpenAI. Make sure you also replace the placeholder with the correct values of your memory vector database.
 
 **3. Create Data Loader (optional)**
 
-*   For simplicity, let's assume you have a simple text file of data to be indexed, say `knowledge_base.txt`.
-*   **Create a DataLoader service (`Services/DataLoader.cs`):**
+* For simplicity, let's assume you have a simple text file of data to be indexed, say `knowledge_base.txt`.
+* **Create a DataLoader service (`Services/DataLoader.cs`):**
 
 ```csharp
 using System.Text;
@@ -149,9 +161,12 @@ namespace MyRAGApp.Services
     }
 }
 ```
-*  Add the corresponding SemanticKernelOptions class:
-```csharp
-using System.ComponentModel.DataAnnotations;
+
+* Add the corresponding SemanticKernelOptions class:
+  
+  ```csharp
+  using System.ComponentModel.DataAnnotations;
+  ```
 
 namespace MyRAGApp
 {
@@ -161,15 +176,15 @@ namespace MyRAGApp
         public OpenAIConfig? OpenAI { get; set; }
 
         public QdrantConfig? Qdrant { get; set; }
-
+    
     }
     public class OpenAIConfig
     {
         [Required]
         public string? ApiKey { get; set; }
-
+    
         public string? OrgId { get; set; }
-
+    
         [Required]
         public string? ModelId { get; set; }
         [Required]
@@ -184,7 +199,9 @@ namespace MyRAGApp
         [Required]
         public string? CollectionName { get; set; }
     }
+
 }
+
 ```
 *   Make sure to add your knowledge base content in the `knowledge_base.txt` in the `wwwroot/` directory or other preferred location.
 
@@ -306,7 +323,7 @@ app.Run();
 
 **6. Blazor UI**
 
-*   **Modify `Pages/Index.razor`:**
+* **Modify `Pages/Index.razor`:**
 
 ```csharp
 @page "/"
@@ -373,7 +390,7 @@ app.Run();
              {
                 Response = "No relevant knowledge found. Please ask a question related to the content of knowledge base file";
              }
-            
+
 
         }
         catch (Exception ex)
@@ -387,33 +404,33 @@ app.Run();
 
 **Explanation:**
 
-1.  **Dependency Injection:** We inject `KernelService` and `DataLoader` to use them in the page.
-2.  **UI Elements:**
-    *   A text input (`UserQuestion`) for the user to type their question.
-    *   A button to trigger the question processing.
-    *   A div (`Response`) to display the result.
-3.  **`AskQuestion` Method:**
-    *   Gets the kernel from the `KernelService`.
-    *   Uses Semantic Kernel's memory to search for relevant data.
-    *   Constructs an advanced prompt with retrieved context.
-    *   Uses Semantic Kernel to run an LLM completion and get the response.
-    *   Updates the `Response` variable, which triggers a UI update.
+1. **Dependency Injection:** We inject `KernelService` and `DataLoader` to use them in the page.
+2. **UI Elements:**
+   * A text input (`UserQuestion`) for the user to type their question.
+   * A button to trigger the question processing.
+   * A div (`Response`) to display the result.
+3. **`AskQuestion` Method:**
+   * Gets the kernel from the `KernelService`.
+   * Uses Semantic Kernel's memory to search for relevant data.
+   * Constructs an advanced prompt with retrieved context.
+   * Uses Semantic Kernel to run an LLM completion and get the response.
+   * Updates the `Response` variable, which triggers a UI update.
 
 **How to Run**
 
-1.  Make sure that your Qdrant instance is running.
-2.  Set your API keys in `appsettings.json`.
-3.  Add your knowledge base content in the `knowledge_base.txt` file.
-4.  Build and run your project (`dotnet run`).
-5.  Navigate to the application in your browser (`https://localhost:7085` by default).
-6.  Type your question in the input and hit "Ask."
+1. Make sure that your Qdrant instance is running.
+2. Set your API keys in `appsettings.json`.
+3. Add your knowledge base content in the `knowledge_base.txt` file.
+4. Build and run your project (`dotnet run`).
+5. Navigate to the application in your browser (`https://localhost:7085` by default).
+6. Type your question in the input and hit "Ask."
 
 **Important Considerations**
 
-*   **Error Handling:** Implement better error handling and logging throughout your application.
-*   **Memory Store Selection:** Explore other vector databases or memory stores (like Azure Cognitive Search). `Qdrant` is a good starting point.
-*   **Prompt Engineering:** Fine-tune your prompts to get the best results.
-*   **Performance:** Vector search and LLM completions can be slow. Optimize based on your application's needs.
-*   **Security:** Be mindful of storing your API keys securely. Use environment variables or secrets management.
+* **Error Handling:** Implement better error handling and logging throughout your application.
+* **Memory Store Selection:** Explore other vector databases or memory stores (like Azure Cognitive Search). `Qdrant` is a good starting point.
+* **Prompt Engineering:** Fine-tune your prompts to get the best results.
+* **Performance:** Vector search and LLM completions can be slow. Optimize based on your application's needs.
+* **Security:** Be mindful of storing your API keys securely. Use environment variables or secrets management.
 
 Let me know if you would like to dive deeper into specific parts of this process, like more advanced prompt engineering or using a different memory store. I'm here to help you get your RAG application working!
