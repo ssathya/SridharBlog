@@ -2,13 +2,23 @@
 date = '2025-03-15T11:30:50-04:00'
 draft = false
 title = 'Using AWS Systems Manager in a docker image'
+weight = 3
 tags = ['programming', 'aws']
 categories = ['dot-net', 'aws']
 +++
 
-I had issues using AWS Systems Manager in a docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID,  AWS_SECRET_ACCESS_KEY, etc. and I didn't see any examples of how people use Systems Manager within a docker image.  
 
-This is the way I solved it and yes it works!
+
+## What is this?
+
+I had issues using AWS Systems Manager in Docker, and I didn't see any examples of how people use Systems Manager within a Docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID,  AWS_SECRET_ACCESS_KEY, etc. and I didn't see any examples of how people use Systems Manager within a docker image.  
+
+
+
+This is the way I solved it, and yes, it works!
+
+## Sample code
+
 ```cs
 using Amazon.Extensions.NETCore.Setup;
 using Amazon.Runtime;
@@ -59,6 +69,7 @@ public static class ServiceBuilder
 Create an AWSOptions instance and use this instance when you call AddSystemsManager.
 
 And when I run my image I issue the following command:
+
 ```sh
 docker run --name test_container1 -e AWS_ACCESS_KEY_ID=AccessKey -e AWS_SECRET_ACCESS_KEY=SecretKey test_image3
 ```

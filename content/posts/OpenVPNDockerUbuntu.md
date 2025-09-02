@@ -2,6 +2,7 @@
 date = '2025-03-15T11:31:10-04:00'
 draft = false
 title = 'Installing open VPN in an VM'
+weight = 2
 tags = ['vpn', 'docker']
 categories = ['vpn', 'OpenVPN', 'docker']
 +++

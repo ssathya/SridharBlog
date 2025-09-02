@@ -2,6 +2,7 @@
 date = '2025-08-30T17:31:31-04:00'
 draft = false
 title = 'Aspire Getting Started'
+weight = 2
 tags = ['Programming']
 categories = ['Aspire', 'Blazor']
 +++
