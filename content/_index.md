@@ -1,7 +1,11 @@
 ---
-title: My Site
+title: Hello & Welcome! 
 toc: true
 ---
+
+
+
+### Hi!
 
 Welcome to my blog! I'm *delighted* you've stopped by. Here, I share my passions and interests, primarily focusing on building with .NET Core applications. But that's not all—I'm also passionate about photography and electronics. I'm currently working on creating a public album of my photographs, and I look forward to sharing that with you soon, along with links to view my pictures.
 
@@ -12,6 +16,10 @@ My posts are pretty diverse. Some are technical, covering topics like .NET and A
 
   {{< cards >}}
 
-{{< card link="posts" title="Posts" icon="book-open" image="https://ourroaminghearts.com/wp-content/uploads/2018/10/Watkins-Glen-State-Park21.jpg" >}}
+{{< card link="posts" title="Posts" icon="book-open" image="https://i.imgur.com/MOY8KdM.jpeg" >}}
+
+{{< card link="tags" title="Tags" image="https://i.imgur.com/NnLbGdR.jpeg" >}}
+
+{{< card link="categories" title="Categories" image="https://i.imgur.com/nrA3peS.jpeg" >}}
 
 {{< /cards >}}
