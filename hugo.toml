@@ -1,7 +1,8 @@
 baseurl = "/"
 title = "Sridhar's Blog!"
 languageCode = "en-us"
-theme = "newsroom"
+#theme = "newsroom"
+theme = "hextra"
 locale = "en_US"
 publishDir = "public"
 
