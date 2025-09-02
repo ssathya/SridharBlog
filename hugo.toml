@@ -19,3 +19,7 @@ twitter = "@ssathya"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
