@@ -1,7 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Ai</title><link>https://ssathya.github.io/SridharBlog/tags/ai/</link><description>Recent content in Ai on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 15 Mar 2025 11:22:29 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>SemanticKernelRag</title><link>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</link><pubDate>Sat, 15 Mar 2025 11:22:29 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/semantickernelrag/</guid><description>
-&lt;p&gt;Okay, let&amp;rsquo;s break down how to use Semantic Kernel with Retrieval Augmented Generation (RAG) in a Blazor application. It can be a bit tricky to get all the pieces working together, so we&amp;rsquo;ll go step by step.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Understanding the Core Concepts&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
+&lt;h2&gt;Sematic Kernel with RAG&lt;span class="hx:absolute hx:-mt-20" id="sematic-kernel-with-rag"&gt;&lt;/span&gt;
+&lt;a href="#sematic-kernel-with-rag" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Okay, let&amp;rsquo;s break down how to use Semantic Kernel with Retrieval Augmented Generation (RAG) in a Blazor application. It can be a bit tricky to get all the pieces working together, so we&amp;rsquo;ll go step by step.&lt;/p&gt;
+&lt;h2&gt;Understanding the Core Concepts&lt;span class="hx:absolute hx:-mt-20" id="understanding-the-core-concepts"&gt;&lt;/span&gt;
+&lt;a href="#understanding-the-core-concepts" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Semantic Kernel:&lt;/strong&gt; This is a framework that helps you build intelligent applications by integrating Large Language Models (LLMs) like OpenAI, Azure OpenAI, etc. It provides abstractions for things like plugins, memory, and planners.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;RAG (Retrieval Augmented Generation):&lt;/strong&gt; This approach improves LLM responses by first retrieving relevant information from a data source (like a vector database) and then using that information as context when generating the final output. This helps the LLM ground its responses in factual data and reduce hallucinations.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Blazor:&lt;/strong&gt; This is a framework for building interactive web UIs with C# instead of JavaScript. We&amp;rsquo;ll use it to create the front-end for your RAG-powered application.&lt;/li&gt;
@@ -19,9 +20,11 @@
 &lt;p&gt;I&amp;rsquo;ll provide code snippets with explanations and comments. This will be for a simple Blazor Server app for demonstration purposes.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. Setting up your Environment&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create a New Blazor Server Project:&lt;/strong&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create a New Blazor Server Project:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;In Visual Studio or using the .NET CLI:
+&lt;li&gt;
+&lt;p&gt;In Visual Studio or using the .NET CLI:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new blazorserver -o MyRAGApp
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd MyRAGApp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
@@ -37,7 +40,8 @@ title="Copy code"
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Install NuGet Packages:&lt;/strong&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Install NuGet Packages:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
 &lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet add package Microsoft.SemanticKernel
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Qdrant
@@ -51,7 +55,7 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-(Choose &lt;code&gt;Qdrant&lt;/code&gt; or a memory connector of your preference)
+&lt;p&gt;(Choose &lt;code&gt;Qdrant&lt;/code&gt; or a memory connector of your preference)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Make sure you have &lt;code&gt;System.Text.Json&lt;/code&gt; package included as well.&lt;/li&gt;
 &lt;/ul&gt;
@@ -178,43 +182,10 @@ title="Copy code"
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Add the corresponding SemanticKernelOptions class:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add the corresponding SemanticKernelOptions class:&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.ComponentModel.DataAnnotations;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; MyRAGApp
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SemanticKernelOptions&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; OpenAIConfig? OpenAI { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; QdrantConfig? Qdrant { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;OpenAIConfig&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; ApiKey { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; OrgId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; ModelId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; EmbeddingModelId { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;QdrantConfig&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; Endpoint { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;int?&lt;/span&gt; VectorSize { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt; [Required]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;string?&lt;/span&gt; CollectionName { &lt;span style="color:#66d9ef"&gt;get&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;set&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; System.ComponentModel.DataAnnotations;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
@@ -224,77 +195,97 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;Make sure to add your knowledge base content in the &lt;code&gt;knowledge_base.txt&lt;/code&gt; in the &lt;code&gt;wwwroot/&lt;/code&gt; directory or other preferred location.&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;4. Kernel Setup&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create a Kernel service (&lt;code&gt;Services/KernelService.cs&lt;/code&gt;):&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;namespace MyRAGApp
+{
+public class SemanticKernelOptions
+{
+[Required]
+public OpenAIConfig? OpenAI { get; set; }&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; public QdrantConfig? Qdrant { get; set; }
+}
+public class OpenAIConfig
+{
+[Required]
+public string? ApiKey { get; set; }
+public string? OrgId { get; set; }
+[Required]
+public string? ModelId { get; set; }
+[Required]
+public string? EmbeddingModelId { get; set; }
+}
+public class QdrantConfig
+{
+[Required]
+public string? Endpoint { get; set; }
+[Required]
+public int? VectorSize { get; set; }
+[Required]
+public string? CollectionName { get; set; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}&lt;/p&gt;
 &lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Connectors.OpenAI;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.Extensions.Options;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Memory;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Embeddings;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; MyRAGApp.Services
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;KernelService&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; IOptions&amp;lt;SemanticKernelOptions&amp;gt; _options;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;readonly&lt;/span&gt; ILogger&amp;lt;KernelService&amp;gt; _logger;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; KernelService(IOptions&amp;lt;SemanticKernelOptions&amp;gt; options, ILogger&amp;lt;KernelService&amp;gt; logger)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options = options;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger = logger;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; IKernel GetKernel()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;try&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = Kernel.Builder;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; apiKey = _options.Value.OpenAI?.ApiKey;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; orgId = _options.Value.OpenAI?.OrgId;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; modelId = _options.Value.OpenAI?.ModelId;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; embeddingModelId = _options.Value.OpenAI?.EmbeddingModelId;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(apiKey) || &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(modelId) || &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;.IsNullOrEmpty(embeddingModelId))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;&amp;#34;OpenAI API settings are not correctly configured.&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.AddAzureOpenAIChatCompletion(modelId, apiKey,orgId);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.AddAzureOpenAITextEmbeddingGeneration(embeddingModelId, apiKey, orgId);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; builder.Services.AddTransient((sp) =&amp;gt; GetMemoryStore());
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; builder.Build();
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;catch&lt;/span&gt; (Exception ex)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _logger.LogError(&lt;span style="color:#e6db74"&gt;$&amp;#34;Error creating Kernel: {ex.Message}&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;private&lt;/span&gt; ISemanticTextMemory? GetMemoryStore()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (_options.Value.Qdrant &lt;span style="color:#66d9ef"&gt;is&lt;/span&gt; not &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; QdrantMemoryStore(
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.Endpoint,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _options.Value.Qdrant.VectorSize
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; );
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;null&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;* Make sure to add your knowledge base content in the `knowledge_base.txt` in the `wwwroot/` directory or other preferred location.
+**4. Kernel Setup**
+* **Create a Kernel service (`Services/KernelService.cs`):**
+```csharp
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Connectors.OpenAI;
+using Microsoft.Extensions.Options;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Embeddings;
+using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+namespace MyRAGApp.Services
+{
+public class KernelService
+{
+private readonly IOptions&amp;lt;SemanticKernelOptions&amp;gt; _options;
+private readonly ILogger&amp;lt;KernelService&amp;gt; _logger;
+public KernelService(IOptions&amp;lt;SemanticKernelOptions&amp;gt; options, ILogger&amp;lt;KernelService&amp;gt; logger)
+{
+_options = options;
+_logger = logger;
+}
+public IKernel GetKernel()
+{
+try
+{
+var builder = Kernel.Builder;
+var apiKey = _options.Value.OpenAI?.ApiKey;
+var orgId = _options.Value.OpenAI?.OrgId;
+var modelId = _options.Value.OpenAI?.ModelId;
+var embeddingModelId = _options.Value.OpenAI?.EmbeddingModelId;
+if (string.IsNullOrEmpty(apiKey) || string.IsNullOrEmpty(modelId) || string.IsNullOrEmpty(embeddingModelId))
+{
+_logger.LogError(&amp;#34;OpenAI API settings are not correctly configured.&amp;#34;);
+return null;
+}
+builder.AddAzureOpenAIChatCompletion(modelId, apiKey,orgId);
+builder.AddAzureOpenAITextEmbeddingGeneration(embeddingModelId, apiKey, orgId);
+builder.Services.AddTransient((sp) =&amp;gt; GetMemoryStore());
+return builder.Build();
+}
+catch (Exception ex)
+{
+_logger.LogError($&amp;#34;Error creating Kernel: {ex.Message}&amp;#34;);
+return null;
+}
+}
+private ISemanticTextMemory? GetMemoryStore()
+{
+if (_options.Value.Qdrant is not null)
+{
+return new QdrantMemoryStore(
+_options.Value.Qdrant.Endpoint,
+_options.Value.Qdrant.VectorSize
+);
+}
+return null;
+}
+}
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
 &lt;button
 class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
 title="Copy code"
