@@ -1,14 +1,15 @@
 +++
 date = '2025-09-10T10:45:20-04:00'
-draft = true
+draft = false
 title = 'Monkey Cache Settings'
+tags = ['Monkey Cache']
+categories = ['programming']
+weight = 3
 +++
 
 ## What is Monkey Cache?
 
 **MonkeyCache** is a lightweight caching library for .NET applications, created. It’s designed to make caching flexible and straightforward—especially useful when you want to store data temporarily without setting up a full-blown database or complex infrastructure.
-
-
 
 ### Key Features
 
@@ -37,8 +38,6 @@ Perfect for scenarios like:
 - Reducing redundant network calls in mobile apps.
 
 It’s convenient in mobile or desktop apps where you want quick, local caching without spinning up a whole database.
-
-
 
 ## How do I use it:
 

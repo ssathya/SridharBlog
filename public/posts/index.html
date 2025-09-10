@@ -141,17 +141,17 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/posts/aws-systems-manager/"
+    href="/posts/monkeycachesettings/"
     
-  >Using AWS Systems Manager in a docker image
+  >Monkey Cache Settings
     </a>
               
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/posts/monkeycachesettings/"
+    href="/posts/aws-systems-manager/"
     
-  >Monkey Cache Settings
+  >Using AWS Systems Manager in a docker image
     </a>
               
             </li><li class="hx:flex hx:flex-col "><a
@@ -200,14 +200,6 @@
     href="/posts/install-ollama/"
     
   >Installing (Upgrading) Ollama
-    </a>
-              
-            </li><li class="hx:flex hx:flex-col "><a
-    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/posts/semantickernelrag-new/"
-    
-  >Semantic Kernel with RAG
     </a>
               
             </li><li class="hx:flex hx:flex-col "><a
@@ -349,17 +341,6 @@ PlatformThough we can use any VM, I prefer using LightSail offering from AWS to
           </div>
         
           <div class="hx:mb-10">
-            <h3><a style="color: inherit; text-decoration: none;" class="hx:block hx:font-semibold hx:mt-8 hx:text-2xl " href="/posts/aws-systems-manager/">Using AWS Systems Manager in a docker image</a></h3>
-            
-            <p class="hx:opacity-80 hx:mt-4 hx:leading-7">What is this?I had issues using AWS Systems Manager in Docker, and I didn’t see any examples of how people use Systems Manager within a Docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, etc. and I didn’t see any examples of how people use Systems Manager within a docker image.
-This is the way I solved it, and yes, it works!</p>
-            <p class="hx:opacity-80 hx:mt-1 hx:leading-7">
-              <a class="hx:text-[color:hsl(var(--primary-hue),100%,50%)] hx:underline hx:underline-offset-2 hx:decoration-from-font" href="/posts/aws-systems-manager/">Read more →</a>
-            </p>
-            <p class="hx:opacity-50 hx:text-sm hx:mt-4 hx:leading-7">March 15, 2025</p>
-          </div>
-        
-          <div class="hx:mb-10">
             <h3><a style="color: inherit; text-decoration: none;" class="hx:block hx:font-semibold hx:mt-8 hx:text-2xl " href="/posts/monkeycachesettings/">Monkey Cache Settings</a></h3>
             
             <p class="hx:opacity-80 hx:mt-4 hx:leading-7">What is Monkey Cache?MonkeyCache is a lightweight caching library for .NET applications, created. It’s designed to make caching flexible and straightforward—especially useful when you want to store data temporarily without setting up a full-blown database or complex infrastructure.
@@ -369,6 +350,17 @@ Time-based expiration: Cached items can specify how long an item should stay in 
               <a class="hx:text-[color:hsl(var(--primary-hue),100%,50%)] hx:underline hx:underline-offset-2 hx:decoration-from-font" href="/posts/monkeycachesettings/">Read more →</a>
             </p>
             <p class="hx:opacity-50 hx:text-sm hx:mt-4 hx:leading-7">September 10, 2025</p>
+          </div>
+        
+          <div class="hx:mb-10">
+            <h3><a style="color: inherit; text-decoration: none;" class="hx:block hx:font-semibold hx:mt-8 hx:text-2xl " href="/posts/aws-systems-manager/">Using AWS Systems Manager in a docker image</a></h3>
+            
+            <p class="hx:opacity-80 hx:mt-4 hx:leading-7">What is this?I had issues using AWS Systems Manager in Docker, and I didn’t see any examples of how people use Systems Manager within a Docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, etc. and I didn’t see any examples of how people use Systems Manager within a docker image.
+This is the way I solved it, and yes, it works!</p>
+            <p class="hx:opacity-80 hx:mt-1 hx:leading-7">
+              <a class="hx:text-[color:hsl(var(--primary-hue),100%,50%)] hx:underline hx:underline-offset-2 hx:decoration-from-font" href="/posts/aws-systems-manager/">Read more →</a>
+            </p>
+            <p class="hx:opacity-50 hx:text-sm hx:mt-4 hx:leading-7">March 15, 2025</p>
           </div>
         
           <div class="hx:mb-10">
