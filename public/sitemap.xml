@@ -11,16 +11,28 @@
     <loc>//localhost:1313/posts/openvpndockerubuntu/</loc>
     <lastmod>2025-03-15T11:31:10-04:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/posts/monkeycachesettings/</loc>
+    <lastmod>2025-09-10T10:45:20-04:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/posts/aws-systems-manager/</loc>
     <lastmod>2025-03-15T11:30:50-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2025-09-10T10:45:20-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2025-09-10T10:45:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/monkeycachesettings/</loc>
+    <loc>//localhost:1313/tags/monkey-cache/</loc>
     <lastmod>2025-09-10T10:45:20-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/</loc>
+    <lastmod>2025-09-10T10:45:20-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/programming/</loc>
+    <lastmod>2025-09-10T10:45:20-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
     <lastmod>2025-09-10T10:45:20-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/nginxdotnetcore/</loc>
@@ -32,13 +44,7 @@
     <loc>//localhost:1313/categories/blazor/</loc>
     <lastmod>2025-08-30T17:31:31-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
-    <lastmod>2025-08-30T17:31:31-04:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/tags/programming/</loc>
-    <lastmod>2025-08-30T17:31:31-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
     <lastmod>2025-08-30T17:31:31-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/california-2025/</loc>
@@ -95,9 +101,6 @@
     <loc>//localhost:1313/categories/tech-guides/</loc>
     <lastmod>2025-03-30T11:56:15-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/semantickernelrag-new/</loc>
-    <lastmod>2025-03-23T16:55:18-04:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/categories/hosting/</loc>
     <lastmod>2025-03-17T00:20:35-04:00</lastmod>
   </url><url>
@@ -150,9 +153,6 @@
     <lastmod>2025-03-15T11:26:12-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/ollamatocs/</loc>
-    <lastmod>2025-03-15T11:26:12-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/programming/</loc>
     <lastmod>2025-03-15T11:26:12-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/ai/</loc>

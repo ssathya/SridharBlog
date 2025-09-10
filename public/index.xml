@@ -618,92 +618,6 @@ Finally, start the Open VPN server:&lt;/p&gt;
     </item>
     
     <item>
-      <title>Using AWS Systems Manager in a docker image</title>
-      <link>//localhost:1313/posts/aws-systems-manager/</link>
-      <pubDate>Sat, 15 Mar 2025 11:30:50 -0400</pubDate>
-      
-      <guid>//localhost:1313/posts/aws-systems-manager/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;What is this?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;what-is-this&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#what-is-this&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I had issues using AWS Systems Manager in Docker, and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a Docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID,  AWS_SECRET_ACCESS_KEY, etc. and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a docker image.&lt;/p&gt;
-&lt;p&gt;This is the way I solved it, and yes, it works!&lt;/p&gt;
-&lt;h2&gt;Sample code&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sample-code&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#sample-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Amazon.Extensions.NETCore.Setup;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Amazon.Runtime;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.Extensions.Configuration;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.Extensions.DependencyInjection;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; CloudConsole.Services;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ServiceBuilder&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IConfiguration? Configuration;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IServiceCollection ConfigureServices(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; applicationName)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        IServiceCollection services = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; ServiceCollection();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Configuration = BuildConfiguration(applicationName);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        services.AddSingleton(Configuration);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; services;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IConfiguration BuildConfiguration(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; applicationName)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; allEnvVariables = Environment.GetEnvironmentVariables();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//var region = allEnvVariables[&amp;#34;AWS_DEFAULT_REGION&amp;#34;]?.ToString() ?? string.Empty;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; accessKey = allEnvVariables[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AWS_ACCESS_KEY_ID&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Empty;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; secretKey = allEnvVariables[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AWS_SECRET_ACCESS_KEY&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Empty;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; awsCredentials = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; BasicAWSCredentials(accessKey, secretKey);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        AWSOptions aWSOptions = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Region = Amazon.RegionEndpoint.USEast1,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Credentials = awsCredentials
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        IConfigurationBuilder builder = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; ConfigurationBuilder();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        builder.SetBasePath(Directory.GetCurrentDirectory())
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddJsonFile(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;appsettings.json&amp;#34;&lt;/span&gt;, optional: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddJsonFile(&lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#34;appsettings.{Environment.GetEnvironmentVariable(&amp;#34;&lt;/span&gt;ASPNETCORE_ENVIRONMENT&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;) ?? &amp;#34;&lt;/span&gt;Production&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;}.json&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                , optional: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddEnvironmentVariables()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddSystemsManager(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;/&amp;#34;&lt;/span&gt; + applicationName + &lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;/&amp;#34;&lt;/span&gt;, aWSOptions, TimeSpan.FromMinutes(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddSystemsManager(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;/PortfolioManager/&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;, aWSOptions);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Configuration = builder.Build();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; Configuration;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Create an AWSOptions instance and use this instance when you call AddSystemsManager.&lt;/p&gt;
-&lt;p&gt;And when I run my image I issue the following command:&lt;/p&gt;
-&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name test_container1 -e AWS_ACCESS_KEY_ID&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;AccessKey -e AWS_SECRET_ACCESS_KEY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;SecretKey test_image3&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Monkey Cache Settings</title>
       <link>//localhost:1313/posts/monkeycachesettings/</link>
       <pubDate>Wed, 10 Sep 2025 10:45:20 -0400</pubDate>
@@ -989,6 +903,92 @@ Finally, start the Open VPN server:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Let&amp;rsquo;s not go over the details of what this code does, but I can confirm it works. If you&amp;rsquo;re interested, feel free to use it.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Using AWS Systems Manager in a docker image</title>
+      <link>//localhost:1313/posts/aws-systems-manager/</link>
+      <pubDate>Sat, 15 Mar 2025 11:30:50 -0400</pubDate>
+      
+      <guid>//localhost:1313/posts/aws-systems-manager/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;What is this?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;what-is-this&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-this&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I had issues using AWS Systems Manager in Docker, and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a Docker container; I wanted to pass my login credentials via environment variables. Systems Manager does not use environment variables like AWS_ACCESS_KEY_ID,  AWS_SECRET_ACCESS_KEY, etc. and I didn&amp;rsquo;t see any examples of how people use Systems Manager within a docker image.&lt;/p&gt;
+&lt;p&gt;This is the way I solved it, and yes, it works!&lt;/p&gt;
+&lt;h2&gt;Sample code&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sample-code&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sample-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Amazon.Extensions.NETCore.Setup;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Amazon.Runtime;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.Extensions.Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.Extensions.DependencyInjection;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; CloudConsole.Services;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ServiceBuilder&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IConfiguration? Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IServiceCollection ConfigureServices(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; applicationName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        IServiceCollection services = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; ServiceCollection();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Configuration = BuildConfiguration(applicationName);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        services.AddSingleton(Configuration);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; services;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; IConfiguration BuildConfiguration(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; applicationName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; allEnvVariables = Environment.GetEnvironmentVariables();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//var region = allEnvVariables[&amp;#34;AWS_DEFAULT_REGION&amp;#34;]?.ToString() ?? string.Empty;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; accessKey = allEnvVariables[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AWS_ACCESS_KEY_ID&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; secretKey = allEnvVariables[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AWS_SECRET_ACCESS_KEY&amp;#34;&lt;/span&gt;]?.ToString() ?? &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Empty;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; awsCredentials = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; BasicAWSCredentials(accessKey, secretKey);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        AWSOptions aWSOptions = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Region = Amazon.RegionEndpoint.USEast1,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Credentials = awsCredentials
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        IConfigurationBuilder builder = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; ConfigurationBuilder();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        builder.SetBasePath(Directory.GetCurrentDirectory())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddJsonFile(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;appsettings.json&amp;#34;&lt;/span&gt;, optional: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddJsonFile(&lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#34;appsettings.{Environment.GetEnvironmentVariable(&amp;#34;&lt;/span&gt;ASPNETCORE_ENVIRONMENT&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;) ?? &amp;#34;&lt;/span&gt;Production&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;}.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                , optional: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, reloadOnChange: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddEnvironmentVariables()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddSystemsManager(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;/&amp;#34;&lt;/span&gt; + applicationName + &lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;/&amp;#34;&lt;/span&gt;, aWSOptions, TimeSpan.FromMinutes(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .AddSystemsManager(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;/PortfolioManager/&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;, aWSOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Configuration = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; Configuration;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Create an AWSOptions instance and use this instance when you call AddSystemsManager.&lt;/p&gt;
+&lt;p&gt;And when I run my image I issue the following command:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --name test_container1 -e AWS_ACCESS_KEY_ID&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;AccessKey -e AWS_SECRET_ACCESS_KEY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;SecretKey test_image3&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
       </description>
     </item>
@@ -1673,48 +1673,6 @@ Controlling the Hisense freezer/refrigerator involves understanding the standby 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Ollama should be accessible from a remote machine.  &lt;strong&gt;If not, update this document after you resolve the issue 😔.&lt;/strong&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Semantic Kernel with RAG</title>
-      <link>//localhost:1313/posts/semantickernelrag-new/</link>
-      <pubDate>Sun, 23 Mar 2025 16:55:18 -0400</pubDate>
-      
-      <guid>//localhost:1313/posts/semantickernelrag-new/</guid>
-      <description>
-        
-        
-        &lt;h1&gt;Semantic Kernel with RAG revisited!&lt;/h1&gt;&lt;h2&gt;What is RAG, and why do we need it?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;what-is-rag-and-why-do-we-need-it&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#what-is-rag-and-why-do-we-need-it&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Semantic Kernel finds data in a model, and these models have the underlying data that is presented to the user. But how about your own data? For example, you might have a database of your eating habits. You get on your weigh scale and see that there has been a significant swing in your weight during the last week. A possible interaction could be if you could ask your chat application, which is integrated with the Semantic Kernel and RAG, what I had during the past week. Wouldn&amp;rsquo;t it be wonderful if it would give you the answer? And the answer is yes, it can, and we&amp;rsquo;ll work on an example that does something similar.&lt;/p&gt;
-&lt;p&gt;We will build an application that uses Semantic Kernel. It loads your own data (e.g., a PDF, text, or other file) and performs natural language Q&amp;amp;A over it using these tools.&lt;/p&gt;
-&lt;p&gt;Before we roll up our sleeves, let us first answer the question: What is RAG? RAG stands for Retriever Augmented Generation. RAG does the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Retriever:&lt;/strong&gt; A system/component to fetch relevant documents or data from an extensive collection (e.g., expense records).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A Language Model:&lt;/strong&gt; A large language model (LLM) that can generate natural language responses based on prompts and retrieved context.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When you ask a question, RAG retrieves relevant snippets or documents from your dataset and uses them to group the LLM&amp;rsquo;s response. This helps the AI give more accurate context-aware answers by focusing on the information you provide.&lt;/p&gt;
-&lt;h2&gt;Use Cases for RAG&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;use-cases-for-rag&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#use-cases-for-rag&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Customer Support: RAG can improve chatbots by retrieving relevant information from knowledge bases, FAQs, or customer records to provide accurate and contextually relevant responses.&lt;/li&gt;
-&lt;li&gt;Healthcare Applications: In medical chatbots, RAG can retrieve information from electronic health records and medical databases to assist in clinical decision-making.&lt;/li&gt;
-&lt;li&gt;E-commerce Support: RAG-powered chatbots can retrieve data from store inventories and order histories to help customers with product recommendations, order tracking, and troubleshooting.&lt;/li&gt;
-&lt;li&gt;News&lt;/li&gt;
-&lt;li&gt;Personal Knowledge Management: By pulling user-specific data, RAG can generate tailored responses, making interactions more relevant and engaging.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;NEWS&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;news&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#news&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This is my personal interest, so I am pointing out some interesting facts.&lt;/p&gt;
-&lt;p&gt;Retrieval-augmented generation (RAG) can fetch the latest news. By integrating RAG with reliable news APIs or databases, a chat application can retrieve up-to-date information and generate contextually relevant summaries or responses.&lt;/p&gt;
-&lt;p&gt;Some news sources do offer free access to their content through APIs, though there are often limitations on usage. Here are a few options for free news APIs:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Newsdata.io:&lt;/strong&gt; This API provides access to news articles from over 80,000 sources worldwide. It allows filtering by keywords, countries, languages, and categories. The free tier offers limited API calls.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NewsAPI.org:&lt;/strong&gt; While its free tier has been deprecated, it previously allowed access to top headlines and articles from various sources. You might still find limited free access depending on your use case.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;GNews API:&lt;/strong&gt; Offers free access to global news articles with filtering options for language, country, and topic. It’s a good choice for lightweight applications.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;The Guardian API:&lt;/strong&gt; Provides free access to its content, categorized by tags and sections. It’s a great option for developers looking for high-quality journalism.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Currents API:&lt;/strong&gt; This API aggregates news from various sources, blogs, and forums. It offers a free tier with limited API calls.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Look at &lt;a href=&#34;https://publicapis.dev/category/news&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Public APIs developer&amp;rsquo;s portal&lt;/a&gt; or &lt;a href=&#34;https://github.com/free-news-api/news-api&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this GitHub page&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
