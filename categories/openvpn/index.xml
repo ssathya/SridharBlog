@@ -178,4 +178,29 @@ title="Copy code"
 &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;All done; check if you can use the VPN server!&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;All done; check if you can use the VPN server!&lt;/p&gt;
+&lt;h3&gt;Windows Machine&lt;span class="hx:absolute hx:-mt-20" id="windows-machine"&gt;&lt;/span&gt;
+&lt;a href="#windows-machine" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your router supports IPV6, you need to do one more setup. Your VPN will mask your IPV4 but not IPV6. Further browsers like Microsoft Edge happily share your location, and hence, in short, &amp;ldquo;Operation successful patient died&amp;rdquo;!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;How do we address this issue?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Run the following command on your Windows machine:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ncpa.cpl&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This opens the classic Network Connections window directly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From there, right-click your active adapter-&amp;gt;Properties-&amp;gt;Uncheck IPv6 and click OK.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use a privacy-focused browser like Brave and ensure your IP address and location are masked.&lt;/p&gt;
+&lt;p&gt;Once you disconnect from your VPN, turn on IPv6!&lt;/p&gt;</description></item></channel></rss>
