@@ -5,7 +5,7 @@
     <description>Recent content in Hello &amp; Welcome! on Sridhar&#39;s Blog!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Sep 2025 10:45:20 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 28 Oct 2025 21:04:18 -0400</lastBuildDate>
     
 	  <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -613,6 +613,32 @@ Finally, start the Open VPN server:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;All done; check if you can use the VPN server!&lt;/p&gt;
+&lt;h3&gt;Windows Machine&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;windows-machine&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#windows-machine&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If your router supports IPV6, you need to do one more setup. Your VPN will mask your IPV4 but not IPV6. Further browsers like Microsoft Edge happily share your location, and hence, in short, &amp;ldquo;Operation successful patient died&amp;rdquo;!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;How do we address this issue?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Run the following command on your Windows machine:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ncpa.cpl&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This opens the classic Network Connections window directly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From there, right-click your active adapter-&amp;gt;Properties-&amp;gt;Uncheck IPv6 and click OK.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use a privacy-focused browser like Brave and ensure your IP address and location are masked.&lt;/p&gt;
+&lt;p&gt;Once you disconnect from your VPN, turn on IPv6!&lt;/p&gt;
 
       </description>
     </item>
@@ -989,6 +1015,173 @@ Finally, start the Open VPN server:&lt;/p&gt;
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Where Art Meets Devotion: Exploring Kolkata`s Pandals</title>
+      <link>//localhost:1313/posts/kolkata/</link>
+      <pubDate>Tue, 28 Oct 2025 21:04:18 -0400</pubDate>
+      
+      <guid>//localhost:1313/posts/kolkata/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Durga Puja 2025: A Kaleidoscope of Creativity in Kolkata&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;durga-puja-2025-a-kaleidoscope-of-creativity-in-kolkata&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#durga-puja-2025-a-kaleidoscope-of-creativity-in-kolkata&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Introduction&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;introduction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#introduction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Veena and I found ourselves in India during Durga Pooja, a perfect opportunity to revisit Kolkata, a city close to my heart. I was excited to witness every street transformed into an open gallery, a blend of creativity and tradition. This post is a visual journey, so I&amp;rsquo;ll let my pictures tell the story!&lt;/p&gt;
+&lt;h2&gt;Start&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;start&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#start&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Kolkata is in West Bengal, and whenever I think about West Bengal, the first thing that flashes in my head is:
+&lt;img src=&#34;https://i.postimg.cc/8CNw8d71/PXL-20250930-170537992.jpg&#34; alt=&#34;Kolkata Tea&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;After a hiatus of almost forty years, I was thrilled to return to Kolkata. And the first thing on my agenda? To relish their tea in a traditional clay cup, a taste of nostalgia and a journey of rediscovery!&lt;/p&gt;
+&lt;p&gt;Now that we&amp;rsquo;ve covered that, let&amp;rsquo;s begin exploring the pandals I visited. I&amp;rsquo;ve mentioned the word &amp;lsquo;pandal&amp;rsquo; several times—what does it mean? A pandal is a &lt;strong&gt;temporary structure&lt;/strong&gt; used for festivals, religious ceremonies, or social events.  It is a temporary structure, usually in place for about a month. &lt;strong&gt;All structures and deities you see below don&amp;rsquo;t exist when you read this.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Pandals&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pandals&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pandals&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let us start our picture journey:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Location&lt;/th&gt;
+          &lt;th&gt;Picture&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Lake Town&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/kVVKcgfX&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34; src=&#34;https://i.postimg.cc/bvggqGnb/PXL-20251001-043646570.jpg&#34; alt=&#34;PXL-20251001-043646570&#34; &gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Lake Town&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/5HHL32nJ&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34; src=&#34;https://i.postimg.cc/7L99qCz5/PXL-20251001-043845310.jpg&#34; alt=&#34;PXL-20251001-043845310&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dum Dum Park&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/PLLY452Y&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34; src=&#34;https://i.postimg.cc/QMmmjB74/PXL-20251001-050024742.jpg&#34; alt=&#34;PXL-20251001-050024742&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dum Dum Park&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/TKNngDqx&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34; src=&#34;https://i.postimg.cc/bvpLX0ZZ/PXL-20251001-050359966-NIGHT.jpg&#34; alt=&#34;PXL-20251001-050359966-NIGHT&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dum Dum Tarun Dal&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/WDDgn1X2&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/BvppJ8F1/PXL-20251001-051536945.jpg&#34; alt=&#34;PXL-20251001-051536945&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dum Dum Tarun Dal&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/ZWs6pdPD&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/g0m49yxd/PXL-20251001-051720198.jpg&#34; alt=&#34;PXL-20251001-051720198&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dum Dum Tarun Dal&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/gww8D2Nx&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/k5ss7VSv/PXL-20251001-052745897.jpg&#34; alt=&#34;PXL-20251001-052745897&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arjurpur Amara sabai club&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/d7zdScxG&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/bJvTrz0V/PXL-20251001-054109945.jpg&#34; alt=&#34;PXL-20251001-054109945&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arjurpur Amara sabai club&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/bGGkTw3t&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/hGssKJmp/PXL-20251001-054216861.jpg&#34; alt=&#34;PXL-20251001-054216861&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;New Town mela ground&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/mhwkpGHj&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34; src=&#34;https://i.postimg.cc/02gSQk5T/New-Town-Front.jpg&#34; alt=&#34;New-Town-Front&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;New Town mela ground&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/R3jfbxDX&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/265wyzFR/PXL-20251001-064100063-PANO.jpg&#34; alt=&#34;PXL-20251001-064100063-PANO&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div style=&#39;text-align: justify;&#39;&gt;
+I have quite a collection of images to share from this experience, but I want to focus only a little on Location 5. This particular place stood out as one of the most beautifully constructed and thoughtfully designed areas I have ever seen. The atmosphere there was absolutely electric, charged with an energy that was almost palpable. As I stepped inside, I was immediately captivated by the stunning mirrors that seemed to multiply the space endlessly, creating a mesmerizing effect. The lighting was specially curated to enhance the ambiance, casting a warm, inviting glow that complemented the lively music playing in the background. Every element in this place combined to create an environment that was vibrant, exciting, and unforgettable. Words truly can&#39;t do justice to the sheer sense of wonder and exhilaration I felt in that moment!
+&lt;/div&gt;
+&lt;p&gt;Back to pictures.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Location&lt;/th&gt;
+          &lt;th&gt;Picture&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake IB Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/Vd5nBBg5&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/xT35Q6bG/PXL-20251001-071610755-PANO.jpg&#34; alt=&#34;PXL-20251001-071610755-PANO&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake IB Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/QV8pVrW5&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/WprSWNN9/PXL-20251001-071834842-PANO.jpg&#34; alt=&#34;PXL-20251001-071834842-PANO&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake IB Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/1V36dpZt&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/7hgVfVsg/PXL-20251001-071351515-2.jpg&#34; alt=&#34;PXL-20251001-071351515-2&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake EC Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/V0kMhjc0&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/NF1454JD/PXL-20251001-075646988.jpg&#34; alt=&#34;PXL-20251001-075646988&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake EC Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/K38LWnyL&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/zvnjVjtd/PXL-20251001-075749505-MP.jpg&#34; alt=&#34;PXL-20251001-075749505-MP&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake EC Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/8sphsVrr&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/Dfs5jvv5/PXL-20251001-082106306-MP.jpg&#34; alt=&#34;PXL-20251001-082106306-MP&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The locations tend to be crowded in the evenings and into the night, while they are generally easier to access before noon. However, we chose to visit some sites after sunset. Below are some of the photographs we took following sunset.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Location&lt;/th&gt;
+          &lt;th&gt;Picture&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake FD Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/tYfPrZv7&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg&#34; alt=&#34;PXL-20251002-143013450&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake FD Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/xqfKqSbz&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/05mZWkkc/PXL-20251002-142633882.jpg&#34; alt=&#34;PXL-20251002-142633882&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake FD Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/ctLYzQNM&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/HnQ2V2ZK/PXL-20251002-142137676.jpg&#34; alt=&#34;PXL-20251002-142137676&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Salt Lake FD Block&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/BXtHccp9&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/TYJ0xtWw/PXL-20251002-130638498.jpg&#34; alt=&#34;PXL-20251002-130638498&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Bakul Bagan&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/tYfPrZv7&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg&#34; alt=&#34;PXL-20251002-143013450&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Bakul Bagan&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/ppyzYYZg&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/ZKxHmwyK/PXL-20251002-143153406-MP.jpg&#34; alt=&#34;PXL-20251002-143153406-MP&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;North Park&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/jCMy7kzB&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/15QBbk4R/PXL-20251002-143804175-MP.jpg&#34; alt=&#34;PXL-20251002-143804175-MP&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;North Park&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/Tphgqq0T&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/zXF7NxRH/PXL-20251002-144018656-MP.jpg&#34; alt=&#34;PXL-20251002-144018656-MP&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;North Park&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/RN8fP6pt&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/sgfcg5pT/PXL-20251002-144140778-PANO.jpg&#34; alt=&#34;PXL-20251002-144140778-PANO&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mahanayak UTtam&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://postimg.cc/yk59fgp9&#34; target=&#34;_blank&#34;&gt;&lt;img style=&#34;max-width: 500px; max-height: 300px;&#34;  src=&#34;https://i.postimg.cc/cL1mLfQD/PXL-20251002-153027733-PANO.jpg&#34; alt=&#34;PXL-20251002-153027733-PANO&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.&lt;/p&gt;
 
       </description>
     </item>
@@ -1673,6 +1866,48 @@ Controlling the Hisense freezer/refrigerator involves understanding the standby 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Ollama should be accessible from a remote machine.  &lt;strong&gt;If not, update this document after you resolve the issue 😔.&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Semantic Kernel with RAG</title>
+      <link>//localhost:1313/posts/semantickernelrag-new/</link>
+      <pubDate>Sun, 23 Mar 2025 16:55:18 -0400</pubDate>
+      
+      <guid>//localhost:1313/posts/semantickernelrag-new/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Semantic Kernel with RAG revisited!&lt;/h1&gt;&lt;h2&gt;What is RAG, and why do we need it?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;what-is-rag-and-why-do-we-need-it&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-rag-and-why-do-we-need-it&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Semantic Kernel finds data in a model, and these models have the underlying data that is presented to the user. But how about your own data? For example, you might have a database of your eating habits. You get on your weigh scale and see that there has been a significant swing in your weight during the last week. A possible interaction could be if you could ask your chat application, which is integrated with the Semantic Kernel and RAG, what I had during the past week. Wouldn&amp;rsquo;t it be wonderful if it would give you the answer? And the answer is yes, it can, and we&amp;rsquo;ll work on an example that does something similar.&lt;/p&gt;
+&lt;p&gt;We will build an application that uses Semantic Kernel. It loads your own data (e.g., a PDF, text, or other file) and performs natural language Q&amp;amp;A over it using these tools.&lt;/p&gt;
+&lt;p&gt;Before we roll up our sleeves, let us first answer the question: What is RAG? RAG stands for Retriever Augmented Generation. RAG does the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Retriever:&lt;/strong&gt; A system/component to fetch relevant documents or data from an extensive collection (e.g., expense records).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Language Model:&lt;/strong&gt; A large language model (LLM) that can generate natural language responses based on prompts and retrieved context.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you ask a question, RAG retrieves relevant snippets or documents from your dataset and uses them to group the LLM&amp;rsquo;s response. This helps the AI give more accurate context-aware answers by focusing on the information you provide.&lt;/p&gt;
+&lt;h2&gt;Use Cases for RAG&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;use-cases-for-rag&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#use-cases-for-rag&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Customer Support: RAG can improve chatbots by retrieving relevant information from knowledge bases, FAQs, or customer records to provide accurate and contextually relevant responses.&lt;/li&gt;
+&lt;li&gt;Healthcare Applications: In medical chatbots, RAG can retrieve information from electronic health records and medical databases to assist in clinical decision-making.&lt;/li&gt;
+&lt;li&gt;E-commerce Support: RAG-powered chatbots can retrieve data from store inventories and order histories to help customers with product recommendations, order tracking, and troubleshooting.&lt;/li&gt;
+&lt;li&gt;News&lt;/li&gt;
+&lt;li&gt;Personal Knowledge Management: By pulling user-specific data, RAG can generate tailored responses, making interactions more relevant and engaging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;NEWS&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;news&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#news&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This is my personal interest, so I am pointing out some interesting facts.&lt;/p&gt;
+&lt;p&gt;Retrieval-augmented generation (RAG) can fetch the latest news. By integrating RAG with reliable news APIs or databases, a chat application can retrieve up-to-date information and generate contextually relevant summaries or responses.&lt;/p&gt;
+&lt;p&gt;Some news sources do offer free access to their content through APIs, though there are often limitations on usage. Here are a few options for free news APIs:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Newsdata.io:&lt;/strong&gt; This API provides access to news articles from over 80,000 sources worldwide. It allows filtering by keywords, countries, languages, and categories. The free tier offers limited API calls.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NewsAPI.org:&lt;/strong&gt; While its free tier has been deprecated, it previously allowed access to top headlines and articles from various sources. You might still find limited free access depending on your use case.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GNews API:&lt;/strong&gt; Offers free access to global news articles with filtering options for language, country, and topic. It’s a good choice for lightweight applications.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Guardian API:&lt;/strong&gt; Provides free access to its content, categorized by tags and sections. It’s a great option for developers looking for high-quality journalism.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Currents API:&lt;/strong&gt; This API aggregates news from various sources, blogs, and forums. It offers a free tier with limited API calls.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Look at &lt;a href=&#34;https://publicapis.dev/category/news&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Public APIs developer&amp;rsquo;s portal&lt;/a&gt; or &lt;a href=&#34;https://github.com/free-news-api/news-api&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this GitHub page&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
