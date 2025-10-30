@@ -1,8 +1,10 @@
 +++
 date = '2025-10-28T21:04:18-04:00'
-draft = true
+draft = false
 title = 'Where Art Meets Devotion: Exploring Kolkata`s Pandals'
 weight = 5
+tags = ['Photography Inspiration', 'Kolkata']
+categories = ['Travel', 'India']
 +++
 
 ## Durga Puja 2025: A Kaleidoscope of Creativity in Kolkata
@@ -21,7 +23,7 @@ After a hiatus of almost forty years, I was thrilled to return to Kolkata. And t
 Now that we've covered that, let's begin exploring the pandals I visited. I've mentioned the word 'pandal' several times—what does it mean? A pandal is a **temporary structure** used for festivals, religious ceremonies, or social events.  It is a temporary structure, usually in place for about a month. **All structures and deities you see below don't exist when you read this.**
 
 ## Pandals
-
+ 
 Let us start our picture journey:
 | Location      | Picture       |
 |----------------|----------------|
