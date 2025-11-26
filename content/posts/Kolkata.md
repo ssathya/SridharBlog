@@ -23,7 +23,7 @@ After a hiatus of almost forty years, I was thrilled to return to Kolkata. And t
 Now that we've covered that, let's begin exploring the pandals I visited. I've mentioned the word 'pandal' several times—what does it mean? A pandal is a **temporary structure** used for festivals, religious ceremonies, or social events.  It is a temporary structure, usually in place for about a month. **All structures and deities you see below don't exist when you read this.**
 
 ## Pandals
- 
+
 Let us start our picture journey:
 | Location      | Picture       |
 |----------------|----------------|
@@ -45,30 +45,28 @@ I have quite a collection of images to share from this experience, but I want to
 
 Back to pictures.
 
-| Location | Picture |
-|--|--|
+| Location           | Picture                                                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Salt Lake IB Block | <a href="https://postimg.cc/Vd5nBBg5" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/xT35Q6bG/PXL-20251001-071610755-PANO.jpg" alt="PXL-20251001-071610755-PANO"></a> |
 | Salt Lake IB Block | <a href="https://postimg.cc/QV8pVrW5" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/WprSWNN9/PXL-20251001-071834842-PANO.jpg" alt="PXL-20251001-071834842-PANO"></a> |
-| Salt Lake IB Block | <a href="https://postimg.cc/1V36dpZt" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/7hgVfVsg/PXL-20251001-071351515-2.jpg" alt="PXL-20251001-071351515-2"></a> |
-| Salt Lake EC Block | <a href="https://postimg.cc/V0kMhjc0" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/NF1454JD/PXL-20251001-075646988.jpg" alt="PXL-20251001-075646988"></a> |
-| Salt Lake EC Block | <a href="https://postimg.cc/K38LWnyL" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/zvnjVjtd/PXL-20251001-075749505-MP.jpg" alt="PXL-20251001-075749505-MP"></a> |
-| Salt Lake EC Block | <a href="https://postimg.cc/8sphsVrr" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Dfs5jvv5/PXL-20251001-082106306-MP.jpg" alt="PXL-20251001-082106306-MP"></a> |
-
+| Salt Lake IB Block | <a href="https://postimg.cc/1V36dpZt" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/7hgVfVsg/PXL-20251001-071351515-2.jpg" alt="PXL-20251001-071351515-2"></a>       |
+| Salt Lake EC Block | <a href="https://postimg.cc/V0kMhjc0" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/NF1454JD/PXL-20251001-075646988.jpg" alt="PXL-20251001-075646988"></a>           |
+| Salt Lake EC Block | <a href="https://postimg.cc/K38LWnyL" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/zvnjVjtd/PXL-20251001-075749505-MP.jpg" alt="PXL-20251001-075749505-MP"></a>     |
+| Salt Lake EC Block | <a href="https://postimg.cc/8sphsVrr" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Dfs5jvv5/PXL-20251001-082106306-MP.jpg" alt="PXL-20251001-082106306-MP"></a>     |
 
 The locations tend to be crowded in the evenings and into the night, while they are generally easier to access before noon. However, we chose to visit some sites after sunset. Below are some of the photographs we took following sunset.
 
-| Location | Picture |
-|--|--|
-| Salt Lake FD Block | <a href="https://postimg.cc/tYfPrZv7" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg" alt="PXL-20251002-143013450"></a> |
-| Salt Lake FD Block | <a href="https://postimg.cc/xqfKqSbz" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/05mZWkkc/PXL-20251002-142633882.jpg" alt="PXL-20251002-142633882"></a> |
-| Salt Lake FD Block | <a href="https://postimg.cc/ctLYzQNM" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/HnQ2V2ZK/PXL-20251002-142137676.jpg" alt="PXL-20251002-142137676"></a> |
-| Salt Lake FD Block | <a href="https://postimg.cc/BXtHccp9" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/TYJ0xtWw/PXL-20251002-130638498.jpg" alt="PXL-20251002-130638498"></a> |
-| Bakul Bagan | <a href="https://postimg.cc/tYfPrZv7" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg" alt="PXL-20251002-143013450"></a> |
-| Bakul Bagan | <a href="https://postimg.cc/ppyzYYZg" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/ZKxHmwyK/PXL-20251002-143153406-MP.jpg" alt="PXL-20251002-143153406-MP"></a> |
-| North Park | <a href="https://postimg.cc/jCMy7kzB" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/15QBbk4R/PXL-20251002-143804175-MP.jpg" alt="PXL-20251002-143804175-MP"></a> |
-| North Park | <a href="https://postimg.cc/Tphgqq0T" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/zXF7NxRH/PXL-20251002-144018656-MP.jpg" alt="PXL-20251002-144018656-MP"></a> |
-| North Park | <a href="https://postimg.cc/RN8fP6pt" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/sgfcg5pT/PXL-20251002-144140778-PANO.jpg" alt="PXL-20251002-144140778-PANO"></a> |
-| Mahanayak UTtam | <a href="https://postimg.cc/yk59fgp9" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/cL1mLfQD/PXL-20251002-153027733-PANO.jpg" alt="PXL-20251002-153027733-PANO"></a> |
+| Location           | Picture                                                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Salt Lake FD Block | <a href="https://postimg.cc/tYfPrZv7" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg" alt="PXL-20251002-143013450"></a>           |
+| Salt Lake FD Block | <a href="https://postimg.cc/xqfKqSbz" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/05mZWkkc/PXL-20251002-142633882.jpg" alt="PXL-20251002-142633882"></a>           |
+| Salt Lake FD Block | <a href="https://postimg.cc/ctLYzQNM" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/HnQ2V2ZK/PXL-20251002-142137676.jpg" alt="PXL-20251002-142137676"></a>           |
+| Salt Lake FD Block | <a href="https://postimg.cc/BXtHccp9" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/TYJ0xtWw/PXL-20251002-130638498.jpg" alt="PXL-20251002-130638498"></a>           |
+| Bakul Bagan        | <a href="https://postimg.cc/tYfPrZv7" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/Z5Yc56rP/PXL-20251002-143013450.jpg" alt="PXL-20251002-143013450"></a>           |
+| Bakul Bagan        | <a href="https://postimg.cc/ppyzYYZg" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/ZKxHmwyK/PXL-20251002-143153406-MP.jpg" alt="PXL-20251002-143153406-MP"></a>     |
+| North Park         | <a href="https://postimg.cc/jCMy7kzB" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/15QBbk4R/PXL-20251002-143804175-MP.jpg" alt="PXL-20251002-143804175-MP"></a>     |
+| North Park         | <a href="https://postimg.cc/Tphgqq0T" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/zXF7NxRH/PXL-20251002-144018656-MP.jpg" alt="PXL-20251002-144018656-MP"></a>     |
+| North Park         | <a href="https://postimg.cc/RN8fP6pt" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/sgfcg5pT/PXL-20251002-144140778-PANO.jpg" alt="PXL-20251002-144140778-PANO"></a> |
+| Mahanayak UTtam    | <a href="https://postimg.cc/yk59fgp9" target="_blank"><img style="max-width: 500px; max-height: 300px;"  src="https://i.postimg.cc/cL1mLfQD/PXL-20251002-153027733-PANO.jpg" alt="PXL-20251002-153027733-PANO"></a> |
 
 I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.
-
