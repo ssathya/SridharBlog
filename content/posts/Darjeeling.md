@@ -6,7 +6,7 @@ title = 'Darjeeling'
 
 # Visiting Darjeeling after 40 years
 
-A long time ago, when I lived in Salem, India, I often visited Yercaud, a town about 30 minutes away by car. Yercaud was a small town where you could walk everywhere. You didn't need a vehicle to get around. My childhood mind made me think that all hill stations would be just small, sleepy towns with nothing much to do.
+A long time ago, when I lived in Salem, India, I often visited Yercaud, a hill station town about 30 minutes away by car. Yercaud was a small town where you could walk everywhere. You didn't need a vehicle to get around. My childhood mind made me think that all hill stations would be just small, sleepy towns with nothing much to do.
 
 When I was in 10th grade, my school organized a trip to Nepal, and during that visit, we also went to Darjeeling. Darjeeling was a pleasant surprise. I never imagined a hill station could have so many businesses and visitors. 
 
@@ -25,9 +25,9 @@ On our way up the hill, we happened to see one of Darjeeling's main attractions,
 
 It's been over 40 years, and I still fondly remember Darjeeling tea. Over time, I've heard many people praise it as some of the best black tea around, and naturally, the first thing I tried was their tea, which truly lived up to the reputation.
 
-|                   |                                                                                                                                                                                                                            |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Golden yellow tea | <a href="https://postimg.cc/Thy1TQJr" target="_blank"><img style="max-width: 300px; max-height: 400px;" src="https://i.postimg.cc/zD7gScLP/PXL-20251004-120243602-PORTRAIT.jpg" alt="PXL-20251004-120243602-PORTRAIT"></a> |
+|                               |                                                                                                                                                                                                                            |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Golden yellow first-flush tea | <a href="https://postimg.cc/Thy1TQJr" target="_blank"><img style="max-width: 300px; max-height: 400px;" src="https://i.postimg.cc/zD7gScLP/PXL-20251004-120243602-PORTRAIT.jpg" alt="PXL-20251004-120243602-PORTRAIT"></a> |
 
 We arrived in Darjeeling late in the afternoon. After checking into our hotel and having lunch, we strolled to Market Street, the main commercial hub and the popular hangout spot for tourists. If I were to describe it as crowded, that would be an understatement given the sheer number of people there. It was swamped; the only thing visible around us was a sea of heads. We happened to step into Glenary’s, which is a bakery on Market Street. 
 
@@ -56,11 +56,9 @@ I am truly amazed by the reasoning and economics behind running thousands of pip
 
 Let's talk about what makes Darjeeling such a wonderful place to visit. I had a lovely three-night stay there. My room had a window that overlooked a beautiful valley, which was often shrouded in dense fog. It was truly breathtaking to watch the mountains and tea estates gently emerge and disappear as the fog moved. However, on one of the three mornings I was there, I experienced this:
 
-
-
 <a href="https://postimg.cc/Z01Rn3wG" target="_blank"><img style="max-width: 500px; max-height: 300px;" src="https://i.postimg.cc/02NJt0Dy/PXL_20251006_001148419.jpg" alt="PXL_20251006_001148419"></a>
 
-And this!
+These pictures are of Kanchenjunga, also known as Kangchenjunga, which is the third-highest mountain in the world, standing at an elevation of 8,586 meters (28,169 feet). It is located in the eastern Himalayas, straddling the border between India and Nepal.
 
 <a href="https://postimg.cc/5jZ0yvPy" target="_blank"><img style="max-width: 500px; max-height: 300px;" src="https://i.postimg.cc/Nf0rNkm6/PXL_20251006_010147864.jpg" alt="PXL_20251006_010147864"></a>
 
@@ -85,7 +83,5 @@ We did take a ride on the toy train; it is real train that transports people! Ma
 Before we wind up let me mention about Darjeeling momos! Mouth watering!
 
 <a href="https://postimg.cc/1VN3M53j" target="_blank"><img style="max-width: 500px; max-height: 300px;" src="https://i.postimg.cc/hv2QDXWc/PXL_20251004_134732818_PORTRAIT_ORIGINAL.jpg" alt="PXL_20251004_134732818_PORTRAIT_ORIGINAL"></a>
-
-
 
 *See you soon!*
