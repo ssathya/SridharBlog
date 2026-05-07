@@ -2,8 +2,12 @@
 date = '2026-05-01T17:55:57-04:00'
 draft = false
 title = 'Biking'
+weight = 2
+tags = ['biking', 'outdoor']
+categories = ['fun']
 +++
 
+[![Gemini-Generated-Image-9nv3wh9nv3wh9nv3.png](https://i.postimg.cc/LXHSZCCt/Gemini-Generated-Image-9nv3wh9nv3wh9nv3.png)](https://postimg.cc/gwBQCDPj)
 ## About my renewed passion
 
 I used to enjoy biking a lot during my college days, especially until I got a motorcycle. Recently, I've rekindled my love for biking, and it feels so great to reconnect with it! First, let's talk about my equipment. I ride an affordable bike, so I usually go to places nearby where I can bring it. It's an e-bike, which really helps me keep going, even when I feel tired. It's such a joyful way to stay active and enjoy the outdoors! 
