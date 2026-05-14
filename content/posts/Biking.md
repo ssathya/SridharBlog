@@ -34,32 +34,33 @@ In early May 2026, we had an unusually hot day in the mid-northeast USA and took
 
 <a href="https://postimg.cc/87szGTcZ" target="_blank"><img  style="max-width: 500px; max-height: 300px;" src="https://i.postimg.cc/kgv6x4mP/PXL-20260505-131722338.jpg" alt="copilot_image_1759554357169"></a>  
 
-I'll update this document as I explore more trails/routes, but I found the following routes that I'll consider over time.
-| Name | Region | Length | Type | User Comments & Insights |
-| :--- | :--- | :--- | :--- | :--- |
-| Delaware & Raritan (D&R) Canal | Central | ~70 miles | Point-to-Point | Users love the flat, scenic views of the water. It’s a mix of crushed stone and some paved areas. Insight: Great for long, steady endurance rides with historical landmarks along the way. |
-| Columbia Trail | North | ~15 miles | Point-to-Point | Highly recommended for being gorgeous and relatively flat for North Jersey. It runs from High Bridge to Flanders. Insight: This is a rail-trail with a very gentle grade, ideal for those who want a forest feel without steep climbs. |
-| Henry Hudson Trail | Central/North | ~24 miles | Point-to-Point | Often split into a North (shore) and South (woods) leg. Many users highlight the Atlantic Highlands section for bay views. Insight: The northern paved section is excellent for road bikes, though it does have some road crossings. |
-| Loantaka Brook Reservation | North | ~8 miles | Point-to-Point / Loop options | Described as having paved forest trails that are busier near the trailheads but quiet down further south. Insight: Perfect for a quick shake-out ride; the smooth pavement is high-quality. |
-| Saddle River County Park Path | North | ~6 miles | Point-to-Point | A very popular paved route that connects several parks. Users note it can get crowded on weekends with pedestrians. Insight: Features scenic waterfalls and bridges; best for a leisurely pace rather than high-speed training. |
-| Sandy Hook Multi-Use Path | North/Coastal | ~8.5 miles | Loop | Renowned for ocean views and the ability to ride out to the lighthouse. Users mention that parking is free if you tell the gate you are just there to bike. Insight: Expect wind—it can make the ride significantly harder or easier depending on the direction. |
-| Middlesex Greenway | Central | ~3.5 miles | Point-to-Point | A hidden gem that is fully paved and connects Metuchen, Edison, and Woodbridge. Insight: Short but very well-maintained and entirely separated from traffic. |
-| Duke Farms | Central | ~12 miles | Loops | A private estate with a massive network of paved and gravel paths. Users highlight the ability to rent bikes on-site. Insight: A very manicured experience with beautiful gardens and no car traffic at all. |
-| Lawrence-Hopewell Trail (LHT) | Central | ~22 miles | Loop | A community-developed trail that uses a mix of park paths and quiet neighborhood streets. Insight: A fantastic way to see the Mercer County countryside, though it requires following markers closely. |
-| Edgar Felix Bike Path | South/Central | ~5 miles | Point-to-Point | Connects Manasquan to Allaire State Park. It is fully paved and very flat. Insight: This is a great beach-to-woods route; you can bike from the shore right into the state park. |
+### Columbia Trail
 
-I also collected a list of trails to explore from another source. Some of the locations/trails might be repeated.
-| Tour Name | Max Length (mi) | Route Type | Region |
-| :--- | :--- | :--- | :--- |
-| Allamuchy Allegory Ride | 41.2 | Loop | North |
-| Campgaw Caper | 25.4 | Loop | North |
-| Columbia Trail | 15.1 | Point-to-Point | North |
-| D&R Canal Towpath | 12.2 | Point-to-Point | Central |
-| Great Swamp Ride | 24.3 | Loop | North |
-| Greenwood Lake Loop | 16.8 | Loop | North |
-| Jersey City to Hoboken | 14 | Loop | North |
-| Last Covered Bridge Ride | 47.6 | Loop | Central |
-| Old Mine Road Ride | 43.2 | Point-to-Point | North |
-| Round Valley Roundabout | 28.4 | Loop | Central |
-| Shore: Brick to Sandy Hook | 36 | Point-to-Point | Central |
-| Washington Rock & Roll Tour | 22.4 | Loop | North |
+[![PXL-20260513-184338645-2.jpg](https://i.postimg.cc/jj7ZK9HF/PXL-20260513-184338645-2.jpg)](https://postimg.cc/cKdQBF5R)
+
+This time, I didn't complete the entire trail. It's a pretty manageable ride, about 15 miles each way. We chose to split it into two parts, starting with the northern section to make the adventure even more enjoyable. First, we visited a [coffee shop](https://thecoffeepotter.com/) that is across the trail. It's a cozy coffee shop with a wonderful atmosphere.  As shown in the picture, the trail passes through mature deciduous and evergreen forests that form a canopy blocking the sun. We biked south and stopped when we reached farm and pastureland. I'm told the southern part of the trail is more scenic. I need to explore it soon. 
+
+---
+I'll update this document as I explore more trails/routes, but I found the following routes that I'll consider over time.
+| Name | Region | Length | Type | User Comments & Insights | Approx. Driving from Bridgewater |
+| --- | --- | --- | --- | --- | --- |
+| **Allamuchy Allegory Ride** | North | 41.2 miles | Loop | Users describe it as a challenging but rewarding climb with beautiful, rugged lake views through the state park. Insight: Best for experienced riders due to the elevation changes and rocky terrain. | ~45 mins via I-78 W and I-80 W |
+| **Campgaw Caper** | North | 25.4 miles | Loop | Users love the quiet, heavily shaded roads and the peaceful forest setting near the reservation ski area. Insight: Great for a steady, rolling hill workout without heavy vehicle traffic. | ~50 mins via I-287 N |
+| **Columbia Trail** | North | ~15 miles | Point-to-Point | Highly recommended for being gorgeous and relatively flat for North Jersey. It runs from High Bridge to Flanders. Insight: This is a rail-trail with a very gentle grade, ideal for those who want a forest feel without steep climbs. | ~25 mins via I-78 W to High Bridge |
+| **Delaware & Raritan (D&R) Canal** | Central | ~70 miles | Point-to-Point | Users love the flat, scenic views of the water. It’s a mix of crushed stone and some paved areas. Insight: Great for long, steady endurance rides with historical landmarks along the way. | **Local Access** (Bound Brook / East Millstone) |
+| **Duke Farms** | Central | ~12 miles | Loops | A private estate with a massive network of paved and gravel paths. Users highlight the ability to rent bikes on-site. Insight: A very manicured experience with beautiful gardens and no car traffic at all. | ~10–15 mins via US-206 S |
+| **Edgar Felix Bike Path** | South/Central | ~5 miles | Point-to-Point | Connects Manasquan to Allaire State Park. It is fully paved and very flat. Insight: This is a great beach-to-woods route; you can bike from the shore right into the state park. | ~55 mins via I-287 S and GSP S |
+| **Great Swamp Ride** | North | 24.3 miles | Loop | Highly praised for being incredibly flat and peaceful with plenty of wildlife and birdwatching opportunities. Insight: Completely flat and scenic, but keep an eye out for occasional rough patches on the back roads. | ~20 mins via I-287 N |
+| **Greenwood Lake Loop** | North | 16.8 miles | Loop | Users rave about the stunning lakeside vistas and mountain backdrops, though they note some tight road shoulders. Insight: Incredibly beautiful but requires caution on the steep descents and shared-road sections. | ~1 hour via I-287 N |
+| **Henry Hudson Trail** | Central/North | ~24 miles | Point-to-Point | Often split into a North (shore) and South (woods) leg. Many users highlight the Atlantic Highlands section for bay views. Insight: The northern paved section is excellent for road bikes, though it does have some road crossings. | ~40 mins via I-287 S and NJ-34 |
+| **Jersey City to Hoboken** | North | 14 miles | Loop | Users love the unparalleled views of the NYC skyline and the vibrant, bustling waterfront atmosphere. Insight: Fully paved and flat, but best ridden early in the morning to avoid heavy pedestrian crowds on the promenade. | ~50 mins via I-78 E |
+| **Last Covered Bridge Ride** | Central | 47.6 miles | Loop | Highly rated for its peaceful countryside vibe and passing the historic Green Sergeant’s Covered Bridge. Insight: A fantastic endurance ride through rural Hunterdon County with rolling, pastoral terrain. | ~40 mins via US-202 S |
+| **Lawrence-Hopewell Trail (LHT)** | Central | ~22 miles | Loop | A community-developed trail that uses a mix of park paths and quiet neighborhood streets. Insight: A fantastic way to see the Mercer County countryside, though it requires following markers closely. | ~35 mins via US-206 S |
+| **Loantaka Brook Reservation** | North | ~8 miles | Point-to-Point / Loop | Described as having paved forest trails that are busier near the trailheads but quiet down further south. Insight: Perfect for a quick shake-out ride; the smooth pavement is high-quality. | ~25 mins via I-287 N |
+| **Middlesex Greenway** | Central | ~3.5 miles | Point-to-Point | A hidden gem that is fully paved and connects Metuchen, Edison, and Woodbridge. Insight: Short but very well-maintained and entirely separated from traffic. | ~25 mins via I-287 S to Metuchen |
+| **Old Mine Road Ride** | North | 43.2 miles | Point-to-Point | Users mention it feels like stepping back in time with its heavy forest, historic markers, and secluded Delaware River views. Insight: Very remote with spotty cell service; bring extra tubes and water for the older, rougher pavement. | ~1 hour 15 mins via I-80 W |
+| **Round Valley Roundabout** | Central | 28.4 miles | Loop | Users warn that the massive hills surrounding the reservoir are absolutely punishing, but the water views make it worth it. Insight: A high-intensity climbing workout; make sure your brakes and climbing gears are well-tuned. | ~20 mins via I-78 W |
+| **Saddle River County Park Path** | North | ~6 miles | Point-to-Point | A very popular paved route that connects several parks. Users note it can get crowded on weekends with pedestrians. Insight: Features scenic waterfalls and bridges; best for a leisurely pace rather than high-speed training. | ~50 mins via I-287 N |
+| **Sandy Hook Multi-Use Path** | North/Coastal | ~8.5 miles | Loop | Renowned for ocean views and the ability to ride out to the lighthouse. Users mention that parking is free if you tell the gate you are just there to bike. Insight: Expect wind—it can make the ride significantly harder or easier depending on the direction. | ~1 hour via I-287 S and GSP S |
+| **Shore: Brick to Sandy Hook** | Central | 36 miles | Point-to-Point | Users love the classic coastal breeze and passing through a variety of iconic Jersey shore towns. Insight: Completely flat but highly exposed to the elements; always check the ocean wind forecast before heading out. | ~1 hour via GSP S |
+| **Washington Rock & Roll Tour** | North | 22.4 miles | Loop | Users enjoy the historic stop at Washington Rock and the sweeping, panoramic views of the valley below. Insight: Features some punchy climbs along the Watchung ridge that will give your legs a solid workout. | ~15 mins via US-22 E |
