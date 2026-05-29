@@ -40,6 +40,29 @@ In early May 2026, we had an unusually hot day in the mid-northeast USA and took
 
 This time, I didn't complete the entire trail. It's a pretty manageable ride, about 15 miles each way. We chose to split it into two parts, starting with the northern section to make the adventure even more enjoyable. First, we visited a [coffee shop](https://thecoffeepotter.com/) that is across the trail. It's a cozy coffee shop with a wonderful atmosphere.  As shown in the picture, the trail passes through mature deciduous and evergreen forests that form a canopy blocking the sun. We biked south and stopped when we reached farm and pastureland. I'm told the southern part of the trail is more scenic. I need to explore it soon. 
 
+Here is a draft for your blog post about the Atlantic section of the Henry Hudson Trail, incorporating your specific experiences and verified details from other riders.
+
+## 🚴‍♂️ Riding the Henry Hudson Trail: Atlantic Section Review
+
+The Atlantic section of the Henry Hudson Trail offers a unique mix of scenic bay views and urban challenges. Starting your ride at **22 Gerard Avenue** in Aberdeen Township, New Jersey, places you right at a key trailhead near Fireman’s Park (often associated with Oakshades Park), which provides convenient parking and access to the 9.7-mile northernmost segment that runs parallel to Route 36 toward Atlantic Highlands.
+[![PXL-20260522-162814674.jpg](https://i.postimg.cc/FznkLqVc/PXL-20260522-162814674.jpg)](https://postimg.cc/Fk3KtTqs)
+
+### The Ride Experience: Pavement and Roots
+For the majority of the journey, the trail is **flat and paved**, making it accessible for riders of various skill levels. The surface is generally well-maintained as it winds through residential backyards, small business areas, and wooded sections. However, consistent with your experience, many riders note that the **final mile or so** approaching the eastern end can be significantly rougher. In this section, **tree roots** often push up through the asphalt, creating bumps and "toe-clipper" hazards that disrupt an otherwise smooth ride. While the trail is officially asphalt throughout, age and root growth have left parts of the eastern end in need of resurfacing.
+
+### Navigating Road Crossings
+One of the most frequent complaints about this specific section is the **high number of road crossings**. The trail frequently intersects with busy local streets, requiring riders to stop at traffic signals or crosswalks every few blocks. While these measures are designed for safety, they make it difficult to maintain a consistent cadence or speed. Riders often report that traffic does not always yield as expected, turning what should be a leisurely cruise into a stop-and-go workout. This fragmentation is particularly challenging for families with young children or those looking for a continuous aerobic ride.
+
+### Weather Factors: The Sea Breeze
+Because the trail roughly parallels the shoreline and crosses various inlets and marshy areas, it is highly exposed to the elements. The **sea breeze** is a defining characteristic of the ride. On calm days, this provides a refreshing coolness, especially during the for those seeking summer months. However, when the wind is strong, riding **against the breeze** can be physically demanding, turning the flat 10-mile stretch into a grueling leg workout. Conversely, a tailwind can make the return trip exceptionally fast. Riders are advised to check wind conditions before heading out, as the lack of tree cover in certain sections leaves you fully exposed to the coastal winds.
+
+[![PXL-20260522-164339866.jpg](https://i.postimg.cc/d3SZyXjC/PXL-20260522-164339866.jpg)](https://postimg.cc/2Lh5p0Jj)
+
+### Scenic Highlights
+Despite the pavement issues and traffic interruptions, the trail offers rewarding scenery. As you pedal eastward, you will cross wooden bridges over tidal marshes and catch glimpses of **Sandy Hook Bay**. On clear days, the trail affords spectacular views of the **New York City skyline** in the distance, particularly around the 3.3-mile mark from the Matawan/Aberdeen end. The route transitions from industrial and residential zones to more open, scenic wetlands, providing a diverse backdrop that keeps the ride interesting even when the pavement quality dips.
+
+
+
 ---
 I'll update this document as I explore more trails/routes, but I found the following routes that I'll consider over time.
 | Name | Region | Length | Type | User Comments & Insights | Approx. Driving from Bridgewater |
