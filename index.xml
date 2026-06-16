@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2026 17:55:57 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 11 Jun 2026 14:57:05 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
 &lt;h1&gt;Blog Post Creation Workflow&lt;/h1&gt;&lt;p&gt;This document outlines the process for creating new blog posts. It will be updated regularly as new techniques and workflow improvements are implemented.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
@@ -1271,7 +1271,168 @@ I have quite a collection of images to share from this experience, but I want to
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.&lt;/p&gt;</description></item><item><title>Medicare</title><link>https://ssathya.github.io/SridharBlog/posts/medicare/</link><pubDate>Mon, 09 Mar 2026 17:12:49 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/medicare/</guid><description>
+&lt;p&gt;I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.&lt;/p&gt;</description></item><item><title>Gemini CLI Tutorial</title><link>https://ssathya.github.io/SridharBlog/posts/gemini-cli-tutorial/</link><pubDate>Thu, 11 Jun 2026 14:57:05 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/gemini-cli-tutorial/</guid><description>
+&lt;p&gt;This tutorial serves as my personal reference for using the Gemini CLI. I have documented this blog while following this &lt;a href="https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3D1AF5pFGwRTM%26list%3DPL4cUxeGkcC9h-AKdBSCRpqjD3y6T7Xgrb"target="_blank" rel="noopener"&gt;YouTube playlist&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Setup&lt;span class="hx:absolute hx:-mt-20" id="setup"&gt;&lt;/span&gt;
+&lt;a href="#setup" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Installation&lt;span class="hx:absolute hx:-mt-20" id="installation"&gt;&lt;/span&gt;
+&lt;a href="#installation" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To install the Gemini CLI, run the command below in a terminal window. Ensure Node.js is installed on your system.&lt;/p&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;npm install -g @google/gemini-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;After installing the CLI tool, navigate to your project folder. If it is your first time launching the Gemini CLI, it will prompt you to authenticate. To use a different account later, you can run the following command in the CLI:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;/auth&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;We have three options to log in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Using a Google account&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using a Gemini API Key&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using Vertex AI&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Selecting a Google account will redirect you to an authentication page. Alternatively, you can use an API key, available from Google AI Studio. This document does not cover Vertex AI.&lt;/p&gt;
+&lt;p&gt;Using a Google account is straightforward, and for now, we will rely on it. We will discuss the API key shortly. Once authenticated, we can start using the Gemini CLI.&lt;/p&gt;
+&lt;p&gt;If you have already created the project and have some files in the folder, let us start with the following query to our new tool:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tell me about this project&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Given some code and a &lt;code&gt;Readme.md&lt;/code&gt; file, the system reads both files and produces a project summary.&lt;/p&gt;
+&lt;h3&gt;First Use&lt;span class="hx:absolute hx:-mt-20" id="first-use"&gt;&lt;/span&gt;
+&lt;a href="#first-use" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;I prefer using Visual Studio for C# development. However, since Visual Studio lacks extensions for Gemini, I will switch to Visual Studio Code (VS Code) for my development work.&lt;/p&gt;
+&lt;p&gt;Open VS Code, and within its terminal, run the command &lt;code&gt;gemini&lt;/code&gt;. If it is your first time using Gemini, you will be prompted to install a companion extension. Proceed with the installation.&lt;/p&gt;
+&lt;h2&gt;The Gemini.md File&lt;span class="hx:absolute hx:-mt-20" id="the-geminimd-file"&gt;&lt;/span&gt;
+&lt;a href="#the-geminimd-file" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;First, the goal is to create a Gemini markdown file (&lt;code&gt;Gemini.md&lt;/code&gt;) that provides instructions to Gemini about project conventions, packages, libraries, project architecture, and any coding preferences. For instance, it is preferred to avoid bloating the template files.&lt;/p&gt;
+&lt;p&gt;When there is an existing project with added files and code, the Gemini CLI can be used to generate the Gemini file. The CLI searches through the codebase to identify patterns and gather information such as the framework in use, CSS libraries, application structure, overall purpose, and data handling. It then summarizes this information and writes it to the Gemini file. We use the following command to generate the &lt;code&gt;Gemini.md&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;/init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The program reads multiple files and examines the application to generate content for a new Gemini file. However, it has not written the content yet; it only displays a diff showing the proposed changes. In the chat window, it prompts for permission to write this content to the file. By default, whenever the Gemini CLI intends to make file changes or run commands, it will seek user approval beforehand.&lt;/p&gt;
+&lt;p&gt;When prompted, users typically have three options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;Yes, allow once&amp;rdquo;&lt;/strong&gt;: Permits a single write action but prompts again for future changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;Yes, always allow&amp;rdquo;&lt;/strong&gt;: Grants permission for the session without further prompts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Refuse/Modify&lt;/strong&gt;: Users can refuse, suggest modifications to the content, or cancel the operation altogether.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The user prefers to review each change before it is applied and therefore selects &lt;strong&gt;&amp;ldquo;Yes, allow once.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The above command will create a &lt;code&gt;Gemini.md&lt;/code&gt; file based on the project and the &lt;code&gt;Readme.md&lt;/code&gt; file. We can, and most probably have to, add additional instructions. These are the instructions I added to my &lt;code&gt;Gemini.md&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;### Additional Coding Preferences
+- Check whether any NuGet packages can implement the functionality before writing new code.
+- If a service or utility is used in multiple projects, the method should be implemented in the AppCommon project.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;There is one more step in that process: run the command &lt;code&gt;/memory refresh&lt;/code&gt;. This command instructs the Gemini CLI to rescan for any Gemini files since its last scan. After running it, a message should appear indicating that the memory has been refreshed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Additional Gemini files can be created within subdirectories to offer instructions tailored to specific files in that section of the application. For instance, if there are instructions relevant only when creating or editing page components, a new Gemini file could be placed in the &lt;code&gt;pages&lt;/code&gt; folder. When working on files within that folder, the model will follow those specific instructions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Additionally, these files should not be created and then neglected. As the application evolves, changes are made, and various services, preferences, or styles are integrated, the Gemini file should be continuously updated to mirror these developments. Otherwise, the AI model will rely on outdated information about the project.&lt;/p&gt;
+&lt;p&gt;This process is always the first step when working on an existing project. For a new project, the file should still be created, but initially, there will be no data for Gemini to generate content from. In such cases, basic preferences are typically set manually at the start, and then the file is updated progressively as the application develops.&lt;/p&gt;
+&lt;p&gt;A global &lt;code&gt;Gemini.md&lt;/code&gt; file is also possible, but it will not be covered in this document.&lt;/p&gt;
+&lt;h2&gt;Code Changes&lt;span class="hx:absolute hx:-mt-20" id="code-changes"&gt;&lt;/span&gt;
+&lt;a href="#code-changes" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Although Gemini can handle the entire project, we will begin by working on one file at a time. To observe the changes, let us open the specific file where updates will be made.&lt;/p&gt;
+&lt;p&gt;In the Gemini CLI UI, users can enter prompts describing the changes they want to make. Typically, they prepare a markdown document listing all desired modifications, then select each feature and paste the corresponding prompt into the chat window. Editing directly within the prompt window can be a bit tricky, but having the document ready allows users to review their planned changes and ask Gemini to carry out each step individually.&lt;/p&gt;
+&lt;p&gt;The Gemini CLI can also commit our changes to Git.&lt;/p&gt;
+&lt;h2&gt;Commands and Settings&lt;span class="hx:absolute hx:-mt-20" id="commands-and-settings"&gt;&lt;/span&gt;
+&lt;a href="#commands-and-settings" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can get a list of all commands by using the forward slash (&lt;code&gt;/&lt;/code&gt;) character.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We have already discussed the &lt;code&gt;/init&lt;/code&gt; command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;/chat&lt;/code&gt; command is used to manage chat sessions with Gemini. It includes several subcommands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;list&lt;/code&gt;: Displays all previous chat commands.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;save&lt;/code&gt;: Saves the current session with a specified tag (e.g., &lt;code&gt;/chat save &amp;quot;tag name for saving&amp;quot;&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Other useful subcommands include &lt;code&gt;clear&lt;/code&gt;, &lt;code&gt;compress&lt;/code&gt;, &lt;code&gt;auth&lt;/code&gt;, and more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;/model&lt;/code&gt; command allows us to select and switch the model that we want to use with the Gemini CLI.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;/stats model&lt;/code&gt; command provides information about our API usage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;/memory&lt;/code&gt; command was discussed earlier; it includes subcommands such as &lt;code&gt;show&lt;/code&gt;, &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;refresh&lt;/code&gt;, and &lt;code&gt;list&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Context&lt;span class="hx:absolute hx:-mt-20" id="context"&gt;&lt;/span&gt;
+&lt;a href="#context" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This section discusses what context is, how it helps the AI model make decisions, and how to manage context within projects.&lt;/p&gt;
+&lt;p&gt;Context is used to inform Gemini about what is expected. For instance, if there is a need to change the font size in the file &lt;code&gt;Index.html&lt;/code&gt;, one might specify:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Please increase the font size of paragraph text in &lt;code&gt;@Index.html&lt;/code&gt;.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This instructs Gemini to limit the changes exclusively to &lt;code&gt;Index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Adding an API Key&lt;span class="hx:absolute hx:-mt-20" id="adding-an-api-key"&gt;&lt;/span&gt;
+&lt;a href="#adding-an-api-key" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Obtain an API key from &lt;a href="https://www.google.com/search?q=https://aistudio.google.com/"target="_blank" rel="noopener"&gt;Google AI Studio&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the &lt;code&gt;/auth&lt;/code&gt; command in your terminal.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter your authentication key (API Key).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ensure that the model in use matches the one selected in AI Studio; if not, access the settings and enable preview features.&lt;/p&gt;</description></item><item><title>Medicare</title><link>https://ssathya.github.io/SridharBlog/posts/medicare/</link><pubDate>Mon, 09 Mar 2026 17:12:49 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/medicare/</guid><description>
 &lt;p&gt;Medicare is the federal health insurance program for people who are 65+ or younger people with disabilities. It is divided into four parts:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
