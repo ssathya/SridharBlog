@@ -1,6 +1,6 @@
 +++
 date = '2026-06-26T13:56:53-04:00'
-draft = true
+draft = false
 title = 'Astro Photography The Beginning '
 +++
 
