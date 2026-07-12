@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 26 Jun 2026 13:56:53 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 12 Jul 2026 17:43:49 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
 &lt;h1&gt;Blog Post Creation Workflow&lt;/h1&gt;&lt;p&gt;This document outlines the process for creating new blog posts. It will be updated regularly as new techniques and workflow improvements are implemented.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
@@ -116,7 +116,79 @@ title="Copy code"
 &lt;li&gt;The changes will be automatically deployed to the Azure static website.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Biking</title><link>https://ssathya.github.io/SridharBlog/posts/biking/</link><pubDate>Fri, 01 May 2026 17:55:57 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/biking/</guid><description>
+&lt;/ol&gt;</description></item><item><title>Stacking Time For SeeStar S30 Pro</title><link>https://ssathya.github.io/SridharBlog/posts/exposure_time_s30/</link><pubDate>Sun, 12 Jul 2026 17:43:49 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/exposure_time_s30/</guid><description>
+&lt;p&gt;If you&amp;rsquo;re getting started with deep-sky astrophotography using the SeeStar S30 Pro, understanding how to stack your images is a key step. This quick reference isn&amp;rsquo;t a strict rule, but rather a helpful starting point to guide you in determining the appropriate stacking time for your exposures. As with many aspects of astrophotography, experience is your best guide—over time, you&amp;rsquo;ll learn whether to increase or decrease your stacking duration based on your results. Remember, each camera-and-telescope setup can behave differently, so don&amp;rsquo;t hesitate to experiment. The goal is to find the optimal balance that captures the faint details of your celestial targets without overexposure or excessive noise. As you become more familiar with your equipment and your specific imaging conditions, you&amp;rsquo;ll develop your own instincts for how long to stack. Keep practicing, stay patient, and enjoy the journey of capturing the beauty of the night sky.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Target Type&lt;/th&gt;
+&lt;th&gt;Ideal Integration Time&lt;/th&gt;
+&lt;th&gt;Filter Recommendation&lt;/th&gt;
+&lt;th&gt;Key Targets for S30 Pro&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Large Emission Nebula&lt;/td&gt;
+&lt;td&gt;30-90 minutes&lt;/td&gt;
+&lt;td&gt;LP filter ON&lt;/td&gt;
+&lt;td&gt;Orion(M42), Lagoon(M8), Eagle(M16), Omega(M17)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Planetary Nebula&lt;/td&gt;
+&lt;td&gt;45-120 minutes&lt;/td&gt;
+&lt;td&gt;LP filter ON&lt;/td&gt;
+&lt;td&gt;Ring(M57), Dumbbell(M27), Blinking(NGC 6826)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spiral Galaxy&lt;/td&gt;
+&lt;td&gt;60-180 minutes&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;Whirlpool (M51), Bode&amp;rsquo;s (M81), Pinwheel (M101)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Elliptical Galaxy&lt;/td&gt;
+&lt;td&gt;60-120 minutes&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;Sombrero(M104), M87 in theVirgo Cluster.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Open Star Cluster&lt;/td&gt;
+&lt;td&gt;15-30 minutes&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;Pleiades (M45), Double Cluster (NGC 869/884)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Globular Cluster&lt;/td&gt;
+&lt;td&gt;20-45 minute&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;M13 Hercules, M22 Sagittarius, Omega Centauri&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reflection Nebula&lt;/td&gt;
+&lt;td&gt;90-180 minutes&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;Pleiades nebulosity, Witch Head (IC 2118)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dark Nebula&lt;/td&gt;
+&lt;td&gt;60-120 minutes&lt;/td&gt;
+&lt;td&gt;LP filter OFF&lt;/td&gt;
+&lt;td&gt;Horsehead (IC 434 region), Barnard 33&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Live stacking is the defining imaging technique of the smart telescope era, and it is the process that makes the S30 Pro&amp;rsquo;s results so striking even to observers accustomed to traditional approaches. Understanding exactly what is happening inside the telescope during a stacking session — not in abstract terms, but in the concrete mechanical and mathematical sequence — transforms the experience from passive watching into active, informed observation.&lt;/p&gt;
+&lt;h4&gt;The problem that stacking solves&lt;span class="hx:absolute hx:-mt-20" id="the-problem-that-stacking-solves"&gt;&lt;/span&gt;
+&lt;a href="#the-problem-that-stacking-solves" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Every digital image sensor is imperfect. When it captures a low-light scene- a faint galaxy, a delicate nebula - the signal from the actual astronomical source is mixed with several types of unwanted noise. Read noise is introduced during the process of reading the pixel values off the sensor chip. Dark current noise accumulates as electrons are thermally generated in the sensor even in the absence of light, at a rate proportional to sensor temperature and exposure time. Sky background noise represents the photons arriving at the sensor from scattered artificial light, airglow, and zodiacal light rather than from the target object.&lt;/p&gt;
+&lt;p&gt;A single exposure cannot eliminate any of these noise sources — they are present in every frame regardless of how carefully the exposure is chosen. What stacking exploits is the statistical difference between signal and noise: genuine signal from the astronomical target is consistent from frame to frame, appearing at the same pixel positions with the same relative brightness. Noise, by contrast, is random — it varies independently between frames, sometimes positive, sometimes negative, with no spatial coherence across exposures.&lt;/p&gt;
+&lt;h4&gt;How averaging builds a better image&lt;span class="hx:absolute hx:-mt-20" id="how-averaging-builds-a-better-image"&gt;&lt;/span&gt;
+&lt;a href="#how-averaging-builds-a-better-image" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;When multiple frames are combined through averaging, the true signal from the target builds up coherently — each frame contributes to the same underlying pattern. Meanwhile, random noise tends to cancel out: a pixel that appears slightly brighter in one frame due to noise is balanced out across many frames by pixels that are slightly darker due to opposite noise variations. The mathematics behind this shows a square-root relationship: doubling the number of frames decreases noise by about 1.4 times, while quadrupling the frames halves the noise. That’s why longer sessions with more frames yield cleaner, more detailed images.&lt;/p&gt;
+&lt;p&gt;The S30 Pro continuously performs real-time averaging, updating the stacked image after each new frame is captured and registered. The live preview displayed during a session is not a simulation or approximation; it reflects the actual current state of the accumulating stack, updating frame by frame as the telescope operates.&lt;/p&gt;
+&lt;p&gt;Watching a faint galaxy gradually emerge from noise as more frames are collected is one of the most intensely satisfying experiences the instrument offers.&lt;/p&gt;
+&lt;h4&gt;Reading the live stack and knowing when to stop&lt;span class="hx:absolute hx:-mt-20" id="reading-the-live-stack-and-knowing-when-to-stop"&gt;&lt;/span&gt;
+&lt;a href="#reading-the-live-stack-and-knowing-when-to-stop" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The S30 Pro app shows a real-time integration timer and frame count during stacking sessions. There is no strict rule for when a stack is finished — it depends on sky conditions, your target, and your quality threshold. A good practice is to watch the live preview and determine when new frames no longer substantially improve the stack. Under clear skies and bright targets, this point may be reached after about thirty minutes. For faint targets or in polluted areas, you might see significant gains even after two hours.&lt;/p&gt;
+&lt;p&gt;The histogram display in Stargazing Mode is the most dependable quantitative tool for assessment. When the signal peak clearly rises above the noise floor and the histogram shape stabilizes — no longer shifting notably with each new frame — the stack has matured, and further integration yields minimal gains. This indicates the practical point to stop, save, and proceed to the next target.&lt;/p&gt;</description></item><item><title>Biking</title><link>https://ssathya.github.io/SridharBlog/posts/biking/</link><pubDate>Fri, 01 May 2026 17:55:57 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/biking/</guid><description>
 &lt;p&gt;&lt;a href="https://postimg.cc/gwBQCDPj"target="_blank" rel="noopener"&gt;&lt;img src="https://i.postimg.cc/LXHSZCCt/Gemini-Generated-Image-9nv3wh9nv3wh9nv3.png" alt="Gemini-Generated-Image-9nv3wh9nv3wh9nv3.png" loading="lazy" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;About my renewed passion&lt;span class="hx:absolute hx:-mt-20" id="about-my-renewed-passion"&gt;&lt;/span&gt;
 &lt;a href="#about-my-renewed-passion" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I used to enjoy biking a lot during my college days, especially until I got a motorcycle. Recently, I&amp;rsquo;ve rekindled my love for biking, and it feels so great to reconnect with it! First, let&amp;rsquo;s talk about my equipment. I ride an affordable bike, so I usually go to places nearby where I can bring it. It&amp;rsquo;s an e-bike, which really helps me keep going, even when I feel tired. It&amp;rsquo;s such a joyful way to stay active and enjoy the outdoors!&lt;/p&gt;
@@ -323,252 +395,7 @@ title="Copy code"
 &lt;td&gt;~15 mins via US-22 E&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Aspire Getting Started</title><link>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</link><pubDate>Sat, 30 Aug 2025 17:31:31 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</guid><description>
-&lt;p&gt;In this comprehensive guide, we will explore the foundational steps involved in writing your very first Aspire project. Additionally, the post will provide insightful instructions on how to smoothly transition and migrate your existing projects to the Aspire platform. This tutorial aims to equip beginners with the necessary knowledge and confidence to start developing with Aspire effectively.&lt;/p&gt;
-&lt;p&gt;Microsoft has &lt;a href="https://learn.microsoft.com/en-us/dotnet/aspire/get-started/build-your-first-aspire-app?tabs=windows&amp;amp;pivots=visual-studio"target="_blank" rel="noopener"&gt;excellent documentation&lt;/a&gt; for getting started with Aspire, but I am preparing this document for my personal reference and easy access.&lt;/p&gt;
-&lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
-&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;.NET 9
-&lt;ul&gt;
-&lt;li&gt;Though .NET 8 will be suitable for Aspire, we&amp;rsquo;ll go with version 9 for Aspire 9.x support.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;An OCI-compliant container runtime, such as Podman.&lt;/li&gt;
-&lt;li&gt;Visual Studio 2022&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Create your first Aspire Project.&lt;span class="hx:absolute hx:-mt-20" id="create-your-first-aspire-project"&gt;&lt;/span&gt;
-&lt;a href="#create-your-first-aspire-project" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Start Visual Studio and create a new project. In the Create New Project template, select to create a new &amp;ldquo;Aspire Starter App&amp;rdquo;. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/media/aspire-templates.png" alt="New project template" loading="lazy" /&gt;&lt;/p&gt;
-&lt;p&gt;In the following window, select &amp;lsquo;AspireSample&amp;rsquo; as the project name and click Next.&lt;/p&gt;
-&lt;p&gt;In the next dialog box, ensure .NET 9.0 is selected, ensure Redis for caching is checked, and select &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Visual Studio creates a new solution that is structured to use .NET Aspire.&lt;/p&gt;
-&lt;h2&gt;Testing the application&lt;span class="hx:absolute hx:-mt-20" id="testing-the-application"&gt;&lt;/span&gt;
-&lt;a href="#testing-the-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The sample application includes a frontend Blazor app that communicates with a Minimal API project. The API project is used to provide weather data to the frontend. The frontend app is configured to use service discovery to connect to the API project. The API project is configured to use output caching with Redis. The sample app is now ready for testing. When we deploy the application, we can verify the following conditions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Weather data is retrieved from the API project using service discovery and displayed on the weather page.&lt;/li&gt;
-&lt;li&gt;Subsequent requests are handled via the output caching configured by the .NET Aspire Redis integration.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In Visual Studio, set the &lt;em&gt;AspireSample.AppHost&lt;/em&gt; project as the startup project if it isn&amp;rsquo;t set as startup project. When you start debugging/running the application:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The application displays the .NET Aspire dashboard in the browser.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/aspire-dashboard-webfrontend.png" alt="" loading="lazy" /&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Launch the Blazor frontend by clicking on the &lt;em&gt;launch&lt;/em&gt; button in Aspire dashboard.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Navigate from the home page to the weather page. Make a mental note of some of the values represented in the forecast table.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Continue occasionally refreshing the page. If it is refreshed within 10 seconds, the cached data is returned. Eventually, the cache data will expire, and a new set of values will be displayed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Congratulations! You have created and run your first .NET Aspire solution! Below, we will outline the steps to migrate your existing solution to Aspire.&lt;/p&gt;
-&lt;h1&gt;Moving an existing .NET application to Aspire&lt;/h1&gt;&lt;p&gt;If you have an existing microservice and .NET web app, you can add .NET Aspire to it and get all the included features and benefits.&lt;/p&gt;
-&lt;h2&gt;Get started&lt;span class="hx:absolute hx:-mt-20" id="get-started"&gt;&lt;/span&gt;
-&lt;a href="#get-started" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We will work on an existing application created by Microsoft for this tutorial. We&amp;rsquo;ll use the following command to clone an existing repository:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/MicrosoftDocs/mslearn-dotnet-cloudnative-devops.git eShopLite&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Explore the sample application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-sample-application"&gt;&lt;/span&gt;
-&lt;a href="#explore-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Data Entities:&lt;/strong&gt; This project serves as an example class library. It defines the &lt;em&gt;Product&lt;/em&gt; class used in the Web App and Web API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Products:&lt;/strong&gt; This example Web API returns a list of products in the catalog, along with their properties.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Store:&lt;/strong&gt; This example Blazor Web App shows the product catalog to visitors on the website.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Run the sample application&lt;span class="hx:absolute hx:-mt-20" id="run-the-sample-application"&gt;&lt;/span&gt;
-&lt;a href="#run-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Load the solution in &lt;strong&gt;&lt;mark&gt;Visual Studio&lt;/mark&gt;&lt;/strong&gt; and in the &lt;em&gt;Solution Explorer&lt;/em&gt; right-click the &lt;em&gt;eShopLite&lt;/em&gt; solution, and then select &lt;em&gt;Configure Startup Projects.&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Select &lt;em&gt;Multiple startup projects&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the Action column, Select Start for both the Products and Store projects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select &lt;em&gt;Ok&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Start debugging the solution by pressing the &lt;code&gt;F5&lt;/code&gt;key.&lt;/p&gt;
-&lt;p&gt;Two pages open in the browser:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;A page displays products in JSON format from a call to the Products Web API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A page displays the website&amp;rsquo;s homepage. In the menu on the left, select &lt;strong&gt;&amp;ldquo;Products&amp;rdquo;&lt;/strong&gt; to view the catalog retrieved from the Web API.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Regardless of the tool employed, initiating multiple projects manually or establishing the necessary connections between them can be a laborious and time-consuming task. Furthermore, the Store project mandates explicit configuration of endpoints for the Products API, which can be both cumbersome and susceptible to errors. In such scenarios, .NET Aspire offers an effective solution by simplifying and streamlining these processes.&lt;/p&gt;
-&lt;h2&gt;Ensure .NET Aspire templates are installed&lt;span class="hx:absolute hx:-mt-20" id="ensure-net-aspire-templates-are-installed"&gt;&lt;/span&gt;
-&lt;a href="#ensure-net-aspire-templates-are-installed" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To develop .NET Aspire projects, we need to ensure that Aspire templates are installed on our computer. We can install and list the Aspire templates using the following commands:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new install Aspire.ProjectTemplates&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;This will install Aspire, and we can check the installed packages and version using the following command:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new list aspire&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Add .NET Aspire to the Store web app&lt;span class="hx:absolute hx:-mt-20" id="add-net-aspire-to-the-store-web-app"&gt;&lt;/span&gt;
-&lt;a href="#add-net-aspire-to-the-store-web-app" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now, let&amp;rsquo;s enroll the Store project, which implements the web user interface, in .NET Aspire orchestration:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Store project, select Add, and then select &lt;mark&gt;.NET Aspire Orchestrator Support&lt;/mark&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the Add .NET Aspire Orchestrator Support dialog, select Ok. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/add-aspire-orchestrator-support.png" alt="" loading="lazy" /&gt; You should now have two new projects, both of which have been added to the solution.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; is an orchestrator project designed to connect and configure the different projects and services of your application. The orchestrator is set as the &lt;em&gt;Startup project&lt;/em&gt;, and it depends on the &lt;em&gt;eShopLite&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across an orchestrator project designed to connect and configure the various projects and services within &lt;em&gt;eShopLite.Store&lt;/em&gt; project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;eshopLite.ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across the projects in your solution related to resilience, service discovery, and telemetry.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you would examine the &lt;em&gt;AppHost.cs&lt;/em&gt; file, you&amp;rsquo;ll find the following line of code, which registers the Store project in the .NET Aspire orchestration:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To add the &lt;em&gt;Products&lt;/em&gt; project to the .NET Aspire:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Products project, select Add, and then select .NET Aspire Orchestrator Support.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A dialog indicating that the .NET Aspire Orchestrator project already exists, select OK. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/orchestrator-already-added.png" alt="" loading="lazy" /&gt; In the eShopLite.AppHost project, open &lt;em&gt;AppHost.cs&lt;/em&gt; file. Notice this line of code, which registers the Products project in the .NET Aspire orchestration:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Also notice that the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project, now depends on both the Store and Products projects.&lt;/p&gt;
-&lt;h3&gt;Service Discovery&lt;span class="hx:absolute hx:-mt-20" id="service-discovery"&gt;&lt;/span&gt;
-&lt;a href="#service-discovery" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;At this point, both projects are part of .NET Aspire orchestration, but the Store project needs to rely on the Products backend address through .NET Aspire&amp;rsquo;s service discovery. To enable service discovery, open the &lt;em&gt;AppHost.cs&lt;/em&gt; file in the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project and update the code so that the &lt;code&gt;builder &lt;/code&gt;adds a reference to the &lt;em&gt;Products&lt;/em&gt; project:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = DistributedApplication.CreateBuilder(args);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; products = builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithExternalHttpEndpoints()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithReference(products)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WaitFor(products);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Build().Run();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;The preceding code expresses that the &lt;em&gt;Store&lt;/em&gt; project depends on the &lt;em&gt;Products&lt;/em&gt; project. This reference is used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project at run time. Additionally, the &lt;em&gt;Store&lt;/em&gt; project is configured to use external HTTP endpoints. If you later choose to deploy this application, you&amp;rsquo;d need the call to &lt;code&gt;WithExternalHttpEndpoints &lt;/code&gt;to ensure that it&amp;rsquo;s public to the outside world. Finally, the &lt;code&gt;WaitFor&lt;/code&gt; API ensures that the &lt;em&gt;Store&lt;/em&gt; app waits for the &lt;em&gt;Products&lt;/em&gt; app to be ready to serve requests.&lt;/p&gt;
-&lt;p&gt;Next, update the &lt;em&gt;appsettings.json&lt;/em&gt; in the &lt;em&gt;Store&lt;/em&gt; project with the following JSON:&lt;/p&gt;
-&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
-&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;DetailedErrors&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Logging&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;LogLevel&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Default&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Information&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Microsoft.AspNetCore&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Warning&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;AllowedHosts&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpoint&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;http://products&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpointHttps&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://products&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
-&lt;button
-class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-title="Copy code"
-&gt;
-&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Change to note is &lt;code&gt;ProductEndpoint &lt;/code&gt;and &lt;code&gt;ProductEndpointHttps&lt;/code&gt;. The destination addresses were hardcoded, but now use the &amp;ldquo;products&amp;rdquo; name that was added to the orchestrator in the &lt;em&gt;AppHost&lt;/em&gt;. These names are used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
-&lt;div class="alert is-info"&gt;
-&lt;p class="alert-title"&gt;&lt;span class="docon docon-status-error-outline" aria-hidden="true"&gt;&lt;/span&gt; Note&lt;/p&gt;
-&lt;p&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new startup project.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h2&gt;Explore the enrolled application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-enrolled-application"&gt;&lt;/span&gt;
-&lt;a href="#explore-the-enrolled-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s start by examining the new behavior that .NET Aspire provides.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new statup project.&lt;/em&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;In Visual Studio, to start debugging, press &lt;code&gt;F5&lt;/code&gt; to build and launch the project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If the Start Docker Desktop dialog appears, select Yes. Visual Studio starts the Docker engine and creates the necessary containers. When the deployment is complete, the .NET Aspire dashboard is displayed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the dashboard, select the endpoint for the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the dashboard, select the endpoint for the products project. A new browser tab appears and displays the product catalog in JSON format.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the menu on the left, select Products. The product catalog is displayed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;To stop debugging, close the browser.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Congratulations, you added .NET Aspire orchestration to your preexisting web app. You can now add .NET Aspire integrations and use the .NET Aspire tooling to streamline your cloud native web app development.&lt;/p&gt;</description></item><item><title>Installing open VPN in an VM</title><link>https://ssathya.github.io/SridharBlog/posts/openvpndockerubuntu/</link><pubDate>Sat, 15 Mar 2025 11:31:10 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/openvpndockerubuntu/</guid><description>
+&lt;/table&gt;</description></item><item><title>Installing open VPN in an VM</title><link>https://ssathya.github.io/SridharBlog/posts/openvpndockerubuntu/</link><pubDate>Sat, 15 Mar 2025 11:31:10 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/openvpndockerubuntu/</guid><description>
 &lt;p&gt;The following instructions are based on this &lt;a href="https://www.youtube.com/watch?v=vU0jyDGGUUE"target="_blank" rel="noopener"&gt;Youtube video&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Introduction&lt;span class="hx:absolute hx:-mt-20" id="introduction"&gt;&lt;/span&gt;
 &lt;a href="#introduction" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;When I want to virtually travel to a different country I need to create a VPN server in that region and I often land up watching Youtube videos or installing the software wrong. So I’m creating this gist so that I will not be lost when I install my next OpenVPN server on a VM.&lt;/p&gt;
@@ -1117,7 +944,252 @@ title="Copy code"
 &lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
 &lt;/button&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description></item><item><title>Where Art Meets Devotion: Exploring Kolkata`s Pandals</title><link>https://ssathya.github.io/SridharBlog/posts/kolkata/</link><pubDate>Tue, 28 Oct 2025 21:04:18 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/kolkata/</guid><description>
+&lt;/div&gt;</description></item><item><title>Aspire Getting Started</title><link>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</link><pubDate>Sat, 30 Aug 2025 17:31:31 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/aspire-getting-started/</guid><description>
+&lt;p&gt;In this comprehensive guide, we will explore the foundational steps involved in writing your very first Aspire project. Additionally, the post will provide insightful instructions on how to smoothly transition and migrate your existing projects to the Aspire platform. This tutorial aims to equip beginners with the necessary knowledge and confidence to start developing with Aspire effectively.&lt;/p&gt;
+&lt;p&gt;Microsoft has &lt;a href="https://learn.microsoft.com/en-us/dotnet/aspire/get-started/build-your-first-aspire-app?tabs=windows&amp;amp;pivots=visual-studio"target="_blank" rel="noopener"&gt;excellent documentation&lt;/a&gt; for getting started with Aspire, but I am preparing this document for my personal reference and easy access.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
+&lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;.NET 9
+&lt;ul&gt;
+&lt;li&gt;Though .NET 8 will be suitable for Aspire, we&amp;rsquo;ll go with version 9 for Aspire 9.x support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An OCI-compliant container runtime, such as Podman.&lt;/li&gt;
+&lt;li&gt;Visual Studio 2022&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Create your first Aspire Project.&lt;span class="hx:absolute hx:-mt-20" id="create-your-first-aspire-project"&gt;&lt;/span&gt;
+&lt;a href="#create-your-first-aspire-project" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Start Visual Studio and create a new project. In the Create New Project template, select to create a new &amp;ldquo;Aspire Starter App&amp;rdquo;. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/media/aspire-templates.png" alt="New project template" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;In the following window, select &amp;lsquo;AspireSample&amp;rsquo; as the project name and click Next.&lt;/p&gt;
+&lt;p&gt;In the next dialog box, ensure .NET 9.0 is selected, ensure Redis for caching is checked, and select &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Visual Studio creates a new solution that is structured to use .NET Aspire.&lt;/p&gt;
+&lt;h2&gt;Testing the application&lt;span class="hx:absolute hx:-mt-20" id="testing-the-application"&gt;&lt;/span&gt;
+&lt;a href="#testing-the-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The sample application includes a frontend Blazor app that communicates with a Minimal API project. The API project is used to provide weather data to the frontend. The frontend app is configured to use service discovery to connect to the API project. The API project is configured to use output caching with Redis. The sample app is now ready for testing. When we deploy the application, we can verify the following conditions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Weather data is retrieved from the API project using service discovery and displayed on the weather page.&lt;/li&gt;
+&lt;li&gt;Subsequent requests are handled via the output caching configured by the .NET Aspire Redis integration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Visual Studio, set the &lt;em&gt;AspireSample.AppHost&lt;/em&gt; project as the startup project if it isn&amp;rsquo;t set as startup project. When you start debugging/running the application:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The application displays the .NET Aspire dashboard in the browser.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/aspire-dashboard-webfrontend.png" alt="" loading="lazy" /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Launch the Blazor frontend by clicking on the &lt;em&gt;launch&lt;/em&gt; button in Aspire dashboard.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate from the home page to the weather page. Make a mental note of some of the values represented in the forecast table.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continue occasionally refreshing the page. If it is refreshed within 10 seconds, the cached data is returned. Eventually, the cache data will expire, and a new set of values will be displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Congratulations! You have created and run your first .NET Aspire solution! Below, we will outline the steps to migrate your existing solution to Aspire.&lt;/p&gt;
+&lt;h1&gt;Moving an existing .NET application to Aspire&lt;/h1&gt;&lt;p&gt;If you have an existing microservice and .NET web app, you can add .NET Aspire to it and get all the included features and benefits.&lt;/p&gt;
+&lt;h2&gt;Get started&lt;span class="hx:absolute hx:-mt-20" id="get-started"&gt;&lt;/span&gt;
+&lt;a href="#get-started" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We will work on an existing application created by Microsoft for this tutorial. We&amp;rsquo;ll use the following command to clone an existing repository:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/MicrosoftDocs/mslearn-dotnet-cloudnative-devops.git eShopLite&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Explore the sample application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-sample-application"&gt;&lt;/span&gt;
+&lt;a href="#explore-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Entities:&lt;/strong&gt; This project serves as an example class library. It defines the &lt;em&gt;Product&lt;/em&gt; class used in the Web App and Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Products:&lt;/strong&gt; This example Web API returns a list of products in the catalog, along with their properties.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Store:&lt;/strong&gt; This example Blazor Web App shows the product catalog to visitors on the website.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Run the sample application&lt;span class="hx:absolute hx:-mt-20" id="run-the-sample-application"&gt;&lt;/span&gt;
+&lt;a href="#run-the-sample-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Load the solution in &lt;strong&gt;&lt;mark&gt;Visual Studio&lt;/mark&gt;&lt;/strong&gt; and in the &lt;em&gt;Solution Explorer&lt;/em&gt; right-click the &lt;em&gt;eShopLite&lt;/em&gt; solution, and then select &lt;em&gt;Configure Startup Projects.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Select &lt;em&gt;Multiple startup projects&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the Action column, Select Start for both the Products and Store projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select &lt;em&gt;Ok&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Start debugging the solution by pressing the &lt;code&gt;F5&lt;/code&gt;key.&lt;/p&gt;
+&lt;p&gt;Two pages open in the browser:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A page displays products in JSON format from a call to the Products Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A page displays the website&amp;rsquo;s homepage. In the menu on the left, select &lt;strong&gt;&amp;ldquo;Products&amp;rdquo;&lt;/strong&gt; to view the catalog retrieved from the Web API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regardless of the tool employed, initiating multiple projects manually or establishing the necessary connections between them can be a laborious and time-consuming task. Furthermore, the Store project mandates explicit configuration of endpoints for the Products API, which can be both cumbersome and susceptible to errors. In such scenarios, .NET Aspire offers an effective solution by simplifying and streamlining these processes.&lt;/p&gt;
+&lt;h2&gt;Ensure .NET Aspire templates are installed&lt;span class="hx:absolute hx:-mt-20" id="ensure-net-aspire-templates-are-installed"&gt;&lt;/span&gt;
+&lt;a href="#ensure-net-aspire-templates-are-installed" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To develop .NET Aspire projects, we need to ensure that Aspire templates are installed on our computer. We can install and list the Aspire templates using the following commands:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new install Aspire.ProjectTemplates&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This will install Aspire, and we can check the installed packages and version using the following command:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dotnet new list aspire&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Add .NET Aspire to the Store web app&lt;span class="hx:absolute hx:-mt-20" id="add-net-aspire-to-the-store-web-app"&gt;&lt;/span&gt;
+&lt;a href="#add-net-aspire-to-the-store-web-app" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now, let&amp;rsquo;s enroll the Store project, which implements the web user interface, in .NET Aspire orchestration:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Store project, select Add, and then select &lt;mark&gt;.NET Aspire Orchestrator Support&lt;/mark&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the Add .NET Aspire Orchestrator Support dialog, select Ok. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/add-aspire-orchestrator-support.png" alt="" loading="lazy" /&gt; You should now have two new projects, both of which have been added to the solution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; is an orchestrator project designed to connect and configure the different projects and services of your application. The orchestrator is set as the &lt;em&gt;Startup project&lt;/em&gt;, and it depends on the &lt;em&gt;eShopLite&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across an orchestrator project designed to connect and configure the various projects and services within &lt;em&gt;eShopLite.Store&lt;/em&gt; project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;eshopLite.ServiceDefaults:&lt;/strong&gt; This shared project is used to manage configurations that are reused across the projects in your solution related to resilience, service discovery, and telemetry.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you would examine the &lt;em&gt;AppHost.cs&lt;/em&gt; file, you&amp;rsquo;ll find the following line of code, which registers the Store project in the .NET Aspire orchestration:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To add the &lt;em&gt;Products&lt;/em&gt; project to the .NET Aspire:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, in the Solution Explorer, right-click the Products project, select Add, and then select .NET Aspire Orchestrator Support.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A dialog indicating that the .NET Aspire Orchestrator project already exists, select OK. &lt;img src="https://learn.microsoft.com/en-us/dotnet/aspire/docs/get-started/media/orchestrator-already-added.png" alt="" loading="lazy" /&gt; In the eShopLite.AppHost project, open &lt;em&gt;AppHost.cs&lt;/em&gt; file. Notice this line of code, which registers the Products project in the .NET Aspire orchestration:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Also notice that the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project, now depends on both the Store and Products projects.&lt;/p&gt;
+&lt;h3&gt;Service Discovery&lt;span class="hx:absolute hx:-mt-20" id="service-discovery"&gt;&lt;/span&gt;
+&lt;a href="#service-discovery" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;At this point, both projects are part of .NET Aspire orchestration, but the Store project needs to rely on the Products backend address through .NET Aspire&amp;rsquo;s service discovery. To enable service discovery, open the &lt;em&gt;AppHost.cs&lt;/em&gt; file in the &lt;em&gt;eShopLite.AppHost&lt;/em&gt; project and update the code so that the &lt;code&gt;builder &lt;/code&gt;adds a reference to the &lt;em&gt;Products&lt;/em&gt; project:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-csharp" data-lang="csharp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; builder = DistributedApplication.CreateBuilder(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; products = builder.AddProject&amp;lt;Projects.Products&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;products&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.AddProject&amp;lt;Projects.Store&amp;gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;store&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithExternalHttpEndpoints()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WithReference(products)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; .WaitFor(products);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;builder.Build().Run();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The preceding code expresses that the &lt;em&gt;Store&lt;/em&gt; project depends on the &lt;em&gt;Products&lt;/em&gt; project. This reference is used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project at run time. Additionally, the &lt;em&gt;Store&lt;/em&gt; project is configured to use external HTTP endpoints. If you later choose to deploy this application, you&amp;rsquo;d need the call to &lt;code&gt;WithExternalHttpEndpoints &lt;/code&gt;to ensure that it&amp;rsquo;s public to the outside world. Finally, the &lt;code&gt;WaitFor&lt;/code&gt; API ensures that the &lt;em&gt;Store&lt;/em&gt; app waits for the &lt;em&gt;Products&lt;/em&gt; app to be ready to serve requests.&lt;/p&gt;
+&lt;p&gt;Next, update the &lt;em&gt;appsettings.json&lt;/em&gt; in the &lt;em&gt;Store&lt;/em&gt; project with the following JSON:&lt;/p&gt;
+&lt;div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code"&gt;
+&lt;div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;DetailedErrors&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Logging&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;LogLevel&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Default&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Information&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;Microsoft.AspNetCore&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Warning&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;AllowedHosts&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpoint&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;http://products&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;ProductEndpointHttps&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://products&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0"&gt;
+&lt;button
+class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+title="Copy code"
+&gt;
+&lt;div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"&gt;&lt;/div&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Change to note is &lt;code&gt;ProductEndpoint &lt;/code&gt;and &lt;code&gt;ProductEndpointHttps&lt;/code&gt;. The destination addresses were hardcoded, but now use the &amp;ldquo;products&amp;rdquo; name that was added to the orchestrator in the &lt;em&gt;AppHost&lt;/em&gt;. These names are used to discover the address of the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
+&lt;div class="alert is-info"&gt;
+&lt;p class="alert-title"&gt;&lt;span class="docon docon-status-error-outline" aria-hidden="true"&gt;&lt;/span&gt; Note&lt;/p&gt;
+&lt;p&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new startup project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2&gt;Explore the enrolled application&lt;span class="hx:absolute hx:-mt-20" id="explore-the-enrolled-application"&gt;&lt;/span&gt;
+&lt;a href="#explore-the-enrolled-application" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s start by examining the new behavior that .NET Aspire provides.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Notice that the &lt;strong&gt;eShopLite.AppHost&lt;/strong&gt; project is the new statup project.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In Visual Studio, to start debugging, press &lt;code&gt;F5&lt;/code&gt; to build and launch the project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the Start Docker Desktop dialog appears, select Yes. Visual Studio starts the Docker engine and creates the necessary containers. When the deployment is complete, the .NET Aspire dashboard is displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the dashboard, select the endpoint for the &lt;em&gt;Products&lt;/em&gt; project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the dashboard, select the endpoint for the products project. A new browser tab appears and displays the product catalog in JSON format.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the menu on the left, select Products. The product catalog is displayed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To stop debugging, close the browser.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Congratulations, you added .NET Aspire orchestration to your preexisting web app. You can now add .NET Aspire integrations and use the .NET Aspire tooling to streamline your cloud native web app development.&lt;/p&gt;</description></item><item><title>Where Art Meets Devotion: Exploring Kolkata`s Pandals</title><link>https://ssathya.github.io/SridharBlog/posts/kolkata/</link><pubDate>Tue, 28 Oct 2025 21:04:18 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/kolkata/</guid><description>
 &lt;h2&gt;Durga Puja 2025: A Kaleidoscope of Creativity in Kolkata&lt;span class="hx:absolute hx:-mt-20" id="durga-puja-2025-a-kaleidoscope-of-creativity-in-kolkata"&gt;&lt;/span&gt;
 &lt;a href="#durga-puja-2025-a-kaleidoscope-of-creativity-in-kolkata" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;Introduction&lt;span class="hx:absolute hx:-mt-20" id="introduction"&gt;&lt;/span&gt;
 &lt;a href="#introduction" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Veena and I found ourselves in India during Durga Pooja, a perfect opportunity to revisit Kolkata, a city close to my heart. I was excited to witness every street transformed into an open gallery, a blend of creativity and tradition. This post is a visual journey, so I&amp;rsquo;ll let my pictures tell the story!&lt;/p&gt;
