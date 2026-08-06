@@ -5,6 +5,12 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
   pull_request:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'production'
 
 jobs:
   deploy:
