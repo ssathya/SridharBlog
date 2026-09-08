@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 28 Aug 2026 14:03:03 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sridhar's Blog! – Hello &amp; Welcome!</title><link>https://ssathya.github.io/SridharBlog/</link><description>Recent content in Hello &amp; Welcome! on Sridhar's Blog!</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 08 Sep 2026 15:10:46 -0400</lastBuildDate><atom:link href="https://ssathya.github.io/SridharBlog/index.xml" rel="self" type="application/rss+xml"/><item><title>Add New Blog</title><link>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</link><pubDate>Mon, 01 Sep 2025 14:08:40 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/add-new-blog/</guid><description>
 &lt;h1&gt;Blog Post Creation Workflow&lt;/h1&gt;&lt;p&gt;This document outlines the process for creating new blog posts. It will be updated regularly as new techniques and workflow improvements are implemented.&lt;/p&gt;
 &lt;h2&gt;Prerequisites&lt;span class="hx:absolute hx:-mt-20" id="prerequisites"&gt;&lt;/span&gt;
 &lt;a href="#prerequisites" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
@@ -1343,7 +1343,65 @@ I have quite a collection of images to share from this experience, but I want to
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.&lt;/p&gt;</description></item><item><title>Pyramid Cluster &amp; Eastern Veil Nebula</title><link>https://ssathya.github.io/SridharBlog/posts/m_39-ngc_6992/</link><pubDate>Fri, 28 Aug 2026 14:03:03 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/m_39-ngc_6992/</guid><description>
+&lt;p&gt;I have many more pictures taken, but I believe these are the ones worth sharing. While there were hundreds of Pandals in Calcutta, the humid weather and visiting countless Pandals left me exhausted, so I decided not to visit them all.&lt;/p&gt;</description></item><item><title>Andromeda Galaxy</title><link>https://ssathya.github.io/SridharBlog/posts/andromeda/</link><pubDate>Tue, 08 Sep 2026 15:10:46 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/andromeda/</guid><description>
+&lt;p&gt;In this article, we will visit the &lt;strong&gt;Andromeda Galaxy&lt;/strong&gt;. It is the nearest major spiral galaxy to our own Milky Way.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;&lt;em&gt;Before I lose you, what exactly is a galaxy? And what is the Milky Way?&lt;/em&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;We live on Earth, the third planet from the Sun - a small, rocky world orbiting a mid-sized star in the Solar System, a family of eight planets, dwarf planets, and countless asteroids bound by the Sun&amp;rsquo;s gravity. The Solar System sits on the inner edge of a minor spiral arm called the &lt;strong&gt;Orion Arm&lt;/strong&gt;, a thin strand of stars and gas winding through our home galaxy, the &lt;strong&gt;Milky Way&lt;/strong&gt;. A &lt;strong&gt;galaxy&lt;/strong&gt; is a vast island of stars, gas, dust, and dark matter, all held together by gravity. There are an estimated &lt;strong&gt;100 to 200 billion&lt;/strong&gt; of them in the observable universe, ranging from tiny dwarfs with a few million stars to giants holding over a trillion. &lt;/p&gt;
+&lt;p&gt;The Milky Way is a barred spiral roughly 100,000 light-years across, and we are not near its center - our position is about 27,000 light-years out, like a quiet suburb far from the dense, radiation-heavy downtown. The Sun orbits that center at roughly &lt;strong&gt;514,000 miles per hour&lt;/strong&gt;, completing one full lap (a &amp;ldquo;galactic year&amp;rdquo;) every &lt;strong&gt;~230 million years&lt;/strong&gt;. To put our address in perspective, our nearest major neighbor, Andromeda, is &lt;strong&gt;2.2 times wider&lt;/strong&gt; than the Milky Way and contains roughly &lt;strong&gt;three times as many stars&lt;/strong&gt; — so even our &amp;ldquo;suburb&amp;rdquo; is part of one of the smaller galaxies in our local neighborhood.&lt;/p&gt;
+&lt;p&gt;One more definition before we talk about Andromeda. The term &lt;em&gt;light-years&lt;/em&gt; will keep appearing often on this page. If you aren&amp;rsquo;t conversant with the term &lt;strong&gt;light-years&lt;/strong&gt;, it is &lt;em&gt;not a unit of time&lt;/em&gt;; instead, it is a &lt;em&gt;unit of distance&lt;/em&gt;. It is the total distance a beam of light travels in one year, about 6 trillion miles. Because the speed of light is the fastest thing in the universe, this gives us a ruler big enough to measure the gaps between stars and galaxies without writing out numbers with fifteen zeros.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Now let us get back to the &lt;strong&gt;Andromeda Galaxy&lt;/strong&gt;! &lt;strong&gt;Andromeda&lt;/strong&gt; is the nearest major spiral galaxy to our &lt;strong&gt;Milky Way&lt;/strong&gt;, located 2.5 million light-years away, and serves as a cosmic mirror that reveals our galaxy’s scale and evolution through contrast.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://postimg.cc/gnrxV57M"target="_blank" rel="noopener"&gt;&lt;figure&gt;
+&lt;img src="https://i.postimg.cc/X7k9b6k0/After-GIMP.jpg" title="Andromeda.jpg" alt="Andromeda.jpg" loading="lazy" /&gt;
+&lt;figcaption&gt;Andromeda.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Andromeda is significantly larger, with a diameter of &lt;strong&gt;220,000 light-years&lt;/strong&gt; compared to our Milky Way’s &lt;strong&gt;100,000–120,000 light-years&lt;/strong&gt;.  While both are massive, Andromeda contains roughly &lt;strong&gt;1 trillion stars&lt;/strong&gt; versus the Milky Way’s &lt;strong&gt;100–400 billion&lt;/strong&gt;, making it the dominant member of the Local Group. &lt;/p&gt;
+&lt;p&gt;The Milky Way is a &lt;strong&gt;barred spiral&lt;/strong&gt; with a settled structure, whereas Andromeda shows signs of a more violent past with &lt;strong&gt;warped rings and stellar streams&lt;/strong&gt; from past mergers.  Andromeda’s central black hole is &lt;strong&gt;~100 million solar masses&lt;/strong&gt;, nearly &lt;strong&gt;30 times more massive&lt;/strong&gt; than the Milky Way’s Sagittarius A*, indicating a more aggressive accretion history. &lt;/p&gt;
+&lt;p&gt;The Milky Way is actively forming stars at a moderate rate (&lt;strong&gt;3–5 solar masses per year&lt;/strong&gt;), while Andromeda is in a &lt;strong&gt;quiescent state&lt;/strong&gt;, forming only &lt;strong&gt;1 solar mass per year&lt;/strong&gt;, suggesting it used up much of its gas earlier.&lt;/p&gt;
+&lt;p&gt;And eventually these two galaxies are on a collision course, approaching at &lt;strong&gt;~110 km/s&lt;/strong&gt;, and will merge in about &lt;strong&gt;4 billion years&lt;/strong&gt; to form a giant elliptical galaxy often called &lt;strong&gt;Milkdromeda&lt;/strong&gt;. &lt;em&gt;One can predict what will happen in 4 billion years; be ready. You&amp;rsquo;ve been warned&lt;/em&gt;!🤷‍♂️&lt;/p&gt;
+&lt;p&gt;Let us do a side-by-side comparison of the two galaxies we are talking about.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Feature&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Milky Way&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Andromeda (M31)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Diameter&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~100,000–120,000 ly&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~220,000 ly&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Star Count&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;100–400 billion&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~1 trillion&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Barred Spiral&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Spiral / Barred Spiral&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Star Formation&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Active (3–5 M☉/yr)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Low (1 M☉/yr)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Central Black Hole&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~4 million M☉&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~100 million M☉&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Visibility&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Band of light&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Fuzzy patch (naked eye)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I believe you found this introduction to our neighboring galaxy, Andromeda, fascinating and captivating. When do you plan to look through a telescope yourself?&lt;/p&gt;</description></item><item><title>Pyramid Cluster &amp; Eastern Veil Nebula</title><link>https://ssathya.github.io/SridharBlog/posts/m_39-ngc_6992/</link><pubDate>Fri, 28 Aug 2026 14:03:03 -0400</pubDate><guid>https://ssathya.github.io/SridharBlog/posts/m_39-ngc_6992/</guid><description>
 &lt;p&gt;Every astrophotographer and backyard astronomer knows the timeless joy of pointing optics
 into the rich summer Milky Way around Cygnus. But what happens when you pit two
 completely different celestial beasts against each other? Today, we are intentionally comparing
