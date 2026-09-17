@@ -18,7 +18,7 @@ One more definition before we talk about Andromeda. The term _light-years_ will 
 
 Now let us get back to the **Andromeda Galaxy**! **Andromeda** is the nearest major spiral galaxy to our **Milky Way**, located 2.5 million light-years away, and serves as a cosmic mirror that reveals our galaxy’s scale and evolution through contrast.
 
-[![Andromeda.jpg](https://i.postimg.cc/X7k9b6k0/After-GIMP.jpg "Andromeda.jpg")](https://postimg.cc/gnrxV57M)
+[![Before-GIMP-2.jpg](https://i.postimg.cc/pddk9NZw/Before-GIMP-2.jpg)](https://postimg.cc/mP07q5Kj)
 
 Andromeda is significantly larger, with a diameter of **220,000 light-years** compared to our Milky Way’s **100,000–120,000 light-years**.  While both are massive, Andromeda contains roughly **1 trillion stars** versus the Milky Way’s **100–400 billion**, making it the dominant member of the Local Group. 
 
