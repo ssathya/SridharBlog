@@ -1,6 +1,6 @@
 +++
 date = '2026-10-11T15:28:12-04:00'
-draft = true
+draft = false
 title = 'Astro Image Library'
 +++
 
@@ -45,4 +45,31 @@ The following image is a picture of the  Pyramid Cluster which is also catalogue
 
 <img src="../images/M39PyramidCluster.jpg" alt="M 39 Pyramid Cluster" width="500">
 
-*More to come....*
+## Veil Nebula
+The Veil Nebula isn’t a single nebula — it’s a large supernova remnant whose visible filaments have been broken up into multiple cataloged nebulae.
+
+ Astronomers typically divide the Veil Nebula into three major components, plus several smaller knots:
+
+- Western Veil — NGC 6960 (Witch’s Broom)
+
+- Eastern Veil — NGC 6992, NGC 6995, IC 1340
+
+- Pickering’s Triangle — also called Pickering’s Wisp
+
+I wanted to shoot each one separately and hence went for the Eastern Veil first:
+
+<img src="../images/NGC6992-Enhanced.jpg" alt="Eastern Veil" width="400">
+
+However, I later realized that capturing the entire system in one go would better represent it. My telescope can capture images in mosaic mode, dividing the region into tiled segments and stitching them together afterward. I liked the final result.
+
+<img src="../images/NGC_6960-Fixed.jpg" alt="Veil Nebula" width="600">
+
+## Andromeda Galaxy
+Andromeda is the closest spiral galaxy to our own Milky Way. It’s visible to the unaided eye on clear, dark nights. Andromeda is about twice the size of the Milky Way, with roughly one trillion stars.
+
+<img src="../images/Andromeda-1.jpg" alt="Andromeda Galaxy" width="600">
+
+## Triangulum Galaxy
+This is one of my favorites. Though it is much smaller than Andromeda, I like its spiral structure and the sparkling stars in its core.
+
+<img src="../images/Veena-Triangulum.jpg" alt="Triangulum Galaxy" width="600">
