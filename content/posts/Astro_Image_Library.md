@@ -73,3 +73,10 @@ Andromeda is the closest spiral galaxy to our own Milky Way. It’s visible to t
 This is one of my favorites. Though it is much smaller than Andromeda, I like its spiral structure and the sparkling stars in its core.
 
 <img src="../images/Veena-Triangulum.jpg" alt="Triangulum Galaxy" width="600">
+
+## Pacman Nebula
+
+NGC 281 is a bright emission nebula and is also known as the Pacman Nebula. Edward Barnard discovered the nebula in 1883. It gets its iconic moniker from a distinct dark lane of dust that cuts across the glowing red hydrogen gas, forming a shape that resembles the classic video game character. This celestial structure is an active star-forming region where new stellar bodies are born. At its core, the nebula houses the young open cluster IC 1590, which provides the energetic radiation that illuminates and shapes the surrounding gas.
+
+<img src="../images/NGC_281.jpg" alt="Pacman Nebula" width="600">
+
