@@ -80,6 +80,12 @@ However, I later realized that capturing the entire system in one go would bette
 <img src="../images/NGC_6960-Fixed.jpg" alt="Veil Nebula" width="500">
 </a>
 
+The Western Veil Nebula is beautiful on its own, and I think it deserves an image of its own. I shot this image of the Western Veil Nebula later.
+
+<a target="imageTab" href="../images/NGC_6960-2.jpg">
+<img src="../images/NGC_6960-2.jpg" alt="Veil Nebula" width="500">
+</a>
+
 ## Andromeda Galaxy
 Andromeda is the closest spiral galaxy to our own Milky Way. You can see it with the unaided eye on clear, dark nights. Andromeda is about twice the size of the Milky Way and contains roughly one trillion stars.
 
