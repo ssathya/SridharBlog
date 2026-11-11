@@ -134,3 +134,35 @@ The Heart Nebula (IC 1805) is a large emission nebula. This iconic astrophotogra
 <img src="../images/IC_1805_1.jpg" alt="Heart Nebula" width="500">
 </a>
 
+## Messier 110
+
+This is an interesting Deep-Sky Object (DSO). 
+
+- Although most common DSOs have been assigned names, I could not find one assigned to this galaxy.
+- I'm uploading two images of this object. The first will look identical to the Andromeda galaxy we saw earlier, and the two galaxies do appear close together in the sky. However, Messier 110 is much smaller than Andromeda. The second image shows what to look for to identify it.
+
+<a target="imageTab" href="../images/M110.jpg">
+<img src="../images/M110.jpg" alt="Heart Nebula" width="500">
+</a>
+
+You will see M110 is a tiny galaxy, visually, when compared to the Andromeda galaxy.
+
+<a target="imageTab" href="../images/M_110_wizardstack_247f_labelled.jpg">
+<img src="../images/M_110_wizardstack_247f_labelled.jpg" alt="Heart Nebula" width="500">
+</a>
+
+You’ll also see another DSO, labeled M32. It’s a galaxy in its own right! 
+
+Some interesting facts:
+
+| Feature | M31 | M32 | M110 |
+| :--- | :--- | :--- | :--- |
+| **Type** | Barred Spiral Galaxy | Dwarf Elliptical (E2) | Dwarf Elliptical/Spheroidal (E6p) |
+| **Apparent Magnitude** | 3.4 | 8.1 | 8.5 |
+| **Distance** | ~2.5 million light-years | ~2.48 million light-years | ~2.69 million light-years |
+| **Angular Size** | 191′ × 62′ | 8.7′ × 6.5′ | 22′ × 11′ |
+| **Visual Appearance** | Bright oval core with large faint halo | Compact, star-like, intense core | Diffuse, oval, no bright core |
+| **Discovery** | Ancient history | 1749 (Le Gentil) | 1773 (Messier) |
+| **Relationship to M31** | Primary galaxy | Closest satellite; underwent past encounter | Larger satellite; currently interacting |
+
+You can find additional details [here](https://en.wikipedia.org/wiki/List_of_Andromeda's_satellite_galaxies).
