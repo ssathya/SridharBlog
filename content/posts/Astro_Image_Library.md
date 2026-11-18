@@ -166,3 +166,11 @@ Some interesting facts:
 | **Relationship to M31** | Primary galaxy | Closest satellite; underwent past encounter | Larger satellite; currently interacting |
 
 You can find additional details [here](https://en.wikipedia.org/wiki/List_of_Andromeda's_satellite_galaxies).
+
+## Elephant Trunk - IC 1396
+
+IC 1396 is a vast emission nebula in the constellation Cepheus, located roughly 2,400 light-years from Earth. Spanning about 3 degrees across the sky, it is energized by the massive multiple star HD 206267 near its center. Embedded within the complex is IC 1396A—commonly known as the Elephant's Trunk Nebula—a dense, curving globule of gas and dust whose bright rim is shaped by radiation and stellar winds. Compression along these dark globules has triggered active star formation, spawning young protostars inside the cloud. Near the edge of the region also lies Mu Cephei, the famous red supergiant known as Herschel's Garnet Star.
+
+<a target="imageTab" href="../images/IC 1396_final_1.jpg">
+<img src="../images/IC 1396_final_1.jpg" alt="Elephant Trunk" width="500">
+</a>
